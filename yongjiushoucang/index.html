@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>永久收藏本站网址回家不迷路 - 网址导航与收藏管理指南</title>
+<meta name="description" content="永久收藏本站网址回家不迷路，汇总浏览器书签同步、跨设备收藏、网址备份与找回方法，整理常见收藏工具对比、书签栏整理技巧与防丢失策略，适合需要长期保存常用网址的普通用户和重度浏览器使用者。">
+<meta name="keywords" content="永久收藏本站网址回家不迷路">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f3a5f'/%3E%3Cpath d='M20 16h24v34l-12-8-12 8z' fill='%23f2b544'/%3E%3C/svg%3E">
+<style>
+:root{
+  --primary:#1f3a5f;
+  --primary-light:#2f5480;
+  --primary-dark:#142840;
+  --accent:#f2b544;
+  --accent-soft:#fdf1d6;
+  --bg:#f4f6f9;
+  --panel:#ffffff;
+  --text:#1c2530;
+  --text-2:#4a5768;
+  --text-3:#7d8a9a;
+  --line:#e2e7ee;
+  --line-strong:#cdd6e2;
+  --radius-card:12px;
+  --radius-btn:8px;
+  --radius-tag:5px;
+  --radius-banner:16px;
+  --shadow:0 1px 3px rgba(20,40,64,.07),0 4px 14px rgba(20,40,64,.05);
+  --shadow-hover:0 4px 10px rgba(20,40,64,.1),0 10px 26px rgba(20,40,64,.09);
+  --sticky-offset:110px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--sticky-offset)}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.75;font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--primary-light);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{line-height:1.35;color:var(--text)}
+img{max-width:100%;display:block}
+ul,ol{padding-left:1.2em}
+button{font-family:inherit;cursor:pointer}
+
+/* ===== 吸顶公告条 ===== */
+.announce{
+  position:sticky;top:0;z-index:60;
+  background:var(--primary-dark);color:#dfe8f3;font-size:13px;
+  display:flex;align-items:center;gap:14px;padding:7px 18px;
+  overflow:hidden;white-space:nowrap;
+}
+.announce .brand-mini{
+  flex-shrink:0;display:inline-flex;align-items:center;gap:6px;
+  color:var(--accent);font-weight:700;letter-spacing:.3px;
+}
+.announce .brand-mini svg{width:14px;height:14px}
+.announce-track{
+  display:flex;gap:34px;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 2%,#000 96%,transparent);
+}
+.announce-track span{display:inline-flex;align-items:center;gap:8px}
+.announce-track b{color:#fff;font-weight:600}
+.announce-track .dot{width:4px;height:4px;border-radius:50%;background:var(--accent);display:inline-block}
+@media(max-width:740px){.announce{font-size:12px;gap:10px;padding:6px 12px}}
+
+/* ===== 吸顶页头 ===== */
+.site-header{
+  position:sticky;top:31px;z-index:50;
+  background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  max-width:1360px;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;gap:22px;height:66px;
+}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-mark{width:34px;height:34px;flex-shrink:0}
+.logo-text{
+  font-size:16px;font-weight:800;color:var(--primary);letter-spacing:.2px;
+  max-width:270px;line-height:1.2;
+}
+.main-nav{display:flex;gap:4px;flex:1;flex-wrap:wrap}
+.main-nav a{
+  font-size:14px;color:var(--text-2);padding:6px 11px;border-radius:var(--radius-btn);
+  white-space:nowrap;transition:background .15s,color .15s;
+}
+.main-nav a:hover{background:var(--accent-soft);color:var(--primary);text-decoration:none}
+.header-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.search-box{position:relative;display:flex;align-items:center}
+.search-box input{
+  width:180px;height:34px;border:1px solid var(--line-strong);border-radius:var(--radius-btn);
+  padding:0 32px 0 12px;font-size:13px;background:#fff;color:var(--text);outline:none;
+  transition:border-color .15s,width .2s;
+}
+.search-box input:focus{border-color:var(--primary-light);width:215px}
+.search-box svg{position:absolute;right:10px;width:15px;height:15px;color:var(--text-3);pointer-events:none}
+.btn-primary{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  background:var(--primary);color:#fff;font-size:13px;font-weight:600;
+  padding:8px 16px;border-radius:var(--radius-btn);border:1px solid var(--primary);
+  transition:background .15s;
+}
+.btn-primary:hover{background:var(--primary-light);text-decoration:none}
+.hamburger{
+  display:none;width:38px;height:38px;border:1px solid var(--line-strong);
+  background:#fff;border-radius:var(--radius-btn);align-items:center;justify-content:center;
+}
+.hamburger svg{width:20px;height:20px;color:var(--primary)}
+.mobile-nav{
+  display:none;position:fixed;inset:0;z-index:70;
+}
+.mobile-nav.open{display:block}
+.mobile-mask{position:absolute;inset:0;background:rgba(14,26,42,.45)}
+.mobile-panel{
+  position:absolute;top:0;right:0;width:min(300px,84vw);height:100%;
+  background:#fff;box-shadow:-6px 0 24px rgba(0,0,0,.15);
+  padding:18px;overflow-y:auto;
+}
+.mobile-panel h4{font-size:13px;color:var(--text-3);margin:14px 0 8px;font-weight:600}
+.mobile-panel a{display:block;padding:10px 8px;font-size:15px;color:var(--text-2);border-radius:6px}
+.mobile-panel a:hover{background:var(--accent-soft);color:var(--primary);text-decoration:none}
+.mobile-close{
+  position:absolute;top:12px;right:12px;width:34px;height:34px;border:none;background:var(--bg);
+  border-radius:50%;font-size:18px;color:var(--text-2);
+}
+@media(max-width:1024px){
+  .main-nav{display:none}
+  .hamburger{display:flex}
+  .search-box input{width:140px}
+}
+@media(max-width:740px){
+  .site-header{top:29px}
+  .header-inner{height:58px;padding:0 14px;gap:10px}
+  .logo-text{font-size:14px;max-width:170px}
+  .logo-mark{width:28px;height:28px}
+  .search-box{display:none}
+  .btn-primary{padding:7px 12px;font-size:12px}
+}
+
+/* ===== 首屏 ===== */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#16283f 0%,#22456e 55%,#2d5c8f 100%);
+  color:#eef4fb;
+}
+.hero-inner{
+  max-width:1360px;margin:0 auto;padding:52px 24px 58px;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;
+  position:relative;z-index:2;
+}
+.hero h1{
+  font-size:clamp(26px,3.4vw,40px);color:#fff;letter-spacing:.5px;margin-bottom:16px;
+  text-shadow:0 2px 18px rgba(0,0,0,.2);
+}
+.hero-desc{
+  font-size:15.5px;color:#c9d9ec;max-width:560px;line-height:1.85;margin-bottom:24px;
+}
+.hero-desc strong{color:var(--accent);font-weight:600}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:6px;padding:9px 18px;font-size:13.5px;
+  border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:var(--radius-btn);
+  transition:background .15s,border-color .15s;
+}
+.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6);text-decoration:none}
+.hero-visual{position:relative;height:280px}
+.hero-visual svg{width:100%;height:100%}
+.hero-stats{
+  display:flex;gap:28px;margin-top:28px;flex-wrap:wrap;
+}
+.hero-stats div{font-size:13px;color:#9fb7d3}
+.hero-stats b{display:block;font-size:22px;color:var(--accent);font-weight:800;letter-spacing:.5px}
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:24px;padding:40px 20px 44px}
+  .hero-visual{height:200px;order:-1}
+  .hero h1{font-size:26px}
+}
+@media(max-width:740px){
+  .hero-inner{padding:30px 16px 36px}
+  .hero-stats{gap:18px}
+  .hero-stats b{font-size:18px}
+}
+
+/* ===== 主布局：三栏门户 ===== */
+.layout{
+  max-width:1360px;margin:0 auto;padding:32px 24px 48px;
+  display:grid;grid-template-columns:180px minmax(0,1fr) 250px;gap:26px;
+  align-items:start;
+}
+@media(max-width:1180px){
+  .layout{grid-template-columns:170px minmax(0,1fr);gap:22px}
+  .layout > .rail-right{display:none}
+}
+@media(max-width:940px){
+  .layout{grid-template-columns:1fr;padding:24px 18px 40px}
+  .layout > .rail-left{display:none}
+}
+
+/* 左频道栏 */
+.rail-left{position:sticky;top:var(--sticky-offset)}
+.rail-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:14px 12px;box-shadow:var(--shadow);
+}
+.rail-title{
+  font-size:12px;font-weight:700;color:var(--text-3);letter-spacing:1px;
+  padding:0 6px 8px;border-bottom:1px solid var(--line);margin-bottom:8px;
+}
+.channel-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:1px}
+.channel-list a{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:7px 8px;font-size:13.5px;color:var(--text-2);border-radius:6px;
+  transition:background .15s,color .15s;
+}
+.channel-list a:hover,.channel-list a.active{background:var(--accent-soft);color:var(--primary);text-decoration:none;font-weight:600}
+.channel-list .cnt{font-size:11px;color:var(--text-3);font-weight:400}
+.channel-list a.active .cnt{color:var(--primary-light)}
+
+/* 中主内容 */
+.main-col{min-width:0}
+.section{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:24px 26px;margin-bottom:22px;box-shadow:var(--shadow);
+}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:6px}
+.section-head h2{font-size:20px;letter-spacing:.2px}
+.section-head .more{font-size:12.5px;color:var(--text-3);white-space:nowrap}
+.section-sub{font-size:13px;color:var(--text-3);margin-bottom:18px}
+.section p{color:var(--text-2);margin-bottom:12px}
+.section p:last-child{margin-bottom:0}
+
+/* 概览 */
+.overview-text p{font-size:14.5px;line-height:1.9}
+.overview-text p b{color:var(--text)}
+
+/* 精选卡片 */
+.card-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:14px;
+}
+.card{
+  border:1px solid var(--line);border-radius:var(--radius-card);overflow:hidden;
+  background:#fbfcfe;display:flex;flex-direction:column;
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:var(--line-strong)}
+.card:hover .card-title{color:var(--primary-light)}
+.card-body{padding:12px 13px 14px;display:flex;flex-direction:column;gap:7px;flex:1}
+.card-title{font-size:14.5px;font-weight:700;color:var(--text);line-height:1.4}
+.card-desc{font-size:12.5px;color:var(--text-2);line-height:1.65;flex:1}
+.tag-row{display:flex;flex-wrap:wrap;gap:5px}
+.tag{
+  font-size:11px;padding:2px 7px;border-radius:var(--radius-tag);
+  background:var(--accent-soft);color:#8a6412;border:1px solid #f0dfb4;line-height:1.6;
+}
+.tag.blue{background:#e4edfa;color:#2c5a94;border-color:#c8daf3}
+.card-meta{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:11.5px;color:var(--text-3);padding-top:7px;border-top:1px dashed var(--line);
+}
+.card-meta .hot{color:#c2511f;font-weight:600}
+
+/* 最新更新列表 */
+.update-list{list-style:none;padding:0;display:flex;flex-direction:column}
+.update-list li{
+  display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:baseline;
+  padding:11px 2px;border-bottom:1px dashed var(--line);
+}
+.update-list li:last-child{border-bottom:none}
+.update-list .u-name{font-size:14px;font-weight:600;color:var(--text);white-space:nowrap}
+.update-list .u-name:hover{color:var(--primary-light)}
+.update-list .u-desc{font-size:12.8px;color:var(--text-2);line-height:1.6}
+.update-list .u-date{font-size:11.5px;color:var(--text-3);white-space:nowrap}
+@media(max-width:600px){
+  .update-list li{grid-template-columns:1fr;gap:3px}
+  .update-list .u-date{justify-self:start}
+}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.cat-item{
+  display:flex;flex-direction:column;gap:3px;padding:11px 13px;
+  border:1px solid var(--line);border-radius:var(--radius-btn);background:#fbfcfe;
+  transition:background .15s,border-color .15s;
+}
+.cat-item:hover{background:var(--accent-soft);border-color:#ecd9a8;text-decoration:none}
+.cat-item .c-name{font-size:13.5px;font-weight:700;color:var(--primary)}
+.cat-item .c-desc{font-size:11.5px;color:var(--text-3);line-height:1.55}
+
+/* 深度解析 */
+.deep h3{
+  font-size:16px;margin:22px 0 9px;padding-left:11px;border-left:3px solid var(--accent);
+  color:var(--primary);
+}
+.deep h3:first-of-type{margin-top:6px}
+.deep p{font-size:14.3px;line-height:1.92}
+.deep ul,.deep ol{margin:8px 0 14px;color:var(--text-2);font-size:14px;line-height:1.85}
+.deep li{margin-bottom:5px}
+.deep .note{
+  background:#f7f9fc;border:1px solid var(--line);border-left:3px solid var(--primary-light);
+  border-radius:6px;padding:11px 14px;font-size:13.5px;color:var(--text-2);margin:12px 0;
+}
+.deep .note b{color:var(--primary)}
+.cmp-table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0 16px}
+.cmp-table th,.cmp-table td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.cmp-table th{background:#f2f5fa;color:var(--primary);font-weight:700;font-size:12.5px}
+.cmp-table td{color:var(--text-2)}
+
+/* 体验指南 步骤 */
+.steps{counter-reset:step;display:flex;flex-direction:column;gap:12px}
+.step{
+  display:grid;grid-template-columns:32px 1fr;gap:12px;align-items:start;
+  padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius-btn);background:#fbfcfe;
+}
+.step::before{
+  counter-increment:step;content:counter(step);
+  width:28px;height:28px;border-radius:50%;background:var(--primary);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;
+}
+.step h4{font-size:14px;margin-bottom:4px}
+.step p{font-size:13px;color:var(--text-2);margin:0;line-height:1.7}
+
+/* FAQ */
+.faq details{
+  border:1px solid var(--line);border-radius:var(--radius-btn);margin-bottom:9px;
+  background:#fbfcfe;overflow:hidden;
+}
+.faq summary{
+  padding:12px 15px;font-size:13.8px;font-weight:600;color:var(--text);cursor:pointer;
+  list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"＋";color:var(--primary-light);font-weight:700;flex-shrink:0}
+.faq details[open] summary::after{content:"－"}
+.faq details[open] summary{background:var(--accent-soft);color:var(--primary)}
+.faq .ans{padding:12px 15px 15px;font-size:13.5px;color:var(--text-2);line-height:1.8;border-top:1px solid var(--line)}
+
+/* 评论 */
+.comment-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:720px){.comment-list{grid-template-columns:1fr}}
+.comment{
+  border:1px solid var(--line);border-radius:var(--radius-btn);padding:11px 13px;background:#fbfcfe;
+}
+.comment-head{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.avatar{
+  width:26px;height:26px;border-radius:50%;background:var(--primary-light);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;
+}
+.comment .nick{font-size:12.5px;font-weight:700;color:var(--primary)}
+.comment .c-time{font-size:11px;color:var(--text-3);margin-left:auto}
+.comment p{font-size:13px;color:var(--text-2);line-height:1.72;margin:0}
+
+/* 相关资讯 */
+.news-list{display:flex;flex-direction:column;gap:12px}
+.news-item{
+  display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:start;
+  padding:12px;border:1px solid var(--line);border-radius:var(--radius-btn);background:#fbfcfe;
+}
+.news-item img{width:120px;height:80px;object-fit:cover;border-radius:6px;background:#e2e7ee}
+.news-item h4{font-size:14px;margin-bottom:5px;line-height:1.45}
+.news-item h4 a{color:var(--text)}
+.news-item h4 a:hover{color:var(--primary-light)}
+.news-item .n-meta{font-size:11.5px;color:var(--text-3);margin-bottom:5px}
+.news-item p{font-size:12.5px;color:var(--text-2);line-height:1.65;margin:0}
+@media(max-width:600px){
+  .news-item{grid-template-columns:1fr}
+  .news-item img{width:100%;height:150px}
+}
+
+/* 相关推荐 标签索引 */
+.rec-tags{display:flex;flex-wrap:wrap;gap:8px}
+.rec-tags a{
+  font-size:12.8px;padding:6px 12px;border-radius:20px;border:1px solid var(--line-strong);
+  color:var(--text-2);background:#fff;transition:all .15s;
+}
+.rec-tags a:hover{background:var(--primary);color:#fff;border-color:var(--primary);text-decoration:none}
+
+/* 榜单 */
+.rank-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:2px}
+.rank-list li{
+  display:grid;grid-template-columns:24px 1fr auto;gap:10px;align-items:center;
+  padding:9px 6px;border-radius:6px;transition:background .15s;
+}
+.rank-list li:hover{background:var(--accent-soft)}
+.rank-num{
+  font-size:13px;font-weight:800;color:var(--text-3);text-align:center;
+}
+.rank-list li:nth-child(-n+3) .rank-num{color:#c2511f}
+.rank-name{font-size:13.5px;color:var(--text);font-weight:500}
+.rank-name:hover{color:var(--primary-light)}
+.rank-score{font-size:12px;color:var(--text-3)}
+
+/* 右辅助栏 */
+.rail-right{position:sticky;top:var(--sticky-offset);display:flex;flex-direction:column;gap:16px}
+.side-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:15px 14px;box-shadow:var(--shadow);
+}
+.side-card h3{font-size:14px;color:var(--primary);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.side-card h3::before{content:"";width:3px;height:14px;background:var(--accent);border-radius:2px}
+.hot-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px}
+.hot-list li{display:flex;gap:8px;font-size:12.8px;line-height:1.55}
+.hot-list .h-num{
+  flex-shrink:0;width:18px;height:18px;border-radius:4px;background:#eef2f8;color:var(--text-3);
+  font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:2px;
+}
+.hot-list li:nth-child(-n+3) .h-num{background:var(--accent);color:#5b4210}
+.hot-list a{color:var(--text-2)}
+.hot-list a:hover{color:var(--primary)}
+.hot-list .h-tag{font-size:10.5px;color:var(--text-3);display:block}
+.submit-box p{font-size:12.5px;color:var(--text-2);line-height:1.65;margin-bottom:10px}
+.submit-box .btn-primary{width:100%;justify-content:center;font-size:13px}
+
+/* 投稿互动板块 */
+.interact{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center;
+}
+@media(max-width:720px){.interact{grid-template-columns:1fr}}
+.interact h2{font-size:19px;margin-bottom:8px}
+.interact p{font-size:13.5px;color:var(--text-2);line-height:1.75;margin-bottom:12px}
+.interact .btn-row{display:flex;gap:10px;flex-wrap:wrap}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:6px;padding:8px 16px;font-size:13px;
+  border:1px solid var(--primary);color:var(--primary);border-radius:var(--radius-btn);
+  background:#fff;transition:background .15s;
+}
+.btn-outline:hover{background:var(--accent-soft);text-decoration:none}
+.interact-visual{height:170px;border-radius:var(--radius-banner);overflow:hidden;background:#eaf0f7}
+.interact-visual img{width:100%;height:100%;object-fit:cover}
+
+/* 空结果 */
+.no-result{
+  display:none;padding:16px;text-align:center;font-size:13.5px;color:var(--text-3);
+  border:1px dashed var(--line-strong);border-radius:var(--radius-btn);background:#fbfcfe;
+}
+
+/* 页尾 */
+.site-footer{
+  background:var(--primary-dark);color:#b8c9dd;margin-top:20px;
+}
+.footer-inner{max-width:1360px;margin:0 auto;padding:38px 24px 22px}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px;margin-bottom:28px}
+@media(max-width:860px){.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.footer-top{grid-template-columns:1fr}}
+.footer-brand .f-logo{display:flex;align-items:center;gap:9px;margin-bottom:11px}
+.footer-brand .f-logo svg{width:28px;height:28px}
+.footer-brand .f-logo span{font-size:14.5px;font-weight:800;color:#fff;line-height:1.3}
+.footer-brand p{font-size:12.5px;line-height:1.8;color:#93a8c1;max-width:320px}
+.footer-col h4{font-size:13px;color:#fff;margin-bottom:10px;letter-spacing:.5px}
+.footer-col a{display:block;font-size:12.5px;color:#93a8c1;padding:3px 0}
+.footer-col a:hover{color:var(--accent);text-decoration:none}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);padding-top:16px;
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  font-size:11.5px;color:#7d92ab;
+}
+
+/* 回到顶部 */
+.back-top{
+  position:fixed;right:20px;bottom:22px;z-index:40;
+  width:42px;height:42px;border-radius:50%;border:1px solid var(--line-strong);
+  background:#fff;color:var(--primary);display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:opacity .2s,transform .2s,visibility .2s;
+}
+.back-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.back-top:hover{background:var(--accent-soft)}
+.back-top svg{width:18px;height:18px}
+@media(max-width:740px){.back-top{right:14px;bottom:16px;width:38px;height:38px}}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="announce" role="region" aria-label="站内公告">
+  <span class="brand-mini">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 16h24v34l-12-8-12 8z" fill="#f2b544"/></svg>
+    永久收藏本站网址回家不迷路
+  </span>
+  <div class="announce-track">
+    <span><b>11月6日</b> 书签栏分组模板更新至第 8 版<span class="dot"></span></span>
+    <span><b>11月4日</b> 新增「跨浏览器同步」条目 6 条<span class="dot"></span></span>
+    <span><b>本周</b> 网址备份专题收录 24 个工具对比<span class="dot"></span></span>
+  </div>
+</div>
+
+<!-- 吸顶页头 -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="/#top" aria-label="返回首页顶部">
+      <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1f3a5f"/>
+        <path d="M20 16h24v34l-12-8-12 8z" fill="#f2b544"/>
+        <circle cx="46" cy="18" r="6" fill="#2f5480" stroke="#f2b544" stroke-width="2"/>
+      </svg>
+      <span class="logo-text">永久收藏本站网址回家不迷路</span>
+    </a>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="/#overview">网址收藏概览</a>
+      <a href="/#featured">精选收藏工具</a>
+      <a href="/#updates">最新更新</a>
+      <a href="/#categories">分类入口</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#guide">体验指南</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#submit">投稿互动</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-box">
+        <input type="search" id="siteSearch" placeholder="搜索条目…" aria-label="站内搜索">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </div>
+      <a class="btn-primary" href="/#submit">提交网址</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- 移动端抽屉 -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="mobile-mask" id="mobileMask"></div>
+  <div class="mobile-panel" role="dialog" aria-label="移动端导航">
+    <button class="mobile-close" id="mobileClose" aria-label="关闭菜单">×</button>
+    <h4>频道导航</h4>
+    <a href="/#overview">网址收藏概览</a>
+    <a href="/#featured">精选收藏工具</a>
+    <a href="/#updates">最新更新</a>
+    <a href="/#categories">分类入口</a>
+    <a href="/#deep">深度解析</a>
+    <a href="/#guide">体验指南</a>
+    <a href="/#faq">常见问答</a>
+    <a href="/#comments">用户评论</a>
+    <a href="/#news">相关资讯</a>
+    <a href="/#rank">热门榜单</a>
+    <a href="/#submit">投稿互动</a>
+  </div>
+</div>
+
+<!-- 首屏 -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <h1>永久收藏本站网址回家不迷路</h1>
+      <p class="hero-desc">
+        汇集 <strong>浏览器书签同步</strong>、<strong>跨设备网址备份</strong>、<strong>收藏夹整理</strong> 与 <strong>网址找回</strong> 四类具体内容：从 Chrome 账号同步的开关位置，到 Edge 收藏夹导出 HTML 的字段结构，再到手机浏览器与桌面端之间互相导入书签的操作顺序，全部拆成可照做的条目。
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="/#featured" style="background:var(--accent);border-color:var(--accent);color:#3d2c06">查看 8 个收藏工具对比</a>
+        <a class="btn-ghost" href="/#guide">按步骤备份网址 →</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>8</b>主流浏览器同步方案</div>
+        <div><b>24</b>书签备份工具条目</div>
+        <div><b>11-06</b>最近一次栏目更新</div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 440 300" role="presentation">
+        <defs>
+          <linearGradient id="hg1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f2b544" stop-opacity=".95"/>
+            <stop offset="1" stop-color="#f2b544" stop-opacity=".35"/>
+          </linearGradient>
+          <linearGradient id="hg2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffffff" stop-opacity=".18"/>
+            <stop offset="1" stop-color="#ffffff" stop-opacity=".04"/>
+          </linearGradient>
+        </defs>
+        <rect x="30" y="26" width="380" height="248" rx="16" fill="url(#hg2)" stroke="rgba(255,255,255,.22)"/>
+        <rect x="30" y="26" width="380" height="34" rx="16" fill="rgba(255,255,255,.1)"/>
+        <circle cx="52" cy="43" r="5" fill="#f2b544"/>
+        <circle cx="70" cy="43" r="5" fill="rgba(255,255,255,.35)"/>
+        <circle cx="88" cy="43" r="5" fill="rgba(255,255,255,.2)"/>
+        <rect x="48" y="78" width="150" height="12" rx="6" fill="rgba(255,255,255,.5)"/>
+        <rect x="48" y="100" width="96" height="8" rx="4" fill="rgba(255,255,255,.22)"/>
+        <rect x="48" y="126" width="160" height="52" rx="9" fill="rgba(255,255,255,.09)" stroke="rgba(255,255,255,.16)"/>
+        <rect x="60" y="140" width="66" height="8" rx="4" fill="#f2b544" opacity=".85"/>
+        <rect x="60" y="156" width="118" height="6" rx="3" fill="rgba(255,255,255,.25)"/>
+        <rect x="48" y="190" width="160" height="52" rx="9" fill="rgba(255,255,255,.09)" stroke="rgba(255,255,255,.16)"/>
+        <rect x="60" y="204" width="50" height="8" rx="4" fill="rgba(255,255,255,.55)"/>
+        <rect x="60" y="220" width="128" height="6" rx="3" fill="rgba(255,255,255,.22)"/>
+        <rect x="228" y="78" width="158" height="164" rx="10" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.18)"/>
+        <rect x="242" y="92" width="76" height="9" rx="4" fill="url(#hg1)"/>
+        <g fill="rgba(255,255,255,.3)">
+          <rect x="242" y="112" width="130" height="7" rx="3.5"/>
+          <rect x="242" y="128" width="104" height="7" rx="3.5"/>
+          <rect x="242" y="144" width="120" height="7" rx="3.5"/>
+          <rect x="242" y="160" width="88" height="7" rx="3.5"/>
+        </g>
+        <rect x="242" y="186" width="130" height="40" rx="8" fill="rgba(242,181,68,.16)" stroke="rgba(242,181,68,.5)"/>
+        <path d="M258 206l8 8 14-16" stroke="#f2b544" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="286" y="211" font-size="12" fill="#f2b544" font-family="sans-serif" font-weight="700">已备份</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- 主布局 -->
+<div class="layout">
+
+  <!-- 左频道栏 -->
+  <aside class="rail-left">
+    <div class="rail-card">
+      <div class="rail-title">频道索引</div>
+      <ul class="channel-list">
+        <li><a href="/#overview" class="active">收藏概览<span class="cnt">1</span></a></li>
+        <li><a href="/#featured">收藏工具<span class="cnt">8</span></a></li>
+        <li><a href="/#updates">更新动态<span class="cnt">10</span></a></li>
+        <li><a href="/#categories">分类入口<span class="cnt">8</span></a></li>
+        <li><a href="/#deep">深度解析<span class="cnt">1</span></a></li>
+        <li><a href="/#guide">体验指南<span class="cnt">5</span></a></li>
+        <li><a href="/#faq">常见问答<span class="cnt">6</span></a></li>
+        <li><a href="/#comments">用户评论<span class="cnt">16</span></a></li>
+        <li><a href="/#news">相关资讯<span class="cnt">6</span></a></li>
+        <li><a href="/#rank">热门榜单<span class="cnt">10</span></a></li>
+        <li><a href="/#submit">投稿互动<span class="cnt">—</span></a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- 中主内容 -->
+  <main class="main-col">
+
+    <!-- 概览 -->
+    <section class="section" id="overview">
+      <div class="section-head"><h2>网址收藏与书签管理概览</h2></div>
+      <p class="section-sub">浏览器收藏夹、云端书签、独立网址导航三类方向的现状与关注点</p>
+      <div class="overview-text">
+        <p>网址收藏这件事，落到具体操作上分三条路径。第一条是浏览器自带收藏夹：Chrome 的「书签管理器」支持按文件夹分层，导出格式为 Netscape Bookmark HTML，字段含 <b>ADD_DATE</b>、<b>ICON</b>、<b>LAST_MODIFIED</b> 三项元数据，导入其他浏览器时这三项可能被丢弃。第二条是账号同步，Chrome 需登录 Google 账号并开启「同步」中的书签项，Edge 走微软账号，Firefox 用 Firefox Account，Safari 依赖 iCloud 钥匙串与 Safari 开关。同步的好处是换设备后自动恢复，代价是账号一旦无法登录，云端书签也取不回来。</p>
+        <p>第三条是第三方收藏服务，分两类：一类是 Raindrop.io、Pinboard、Pocket 这类带标签体系的收藏工具，支持跨浏览器、跨平台、全文检索；另一类是网址导航站，把常访问的站点按类别铺在首页，省去逐条打开收藏夹。近年还出现本地优先方案，例如 <b>Linkwarden</b> 自托管、<b>Hoarder</b> 带 AI 自动打标签，适合对云端同步不放心的人。</p>
+        <p>需要关注的具体变化有三个：一是 Chrome 在 2024 年后把书签同步并入 Google 账号统一管理，退出账号后本地书签仍在但不再自动上传；二是 Edge 的「收藏夹栏」与「集锦」是两套独立数据，集锦内容不会随收藏夹一起导出；三是部分国产浏览器（如 360 极速浏览器、QQ 浏览器）导出书签时默认保存为 <b>.html</b>，需手动改后缀为 <b>.htm</b> 才能被旧版工具识别。这些细节决定了「收藏了却找不回」到底卡在哪一步。</p>
+      </div>
+    </section>
+
+    <!-- 精选内容推荐 -->
+    <section class="section" id="featured">
+      <div class="section-head">
+        <h2>精选收藏工具与方案</h2>
+        <a class="more" href="/#categories">按分类查看 →</a>
+      </div>
+      <p class="section-sub">8 个具体工具，含同步方式、导出能力与适用场景</p>
+      <div class="card-grid" id="featuredGrid">
+
+        <article class="card" data-search="chrome 书签管理器 google 账号同步 导出html">
+          <div class="card-body">
+            <div class="card-title">Chrome 书签管理器</div>
+            <div class="card-desc">内置功能，支持文件夹分层与 HTML 导出。登录 Google 账号后书签随同步上传，换机登录即恢复；导出文件含 ADD_DATE 时间戳，可核对最后修改时间。</div>
+            <div class="tag-row"><span class="tag blue">浏览器内置</span><span class="tag">账号同步</span><span class="tag">HTML 导出</span></div>
+            <div class="card-meta"><span>更新 11-05</span><span class="hot">使用率 62%</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-search="edge 收藏夹 集锦 微软账号 导入">
+          <div class="card-body">
+            <div class="card-title">Edge 收藏夹与集锦</div>
+            <div class="card-desc">收藏夹走微软账号同步，集锦是独立数据不参与导出。从 Chrome 迁移时可在设置里选「从其他浏览器导入」，实测保留文件夹层级但不保留图标缓存。</div>
+            <div class="tag-row"><span class="tag blue">浏览器内置</span><span class="tag">跨浏览器导入</span><span class="tag">集锦</span></div>
+            <div class="card-meta"><span>更新 11-03</span><span class="hot">迁移首选 41%</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-search="raindrop.io 标签 全文检索 跨平台收藏">
+          <div class="card-body">
+            <div class="card-title">Raindrop.io</div>
+            <div class="card-desc">支持标签、合集、全文检索与网页快照。免费版每月 100 条收藏上限，Pro 版去掉限制并支持重复链接检测，适合收藏量超 500 条的重度用户。</div>
+            <div class="tag-row"><span class="tag blue">第三方工具</span><span class="tag">标签体系</span><span class="tag">网页快照</span></div>
+            <div class="card-meta"><span>更新 11-02</span><span class="hot">评分 4.6/5</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-search="pinboard 付费 归档 老牌书签">
+          <div class="card-body">
+            <div class="card-title">Pinboard</div>
+            <div class="card-desc">2009 年上线的老牌付费书签服务，一次性买断约 22 美元。核心是归档功能：收藏的网页会保存完整副本，原站打不开时仍能读内容，适合收藏资料类文章。</div>
+            <div class="tag-row"><span class="tag blue">第三方工具</span><span class="tag">买断制</span><span class="tag">网页归档</span></div>
+            <div class="card-meta"><span>更新 10-29</span><span class="hot">评分 4.4/5</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-search="firefox account 同步 书签 移动端">
+          <div class="card-body">
+            <div class="card-title">Firefox Account 同步</div>
+            <div class="card-desc">可单独勾选书签同步，也能开启全量同步。桌面端与 Android 版共用同一账户，iOS 版需在设置中手动启用书签项，默认不勾选，容易漏配。</div>
+            <div class="tag-row"><span class="tag blue">浏览器内置</span><span class="tag">选择性同步</span><span class="tag">多端</span></div>
+            <div class="card-meta"><span>更新 11-01</span><span class="hot">使用率 9%</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-search="linkwarden 自托管 开源 本地优先">
+          <div class="card-body">
+            <div class="card-title">Linkwarden 自托管</div>
+            <div class="card-desc">开源项目，可部署在自己的服务器或 NAS 上。收藏时自动抓取网页快照与 PDF，数据留在本地，适合不接受云端存储的团队和个人。</div>
+            <div class="tag-row"><span class="tag blue">开源自托管</span><span class="tag">本地数据</span><span class="tag">PDF 快照</span></div>
+            <div class="card-meta"><span>更新 10-27</span><span class="hot">GitHub 11.2k star</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-search="pocket 稍后读 文章 移动端 离线">
+          <div class="card-body">
+            <div class="card-title">Pocket 稍后读</div>
+            <div class="card-desc">偏阅读场景而非网址管理，收藏文章后离线可读。2025 年 7 月 Mozilla 宣布停止运营，现有用户需在 10 月前导出数据，导出格式为 CSV 与 HTML 两份。</div>
+            <div class="tag-row"><span class="tag blue">第三方工具</span><span class="tag">稍后读</span><span class="tag">已停运</span></div>
+            <div class="card-meta"><span>状态 已停止服务</span><span class="hot">迁移提醒</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-search="浏览器书签导出 html 备份 本地文件">
+          <div class="card-body">
+            <div class="card-title">书签 HTML 本地备份法</div>
+            <div class="card-desc">每月 1 日从浏览器导出一次 bookmarks.html，存入本地与网盘各一份。文件名带年月便于回溯，实测可恢复文件夹层级，但标签与图标会丢失。</div>
+            <div class="tag-row"><span class="tag blue">手动备份</span><span class="tag">HTML 文件</span><span class="tag">双重存放</span></div>
+            <div class="card-meta"><span>更新 11-06</span><span class="hot">推荐频率 月</span></div>
+          </div>
+        </article>
+
+      </div>
+      <div class="no-result" id="featuredNoResult">没有匹配的收藏工具条目，试试「Chrome」「同步」「导出」等关键词。</div>
+    </section>
+
+    <!-- 最新更新 -->
+    <section class="section" id="updates">
+      <div class="section-head"><h2>书签工具与栏目更新动态</h2></div>
+      <p class="section-sub">10 条近期条目变更记录，按日期倒序</p>
+      <ul class="update-list">
+        <li><a class="u-name" href="/#featured">Chrome 书签管理器</a><span class="u-desc">补充「退出账号后本地书签仍保留但停止上传」的说明，附开关截图路径。</span><span class="u-date">11-05</span></li>
+        <li><a class="u-name" href="/#featured">Edge 收藏夹导入</a><span class="u-desc">实测从 Chrome 迁移时图标缓存不保留，补充手动刷新图标的三种办法。</span><span class="u-date">11-03</span></li>
+        <li><a class="u-name" href="/#featured">Raindrop.io</a><span class="u-desc">免费版条数上限从 100 条调整为 100 条/月，补记 Pro 版重复链接检测的触发条件。</span><span class="u-date">11-02</span></li>
+        <li><a class="u-name" href="/#featured">Firefox Account</a><span class="u-desc">iOS 版书签同步默认关闭的说明补入，附设置路径：设置 → 同步 → 书签。</span><span class="u-date">11-01</span></li>
+        <li><a class="u-name" href="/#deep">导出格式对比</a><span class="u-desc">新增 Netscape Bookmark HTML 与 JSON 两种格式的字段对照表，标注丢失项。</span><span class="u-date">10-30</span></li>
+        <li><a class="u-name" href="/#featured">Pinboard</a><span class="u-desc">买断价格由 22 美元更新为 22 美元，补记归档副本的存储期限为永久。</span><span class="u-date">10-29</span></li>
+        <li><a class="u-name" href="/#featured">Linkwarden</a><span class="u-desc">GitHub star 数更新至 11.2k，补充 Docker 部署的最低内存要求 2GB。</span><span class="u-date">10-27</span></li>
+        <li><a class="u-name" href="/#guide">备份步骤</a><span class="u-desc">第 3 步「改后缀 .html 为 .htm」补充适用工具清单，共 4 款旧版软件。</span><span class="u-date">10-24</span></li>
+        <li><a class="u-name" href="/#faq">FAQ 同步问题</a><span class="u-desc">新增「换手机后书签没同步过来」一问，答案拆成账号、开关、网络三层排查。</span><span class="u-date">10-21</span></li>
+        <li><a class="u-name" href="/#rank">热门榜单</a><span class="u-desc">10 月榜单刷新，Raindrop.io 由第 4 升至第 2，Pinboard 维持第 3。</span><span class="u-date">10-18</span></li>
+      </ul>
+    </section>
+
+    <!-- 分类入口 -->
+    <section class="section" id="categories">
+      <div class="section-head"><h2>按使用场景分类</h2></div>
+      <p class="section-sub">8 个分类，点击进入对应条目集合</p>
+      <div class="cat-grid">
+        <a class="cat-item" href="/#featured"><span class="c-name">浏览器自带收藏</span><span class="c-desc">Chrome、Edge、Firefox、Safari 内置功能</span></a>
+        <a class="cat-item" href="/#featured"><span class="c-name">账号同步方案</span><span class="c-desc">Google、微软、Firefox Account 三类</span></a>
+        <a class="cat-item" href="/#featured"><span class="c-name">第三方书签工具</span><span class="c-desc">Raindrop、Pinboard、Pocket 等</span></a>
+        <a class="cat-item" href="/#deep"><span class="c-name">书签导出与备份</span><span class="c-desc">HTML、JSON、CSV 三种格式对比</span></a>
+        <a class="cat-item" href="/#guide"><span class="c-name">跨设备迁移</span><span class="c-desc">手机与桌面端互导操作顺序</span></a>
+        <a class="cat-item" href="/#faq"><span class="c-name">网址找回与排错</span><span class="c-desc">同步失败、链接失效、误删恢复</span></a>
+        <a class="cat-item" href="/#featured"><span class="c-name">本地自托管</span><span class="c-desc">Linkwarden、Hoarder 部署要点</span></a>
+        <a class="cat-item" href="/#rank"><span class="c-name">工具口碑与榜单</span><span class="c-desc">按稳定性、导出能力排序的 10 项</span></a>
+      </div>
+    </section>
+
+    <!-- 深度解析 -->
+    <section class="section deep" id="deep">
+      <div class="section-head"><h2>书签导出格式与同步机制的差异清单</h2></div>
+      <p class="section-sub">从字段结构、丢失项、同步链路三个角度拆开看</p>
+
+      <h3>Netscape Bookmark HTML：通用但会丢东西</h3>
+      <p>浏览器之间迁移书签，最通用的格式仍是 1990 年代 Netscape 定下的 Bookmark HTML。它把每个链接写成 <code>&lt;DT&gt;&lt;A HREF="..." ADD_DATE="..." ICON="..."&gt;标题&lt;/A&gt;</code> 的结构，文件夹用 <code>&lt;H3&gt;</code> 嵌套。Chrome、Edge、Firefox、Safari 都能读写这个格式，这是它至今没被淘汰的原因。</p>
+      <p>问题在于各浏览器对这个格式的字段支持不一致。Chrome 导出时写入 <b>ADD_DATE</b>（Unix 时间戳，秒级）和 <b>ICON</b>（base64 编码的 favicon）；Firefox 额外写入 <b>LAST_MODIFIED</b> 与 <b>SHORTCUTURL</b>（关键词书签）；Safari 只写 <b>ADD_DATE</b>，不写图标。把 Chrome 导出的文件导入 Safari，图标全部丢失；反过来把 Safari 的文件导入 Chrome，所有书签的添加时间会变成导入当天。</p>
+      <table class="cmp-table">
+        <thead><tr><th>字段</th><th>Chrome</th><th>Firefox</th><th>Safari</th></tr></thead>
+        <tbody>
+          <tr><td>ADD_DATE</td><td>写入，秒级时间戳</td><td>写入</td><td>写入</td></tr>
+          <tr><td>ICON</td><td>写入 base64</td><td>写入</td><td>不写</td></tr>
+          <tr><td>LAST_MODIFIED</td><td>不写</td><td>写入</td><td>不写</td></tr>
+          <tr><td>SHORTCUTURL</td><td>不写</td><td>写入</td><td>不写</td></tr>
+        </tbody>
+      </table>
+      <div class="note"><b>可核对的做法：</b>迁移前先用文本编辑器打开导出的 .html，搜索「ICON=」数一下有多少条。数量接近书签总数，说明图标完整；一条都没有，导入后需要重新加载页面才能刷出图标，而不是书签本身丢了。</div>
+
+      <h3>账号同步的实际链路：本地库 → 加密 → 云端</h3>
+      <p>以 Chrome 为例，书签同步走的是「本地 Bookmarks 文件 → Sync 服务 → 其他设备拉取」三段。本地文件在 Windows 下位于 <code>%LOCALAPPDATA%\Google\Chrome\User Data\Default\Bookmarks</code>，是一个 JSON 文件，即使不登录账号也存在。登录账号并开启同步后，这个文件的内容会上传到 Google 服务器，其他设备登录同一账号时下载合并。</p>
+      <p>链路上有三处容易断：一是账号层面，Google 账号被停用或密码重置后，同步会暂停但不删除本地数据；二是网络层面，国内访问 Google 同步服务不稳定，表现为「同步已暂停」或长时间卡在「正在同步」；三是版本层面，Chrome 大版本更新后偶尔出现书签重复，通常是本地与云端合并逻辑把同一批书签当成两组。</p>
+      <p>Firefox 的链路不同：它把书签存在 <code>places.sqlite</code> 里，同步时只上传变更记录而非整库，冲突合并按「最近修改优先」。这意味着如果在两台设备上同时删改同一条书签，结果取决于哪台先同步完成，没有人工确认环节。</p>
+
+      <h3>第三方工具的判断维度：检索、快照、导出自由度</h3>
+      <p>选第三方书签工具，落到可比较的维度只有三项。第一是检索能力：Raindrop.io 支持标题、描述、标签、全文四层检索，Pinboard 只支持标题与标签，Pocket 支持全文但检索结果按时间排序不可筛选。收藏超过 300 条之后，没有全文检索基本等于找不到。</p>
+      <p>第二是快照：Pinboard 的归档会把网页 HTML 与图片一起抓下来存到自己的服务器，原站 404 后仍可读；Raindrop.io 的 Pro 版只存 HTML 快照不存图片；Linkwarden 存完整页面加 PDF。判断标准很直接——打开一条三年前的收藏，看正文排版还在不在。</p>
+      <p>第三是导出自由度：Raindrop.io 可导出 HTML 与 CSV，Pinboard 导出 JSON，Linkwarden 导出 JSON 与 HTML。导出格式越开放，越不容易被单一服务锁死。Pocket 停运这件事给出了最直接的参照：2025 年 7 月宣布停止运营，用户只有约三个月时间导出，导出入口藏在设置二级菜单里，不少人错过窗口期。</p>
+
+      <h3>「收藏了却找不回」的三种典型原因</h3>
+      <ul>
+        <li><b>存的是链接不是内容。</b>原站改版、域名过期、内容下架，收藏夹里的链接点开是 404。这类损失在资料类收藏里最常见，2023 年多家技术博客关站后，大量教程链接集中失效。</li>
+        <li><b>同步开关没开或开错设备。</b>Firefox iOS 版默认不勾选书签同步；Chrome 在「同步」里可以单独关闭书签项，关掉后本地照常保存但不上传，换机才发现少了。</li>
+        <li><b>导出文件放错位置。</b>导出的 bookmarks.html 放在下载文件夹，清理磁盘时被删。正确做法是固定目录加网盘双备份，文件名带导出日期。</li>
+      </ul>
+      <p>三种原因的排查顺序不一样：第一种要查原站是否还在，用 Wayback Machine 输入 URL 看有没有历史快照；第二种要查账号同步设置里的书签开关；第三种只能靠备份习惯预防，事后无法补救。</p>
+    </section>
+
+    <!-- 体验指南 -->
+    <section class="section" id="guide">
+      <div class="section-head"><h2>网址备份与找回的操作路径</h2></div>
+      <p class="section-sub">按顺序做，5 步覆盖导出、存放、验证、迁移、复查</p>
+      <div class="steps">
+        <div class="step">
+          <div>
+            <h4>先导出，再谈整理</h4>
+            <p>Chrome 打开 <code>chrome://bookmarks</code>，右上角三点菜单选「导出书签」，得到 bookmarks.html。Edge 在 <code>edge://favorites</code> 同样操作。导出是只读动作，不会改动现有收藏，可以随时做。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h4>文件名带日期，存两个地方</h4>
+            <p>重命名为 <code>bookmarks-2026-11.html</code>，本地放一个固定文件夹，同时上传网盘。两个位置互为备份，避免单点丢失。每月 1 日做一次，全年 12 份文件，总量不超过 10MB。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h4>验证导出文件能否被读取</h4>
+            <p>用浏览器直接打开这个 .html 文件，页面会渲染成可点击的书签列表。能看到条目、能点开链接，说明文件完整。部分旧版工具只认 <code>.htm</code> 后缀，遇到导入失败先改后缀试一次。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h4>换设备时先导入再登录</h4>
+            <p>新设备上先手动导入备份文件，确认书签都在，再登录账号开启同步。顺序反了会出现云端与本地合并，重复条目需要逐条清理。导入路径：书签管理器 → 三点菜单 → 导入书签。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h4>每月复查一次失效链接</h4>
+            <p>随机抽 20 条收藏点开，看是否还能访问。失效的用 Wayback Machine 查历史快照，有快照的把快照地址替进去，没有的记下标题重新搜。这一步花 10 分钟，能挡掉大部分「收藏了却用不上」的情况。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq">
+      <div class="section-head"><h2>网址收藏常见问题</h2></div>
+      <p class="section-sub">6 个高频问题，围绕同步、导出与找回</p>
+
+      <details>
+        <summary>Chrome 书签导出后用 Excel 打开是乱码怎么办？</summary>
+        <div class="ans">导出的 bookmarks.html 是 UTF-8 编码的 HTML，Excel 默认按系统编码读，中文会变乱码。正确做法是拖动文件到浏览器窗口打开，或者用记事本、VS Code 以 UTF-8 打开后搜索标题。确实需要表格处理，先用浏览器打开再全选复制到表格，或者用 Raindrop.io 导入后导出 CSV。</div>
+      </details>
+
+      <details>
+        <summary>换手机后书签没同步过来，从哪一层查？</summary>
+        <div class="ans">分三层排查。第一层账号：确认新手机登录的是同一个 Google 或微软账号，不同账号的书签互不相通。第二层开关：Chrome 移动版在「设置 → 同步」里可以单独关闭书签项，Firefox iOS 版的书签同步默认不勾选，要手动打开。第三层网络：国内访问 Google 同步服务不稳定，界面显示「同步已暂停」时先检查网络，再点「立即同步」重试。</div>
+      </details>
+
+      <details>
+        <summary>书签里的链接点开全是 404，还能救回来吗？</summary>
+        <div class="ans">先看有没有历史快照。Wayback Machine 输入完整 URL，有存档就能读到原页面内容；archive.today 对部分新闻类站点保存更完整。两个地方都查不到，说明页面从未被存档，只能凭书签标题重新搜索。资料类内容建议收藏时就顺手存一份 PDF 到本地，比事后找回省事。</div>
+      </details>
+
+      <details>
+        <summary>Edge 的集锦和收藏夹有什么区别，导出时会不会一起带走？</summary>
+        <div class="ans">两者是独立数据。收藏夹对应传统书签，有文件夹层级，能导出 HTML；集锦是 Edge 2020 年加的功能，按项目把网页、图片、笔记放在一起，不参与收藏夹导出。换浏览器前需要单独处理集锦：打开集锦面板，逐条复制链接到收藏夹，或者用「发送到收藏夹」批量转移。</div>
+      </details>
+
+      <details>
+        <summary>第三方书签工具会不会哪天也停运？</summary>
+        <div class="ans">Pocket 在 2025 年 7 月宣布停止运营，给出了约三个月的导出窗口，是最直接的案例。判断一个服务会不会突然关停没法预测，能做的有两件事：一是选支持开放导出格式（HTML、JSON、CSV 至少两种）的工具，二是每季度导出一次存到本地。把数据攥在自己手里，服务关停时损失最小。</div>
+      </details>
+
+      <details>
+        <summary>自托管书签服务需要什么条件，普通人值得折腾吗？</summary>
+        <div class="ans">Linkwarden 用 Docker 部署，最低要求 2GB 内存和一台常开的设备，NAS、树莓派、云服务器都行。装好之后数据存在自己机器上，收藏时自动抓网页快照和 PDF。值得折腾的前提是收藏量超过 500 条、且对云端存储不放心；只是存几十个常用网址，浏览器自带收藏夹加每月导出一次就够用。</div>
+      </details>
+    </section>
+
+    <!-- 用户评论 -->
+    <section class="section" id="comments">
+      <div class="section-head"><h2>用户评论</h2></div>
+      <p class="section-sub">16 条近期留言，按时间倒序</p>
+      <div class="comment-list">
+        <div class="comment"><div class="comment-head"><span class="avatar">林</span><span class="nick">林间小径</span><span class="c-time">11-07</span></div><p>Raindrop 的全文检索救了我，三年前存的一篇前端教程，搜「flex 布局」直接出来了，标题早忘了。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">陈</span><span class="nick">陈默不语</span><span class="c-time">11-07</span></div><p>Pocket 停运那波我损失惨重，两百多篇稍后读没导出来，设置里那个导出入口藏得太深了。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">赵</span><span class="nick">赵四的网盘</span><span class="c-time">11-06</span></div><p>每月 1 号导出书签这件事坚持了两年，文件夹里躺了 24 个 html，一次没用上但心里踏实。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">周</span><span class="nick">周末不加班</span><span class="c-time">11-06</span></div><p>Edge 集锦那个坑我踩过，换电脑后收藏夹全在，集锦一条不剩，客服说本来就不参与同步。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">吴</span><span class="nick">吴钩霜雪</span><span class="c-time">11-05</span></div><p>Pinboard 买断 22 美元，用了六年，归档功能真香，好几个技术博客关站了内容还在。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">郑</span><span class="nick">郑在输入</span><span class="c-time">11-05</span></div><p>Firefox iOS 版书签同步默认关闭这事，我折腾了半小时才找到开关，文档里根本没提。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">孙</span><span class="nick">孙大圣的棒</span><span class="c-time">11-04</span></div><p>Chrome 同步卡在「正在同步」一整天，后来发现是梯子节点的问题，换个节点秒同步。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">钱</span><span class="nick">钱塘江边</span><span class="c-time">11-04</span></div><p>Linkwarden 部署在群晖上，2GB 内存够用，抓 PDF 那步偶尔超时，其他都还行。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">李</span><span class="nick">李子柒的邻居</span><span class="c-time">11-03</span></div><p>收藏夹里躺了八百多条，一半以上是当年觉得有用再也没打开过的，这算数字囤积症吧。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">冯</span><span class="nick">冯唐易老</span><span class="c-time">11-03</span></div><p>导出 HTML 导入 Safari 图标全没了，还以为文件坏了，重装了一次系统，白折腾。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">黄</span><span class="nick">黄河远上</span><span class="c-time">11-02</span></div><p>Wayback Machine 查旧链接挺好使，2019 年的一篇评测文章，原站没了，快照还在。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">许</span><span class="nick">许仙不借伞</span><span class="c-time">11-02</span></div><p>自托管折腾两天，Docker 镜像拉不下来，最后换了个源才跑通，新手慎入。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">何</span><span class="nick">何处惹尘埃</span><span class="c-time">11-01</span></div><p>书签栏按「工作 / 学习 / 生活 / 临时」分了四组，临时组每周清一次，清爽多了。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">罗</span><span class="nick">罗盘指北</span><span class="c-time">10-30</span></div><p>Raindrop 免费版每月 100 条真不够用，Pro 版价格又涨了，纠结中。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">高</span><span class="nick">高山流水遇知音</span><span class="c-time">10-28</span></div><p>浏览器自带收藏夹其实够用，关键是要养成定期清理的习惯，工具换再多不如删掉不用的。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">马</span><span class="nick">马不停蹄</span><span class="c-time">10-25</span></div><p>上周误删了一个文件夹，回收站里翻回来了，Chrome 书签管理器有回收站这事知道的人不多。</p></div>
+      </div>
+    </section>
+
+    <!-- 相关资讯 -->
+    <section class="section" id="news">
+      <div class="section-head"><h2>书签工具与浏览器动态</h2></div>
+      <p class="section-sub">6 条近期资讯，含时间、当事方与后续动作</p>
+      <div class="news-list">
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/bkmknews01/600/400" width="600" height="400" loading="lazy" alt="Chrome 浏览器书签管理器界面截图">
+          <div>
+            <h4><a href="/#news">Chrome 136 版调整书签同步提示文案</a></h4>
+            <div class="n-meta">2026-11-05 · 浏览器更新</div>
+            <p>同步暂停时顶栏提示由「同步已暂停」改为「书签未上传」，并新增一键跳转到同步设置页的按钮。此前用户需自行进入设置查找开关。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/bkmknews02/600/400" width="600" height="400" loading="lazy" alt="Raindrop.io 书签工具界面截图">
+          <div>
+            <h4><a href="/#news">Raindrop.io 上线重复链接自动合并</a></h4>
+            <div class="n-meta">2026-11-02 · 第三方工具</div>
+            <p>Pro 版用户导入书签时，系统会识别 URL 完全相同但标题不同的条目并弹出合并确认框，实测一次导入 1200 条书签识别出 87 组重复。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/bkmknews03/600/400" width="600" height="400" loading="lazy" alt="Firefox 浏览器同步设置界面截图">
+          <div>
+            <h4><a href="/#news">Firefox 142 修复 iOS 端书签同步默认关闭问题</a></h4>
+            <div class="n-meta">2026-10-29 · 浏览器更新</div>
+            <p>新版本中 iOS 端首次登录 Firefox Account 时，书签同步改为默认勾选。此前默认关闭导致大量用户在换机后发现书签缺失。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/bkmknews04/600/400" width="600" height="400" loading="lazy" alt="Linkwarden 自托管书签工具部署界面截图">
+          <div>
+            <h4><a href="/#news">Linkwarden 发布 2.9 版，降低部署内存门槛</a></h4>
+            <div class="n-meta">2026-10-26 · 开源项目</div>
+            <p>最低内存要求从 4GB 降至 2GB，Docker Compose 模板同步更新。项目方在发布说明中称本次优化针对群晖、树莓派等低配设备。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/bkmknews05/600/400" width="600" height="400" loading="lazy" alt="Wayback Machine 历史快照查询页面截图">
+          <div>
+            <h4><a href="/#news">Wayback Machine 新增批量 URL 快照查询</a></h4>
+            <div class="n-meta">2026-10-22 · 存档服务</div>
+            <p>用户可一次上传最多 200 条 URL 的文本文件，批量返回是否有历史快照及最近一次存档日期。此前需逐条手动查询。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/bkmknews06/600/400" width="600" height="400" loading="lazy" alt="Edge 浏览器收藏夹导入界面截图">
+          <div>
+            <h4><a href="/#news">Edge 收藏夹导入新增「保留图标缓存」选项</a></h4>
+            <div class="n-meta">2026-10-18 · 浏览器更新</div>
+            <p>从 Chrome 导入书签时可选保留 favicon 缓存，实测 300 条书签中约 240 条成功带回图标，其余需访问一次页面后刷新。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 相关推荐 -->
+    <section class="section" id="related">
+      <div class="section-head"><h2>相关推荐方向</h2></div>
+      <p class="section-sub">按具体条目与类型词索引</p>
+      <div class="rec-tags">
+        <a href="/#featured">Chrome 书签管理器</a>
+        <a href="/#featured">Edge 集锦导出</a>
+        <a href="/#featured">Raindrop.io 标签体系</a>
+        <a href="/#featured">Pinboard 网页归档</a>
+        <a href="/#deep">Netscape Bookmark HTML 字段</a>
+        <a href="/#guide">书签 HTML 本地备份</a>
+        <a href="/#faq">Wayback Machine 快照查询</a>
+        <a href="/#featured">Linkwarden 自托管部署</a>
+      </div>
+    </section>
+
+    <!-- 热门榜单 -->
+    <section class="section" id="rank">
+      <div class="section-head"><h2>10 月书签工具口碑榜</h2></div>
+      <p class="section-sub">按稳定性、导出自由度、检索能力三项综合排序，数据截至 2026-10-31</p>
+      <ol class="rank-list">
+        <li><span class="rank-num">1</span><a class="rank-name" href="/#featured">Chrome 书签管理器</a><span class="rank-score">综合 9.1</span></li>
+        <li><span class="rank-num">2</span><a class="rank-name" href="/#featured">Raindrop.io</a><span class="rank-score">综合 8.8</span></li>
+        <li><span class="rank-num">3</span><a class="rank-name" href="/#featured">Pinboard</a><span class="rank-score">综合 8.5</span></li>
+        <li><span class="rank-num">4</span><a class="rank-name" href="/#featured">Edge 收藏夹</a><span class="rank-score">综合 8.3</span></li>
+        <li><span class="rank-num">5</span><a class="rank-name" href="/#featured">Linkwarden</a><span class="rank-score">综合 8.0</span></li>
+        <li><span class="rank-num">6</span><a class="rank-name" href="/#featured">Firefox Account 同步</a><span class="rank-score">综合 7.8</span></li>
+        <li><span class="rank-num">7</span><a class="rank-name" href="/#featured">Safari iCloud 书签</a><span class="rank-score">综合 7.5</span></li>
+        <li><span class="rank-num">8</span><a class="rank-name" href="/#featured">Hoarder</a><span class="rank-score">综合 7.2</span></li>
+        <li><span class="rank-num">9</span><a class="rank-name" href="/#featured">360 极速浏览器收藏夹</a><span class="rank-score">综合 6.9</span></li>
+        <li><span class="rank-num">10</span><a class="rank-name" href="/#featured">QQ 浏览器书签导出</a><span class="rank-score">综合 6.6</span></li>
+      </ol>
+    </section>
+
+    <!-- 投稿互动 -->
+    <section class="section" id="submit">
+      <div class="interact">
+        <div>
+          <h2>投稿：分享你的收藏整理法</h2>
+          <p>整理书签的具体做法比工具本身更有参考价值。欢迎投稿以下三类内容：一套可复用的书签文件夹命名规则、一次跨浏览器迁移的完整步骤记录、一个已经失效但找回成功的网址案例。稿件 300 字以上，附操作截图更佳，审核周期 3 个工作日。</p>
+          <div class="btn-row">
+            <a class="btn-primary" href="/#submit">提交稿件</a>
+            <a class="btn-outline" href="/#comments">查看往期投稿</a>
+          </div>
+        </div>
+        <div class="interact-visual">
+          <img src="https://picsum.photos/seed/bkmksubmit1/800/400" width="800" height="400" loading="lazy" alt="书签文件夹整理与备份操作示意图">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 右辅助栏 -->
+  <aside class="rail-right">
+    <div class="side-card">
+      <h3>本周热读条目</h3>
+      <ol class="hot-list">
+        <li><span class="h-num">1</span><a href="/#deep">Netscape Bookmark HTML 字段对照表</a></li>
+        <li><span class="h-num">2</span><a href="/#guide">换设备先导入再登录的顺序</a></li>
+        <li><span class="h-num">3</span><a href="/#faq">Chrome 导出乱码的处理办法</a></li>
+        <li><span class="h-num">4</span><a href="/#featured">Pinboard 归档功能实测</a></li>
+        <li><span class="h-num">5</span><a href="/#news">Pocket 停运后的数据迁移</a></li>
+        <li><span class="h-num">6</span><a href="/#featured">Linkwarden 低配设备部署</a></li>
+        <li><span class="h-num">7</span><a href="/#faq">Edge 集锦与收藏夹的区别</a></li>
+      </ol>
+    </div>
+    <div class="side-card submit-box">
+      <h3>参与网址整理</h3>
+      <p>发现好用的收藏工具或有效的备份方法，可以提交条目，审核通过后收录进对应分类。</p>
+      <a class="btn-primary" href="/#submit">提交一个条目</a>
+    </div>
+    <div class="side-card">
+      <h3>近期更新</h3>
+      <ol class="hot-list">
+        <li><span class="h-num">·</span><a href="/#updates">11-05 Chrome 同步说明补充</a></li>
+        <li><span class="h-num">·</span><a href="/#updates">11-03 Edge 导入图标问题</a></li>
+        <li><span class="h-num">·</span><a href="/#updates">11-02 Raindrop 上限调整</a></li>
+        <li><span class="h-num">·</span><a href="/#updates">11-01 Firefox iOS 同步</a></li>
+      </ol>
+    </div>
+  </aside>
+
+</div>
+
+<!-- 页尾 -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="f-logo">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#2f5480"/>
+            <path d="M20 16h24v34l-12-8-12 8z" fill="#f2b544"/>
+          </svg>
+          <span>永久收藏本站网址回家不迷路</span>
+        </div>
+        <p>覆盖 2020 年至 2026 年 11 月的书签工具变更记录，条目类型包括浏览器内置功能、第三方收藏服务、自托管方案与导出格式说明。每周二、周五各更新一次，月度榜单在每月最后一个工作日发布。</p>
+      </div>
+      <div class="footer-col">
+        <h4>工具条目</h4>
+        <a href="/#featured">Chrome 书签管理器</a>
+        <a href="/#featured">Raindrop.io</a>
+        <a href="/#featured">Pinboard</a>
+        <a href="/#featured">Linkwarden</a>
+      </div>
+      <div class="footer-col">
+        <h4>操作指南</h4>
+        <a href="/#guide">书签导出五步法</a>
+        <a href="/#deep">导出格式对照表</a>
+        <a href="/#faq">同步失败排查</a>
+        <a href="/#faq">失效链接找回</a>
+      </div>
+      <div class="footer-col">
+        <h4>互动与榜单</h4>
+        <a href="/#submit">投稿入口</a>
+        <a href="/#comments">用户评论</a>
+        <a href="/#rank">10 月口碑榜</a>
+        <a href="/#news">近期资讯</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>页面内容为示例条目，工具名称与功能描述以各产品官方说明为准</span>
+      <span>最近更新：2026-11-06</span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 14 6-6 6 6"/></svg>
+</button>
+
+<script>
+(function(){
+  /* 移动端抽屉 */
+  var hamburger = document.getElementById('hamburgerBtn');
+  var mobileNav = document.getElementById('mobileNav');
+  var mobileMask = document.getElementById('mobileMask');
+  var mobileClose = document.getElementById('mobileClose');
+
+  function openNav(){
+    mobileNav.classList.add('open');
+    mobileNav.setAttribute('aria-hidden','false');
+    hamburger.setAttribute('aria-expanded','true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeNav(){
+    mobileNav.classList.remove('open');
+    mobileNav.setAttribute('aria-hidden','true');
+    hamburger.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  }
+  hamburger.addEventListener('click', openNav);
+  mobileMask.addEventListener('click', closeNav);
+  mobileClose.addEventListener('click', closeNav);
+  mobileNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', closeNav);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && mobileNav.classList.contains('open')) closeNav();
+  });
+
+  /* 站内搜索（筛选精选卡片） */
+  var searchInput = document.getElementById('siteSearch');
+  var grid = document.getElementById('featuredGrid');
+  var noResult = document.getElementById('featuredNoResult');
+  if(searchInput && grid){
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.card'));
+    searchInput.addEventListener('input', function(){
+      var q = this.value.trim().toLowerCase();
+      var visible = 0;
+      cards.forEach(function(card){
+        var text = (card.getAttribute('data-search') || '') + ' ' + card.textContent.toLowerCase();
+        var match = !q || text.indexOf(q) !== -1;
+        card.style.display = match ? '' : 'none';
+        if(match) visible++;
+      });
+      noResult.style.display = visible === 0 ? 'block' : 'none';
+    });
+  }
+
+  /* 回到顶部 */
+  var backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > window.innerHeight){
+      backTop.classList.add('show');
+    }else{
+      backTop.classList.remove('show');
+    }
+  }, {passive:true});
+  backTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* 左侧频道高亮 + 页内锚点平滑滚动偏移 */
+  var channels = document.querySelectorAll('.channel-list a');
+  var sections = [];
+  channels.forEach(function(a){
+    var id = a.getAttribute('href').split('#')[1];
+    var el = document.getElementById(id);
+    if(el) sections.push({el: el, link: a});
+  });
+  if('IntersectionObserver' in window && sections.length){
+    var map = {};
+    sections.forEach(function(s){ map[s.el.id] = s.link; });
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          channels.forEach(function(a){ a.classList.remove('active'); });
+          var link = map[en.target.id];
+          if(link) link.classList.add('active');
+        }
+      });
+    }, {rootMargin: '-120px 0px -65% 0px', threshold: 0});
+    sections.forEach(function(s){ obs.observe(s.el); });
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "永久收藏本站网址回家不迷路",
+  "description": "汇总浏览器书签同步、跨设备收藏、网址备份与找回方法，整理常见收藏工具对比、书签栏整理技巧与防丢失策略。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Chrome 书签导出后用 Excel 打开是乱码怎么办？",
+      "acceptedAnswer": {"@type": "Answer", "text": "导出的 bookmarks.html 是 UTF-8 编码的 HTML，Excel 默认按系统编码读，中文会变乱码。正确做法是拖动文件到浏览器窗口打开，或者用记事本、VS Code 以 UTF-8 打开后搜索标题。确实需要表格处理，先用浏览器打开再全选复制到表格，或者用 Raindrop.io 导入后导出 CSV。"}
+    },
+    {
+      "@type": "Question",
+      "name": "换手机后书签没同步过来，从哪一层查？",
+      "acceptedAnswer": {"@type": "Answer", "text": "分三层排查。第一层账号：确认新手机登录的是同一个 Google 或微软账号。第二层开关：Chrome 移动版在设置同步里可以单独关闭书签项，Firefox iOS 版的书签同步默认不勾选。第三层网络：国内访问 Google 同步服务不稳定，界面显示同步已暂停时先检查网络，再点立即同步重试。"}
+    },
+    {
+      "@type": "Question",
+      "name": "书签里的链接点开全是 404，还能救回来吗？",
+      "acceptedAnswer": {"@type": "Answer", "text": "先看有没有历史快照。Wayback Machine 输入完整 URL，有存档就能读到原页面内容；archive.today 对部分新闻类站点保存更完整。两个地方都查不到，只能凭书签标题重新搜索。资料类内容建议收藏时就顺手存一份 PDF 到本地。"}
+    },
+    {
+      "@type": "Question",
+      "name": "Edge 的集锦和收藏夹有什么区别，导出时会不会一起带走？",
+      "acceptedAnswer": {"@type": "Answer", "text": "两者是独立数据。收藏夹对应传统书签，有文件夹层级，能导出 HTML；集锦按项目把网页、图片、笔记放在一起，不参与收藏夹导出。换浏览器前需要单独处理集锦：打开集锦面板，逐条复制链接到收藏夹，或者用发送到收藏夹批量转移。"}
+    },
+    {
+      "@type": "Question",
+      "name": "第三方书签工具会不会哪天也停运？",
+      "acceptedAnswer": {"@type": "Answer", "text": "Pocket 在 2025 年 7 月宣布停止运营，给出了约三个月的导出窗口。能做的有两件事：选支持开放导出格式的工具，每季度导出一次存到本地。把数据攥在自己手里，服务关停时损失最小。"}
+    },
+    {
+      "@type": "Question",
+      "name": "自托管书签服务需要什么条件，普通人值得折腾吗？",
+      "acceptedAnswer": {"@type": "Answer", "text": "Linkwarden 用 Docker 部署，最低要求 2GB 内存和一台常开的设备，NAS、树莓派、云服务器都行。值得折腾的前提是收藏量超过 500 条、且对云端存储不放心；只是存几十个常用网址，浏览器自带收藏夹加每月导出一次就够用。"}
+    }
+  ]
+}
+</script>
+</body>
+                                                                                                                                    </html>
