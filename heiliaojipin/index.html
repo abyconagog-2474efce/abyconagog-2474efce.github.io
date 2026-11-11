@@ -1,0 +1,1064 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>黑料极品 - 争议内容与话题人物聚合</title>
+  <meta name="description" content="黑料极品聚焦网络争议事件、翻车现场与话题人物，整理精选爆料、最新动态、深度解析、分类索引与用户评论，适合关注网络舆论与内容生态的读者浏览。">
+  <meta name="keywords" content="黑料极品">
+  <style>
+    /* === 设计系统变量 === */
+    :root {
+      --color-primary: #b83a2a;
+      --color-primary-light: #d86a58;
+      --color-primary-dark: #8a2a1c;
+      --color-bg: #fdf8f5;
+      --color-surface: #ffffff;
+      --color-text-primary: #1e1a18;
+      --color-text-secondary: #5c544f;
+      --color-text-tertiary: #8c827b;
+      --color-border: #e8e0da;
+      --color-border-light: #f2ece7;
+      --radius-card: 10px;
+      --radius-btn: 8px;
+      --radius-tag: 20px;
+      --radius-banner: 14px;
+      --shadow-default: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-hover: 0 6px 18px rgba(0,0,0,0.10);
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      --sticky-offset: 88px; /* 公告条 + 页头高度预留 */
+      --container-wide: 1360px;
+    }
+
+    /* === 基础重置 === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--sticky-offset); }
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-bg);
+      color: var(--color-text-primary);
+      line-height: 1.7;
+      font-size: 15px;
+      padding-top: var(--sticky-offset);
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; height: auto; object-fit: cover; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    ul, ol { list-style: none; }
+
+    /* === 吸顶容器 === */
+    .sticky-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(253,248,245,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border-light);
+      transition: box-shadow 0.2s;
+    }
+    .sticky-wrapper.scrolled { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+
+    /* === 公告条 === */
+    .announce-bar {
+      background: var(--color-primary-dark);
+      color: #f5e6e2;
+      font-size: 12px;
+      padding: 5px 16px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+      letter-spacing: 0.02em;
+    }
+    .announce-bar .brand-mini { font-weight: 700; color: #fff; }
+    .announce-bar .announce-item { display: inline-flex; align-items: center; gap: 6px; }
+    .announce-bar .announce-date { opacity: 0.75; font-variant-numeric: tabular-nums; }
+
+    /* === 页头 === */
+    .header {
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 50px;
+      max-width: var(--container-wide);
+      margin: 0 auto;
+    }
+    .logo-area { display: flex; align-items: center; gap: 8px; }
+    .logo-svg { width: 28px; height: 28px; flex-shrink: 0; }
+    .logo-text { font-size: 18px; font-weight: 800; color: var(--color-primary-dark); letter-spacing: 0.04em; }
+    .header-nav { display: flex; align-items: center; gap: 18px; font-size: 13px; color: var(--color-text-secondary); }
+    .header-nav a { transition: color 0.2s; }
+    .header-nav a:hover { color: var(--color-primary); }
+    .header-actions { display: flex; align-items: center; gap: 10px; }
+    .search-box { display: flex; align-items: center; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-btn); padding: 3px 8px; gap: 4px; }
+    .search-box input { border: none; outline: none; font-size: 12px; width: 110px; background: transparent; color: var(--color-text-primary); }
+    .search-box input::placeholder { color: var(--color-text-tertiary); }
+    .search-box button { font-size: 12px; color: var(--color-text-secondary); padding: 2px 4px; border-radius: 4px; }
+    .search-box button:hover { background: var(--color-border-light); }
+    .hamburger { display: none; flex-direction: column; gap: 4px; padding: 6px; }
+    .hamburger span { display: block; width: 20px; height: 2px; background: var(--color-text-primary); border-radius: 2px; transition: 0.2s; }
+
+    /* === 移动端抽屉 === */
+    .drawer-overlay {
+      display: none;
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(0,0,0,0.35);
+    }
+    .drawer-overlay.active { display: block; }
+    .drawer {
+      position: fixed; top: 0; right: -280px; width: 260px; height: 100vh; z-index: 201;
+      background: var(--color-surface); box-shadow: var(--shadow-hover);
+      padding: 24px 20px; transition: right 0.25s ease;
+      overflow-y: auto;
+    }
+    .drawer.open { right: 0; }
+    .drawer-close { font-size: 22px; color: var(--color-text-secondary); margin-bottom: 16px; display: block; }
+    .drawer nav { display: flex; flex-direction: column; gap: 12px; }
+    .drawer nav a { font-size: 14px; color: var(--color-text-primary); padding: 6px 0; border-bottom: 1px solid var(--color-border-light); }
+
+    /* === 首屏 === */
+    .hero {
+      max-width: var(--container-wide);
+      margin: 0 auto;
+      padding: 32px 20px 24px;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 32px;
+      align-items: center;
+    }
+    .hero h1 { font-size: 36px; font-weight: 900; color: var(--color-primary-dark); letter-spacing: 0.04em; line-height: 1.2; margin-bottom: 12px; }
+    .hero-desc { font-size: 15px; color: var(--color-text-secondary); line-height: 1.8; max-width: 560px; margin-bottom: 20px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary { display: inline-block; background: var(--color-primary); color: #fff; padding: 10px 24px; border-radius: var(--radius-btn); font-size: 14px; font-weight: 600; transition: background 0.2s, box-shadow 0.2s; }
+    .btn-primary:hover { background: var(--color-primary-dark); box-shadow: var(--shadow-hover); }
+    .btn-outline { display: inline-block; border: 1.5px solid var(--color-primary); color: var(--color-primary); padding: 10px 24px; border-radius: var(--radius-btn); font-size: 14px; font-weight: 600; transition: 0.2s; }
+    .btn-outline:hover { background: var(--color-primary); color: #fff; }
+
+    .hero-visual { position: relative; height: 200px; display: flex; align-items: center; justify-content: center; }
+    .hero-visual svg { width: 100%; height: 100%; max-width: 320px; }
+    @keyframes pulse-soft { 0%,100% { opacity: 0.7; } 50% { opacity: 1; } }
+    .hero-visual .pulse-dot { animation: pulse-soft 3s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { .hero-visual .pulse-dot { animation: none; } }
+
+    /* === 三栏主布局 === */
+    .main-layout {
+      max-width: var(--container-wide);
+      margin: 0 auto;
+      padding: 0 20px 40px;
+      display: grid;
+      grid-template-columns: 175px 1fr 240px;
+      gap: 28px;
+      align-items: start;
+    }
+    .left-sidebar { position: sticky; top: calc(var(--sticky-offset) + 8px); }
+    .right-sidebar { position: sticky; top: calc(var(--sticky-offset) + 8px); }
+
+    /* === 侧栏通用 === */
+    .sidebar-block { margin-bottom: 24px; }
+    .sidebar-block h3 { font-size: 12px; font-weight: 700; color: var(--color-text-tertiary); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid var(--color-border-light); }
+    .channel-list { display: flex; flex-direction: column; gap: 2px; }
+    .channel-list a { display: block; padding: 6px 8px; border-radius: 6px; font-size: 13px; color: var(--color-text-secondary); transition: 0.15s; }
+    .channel-list a:hover, .channel-list a.active { background: var(--color-primary-light); color: #fff; }
+    .hot-list { display: flex; flex-direction: column; gap: 8px; }
+    .hot-list li { display: flex; gap: 8px; align-items: flex-start; font-size: 12.5px; line-height: 1.5; color: var(--color-text-secondary); }
+    .hot-list .rank { flex-shrink: 0; width: 18px; height: 18px; border-radius: 4px; background: var(--color-border-light); color: var(--color-text-tertiary); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; }
+    .hot-list li:nth-child(1) .rank { background: var(--color-primary); color: #fff; }
+    .hot-list li:nth-child(2) .rank { background: var(--color-primary-light); color: #fff; }
+    .hot-list li:nth-child(3) .rank { background: #f0b8a8; color: #fff; }
+
+    /* === 正文板块通用 === */
+    .section { margin-bottom: 40px; }
+    .section-title { font-size: 20px; font-weight: 800; color: var(--color-text-primary); margin-bottom: 16px; padding-left: 12px; border-left: 4px solid var(--color-primary); line-height: 1.3; }
+    .section-sub { font-size: 13px; color: var(--color-text-tertiary); margin-bottom: 16px; }
+
+    /* === 概览 === */
+    .overview-text { font-size: 14.5px; line-height: 1.85; color: var(--color-text-secondary); }
+    .overview-text p { margin-bottom: 10px; }
+    .overview-text strong { color: var(--color-text-primary); }
+
+    /* === 精选卡片网格 === */
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap: 16px; }
+    .card { background: var(--color-surface); border-radius: var(--radius-card); box-shadow: var(--shadow-default); overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
+    .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+    .card-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    .card-body { padding: 12px 14px 14px; display: flex; flex-direction: column; flex: 1; }
+    .card-type { font-size: 10px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 4px; }
+    .card-title { font-size: 14.5px; font-weight: 700; line-height: 1.4; margin-bottom: 6px; }
+    .card-desc { font-size: 12.5px; color: var(--color-text-secondary); line-height: 1.55; flex: 1; margin-bottom: 8px; }
+    .card-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 6px; }
+    .tag { display: inline-block; font-size: 10.5px; padding: 1px 8px; border-radius: var(--radius-tag); background: var(--color-border-light); color: var(--color-text-secondary); white-space: nowrap; }
+    .tag-hot { background: #fde8e4; color: var(--color-primary-dark); }
+    .card-meta { display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--color-text-tertiary); }
+
+    /* === 最新动态列表 === */
+    .update-list { display: flex; flex-direction: column; gap: 1px; background: var(--color-border-light); border-radius: var(--radius-card); overflow: hidden; }
+    .update-item { background: var(--color-surface); padding: 12px 16px; display: flex; gap: 14px; align-items: baseline; transition: background 0.15s; }
+    .update-item:hover { background: #fefcfb; }
+    .update-item .up-name { font-weight: 700; font-size: 13.5px; white-space: nowrap; color: var(--color-text-primary); flex-shrink: 0; }
+    .update-item .up-summary { font-size: 12.5px; color: var(--color-text-secondary); flex: 1; }
+    .update-item .up-time { font-size: 11px; color: var(--color-text-tertiary); white-space: nowrap; flex-shrink: 0; }
+
+    /* === 分类入口 === */
+    .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .cat-item { background: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-btn); padding: 12px 10px; text-align: center; font-size: 13px; font-weight: 600; color: var(--color-text-primary); transition: 0.2s; display: flex; flex-direction: column; gap: 4px; align-items: center; }
+    .cat-item:hover { border-color: var(--color-primary-light); background: #fef8f6; color: var(--color-primary-dark); }
+    .cat-item .cat-count { font-size: 10px; color: var(--color-text-tertiary); font-weight: 400; }
+
+    /* === 深度解析 === */
+    .deep-read { background: var(--color-surface); border-radius: var(--radius-card); padding: 24px 28px; box-shadow: var(--shadow-default); }
+    .deep-read h3 { font-size: 17px; font-weight: 800; color: var(--color-text-primary); margin: 22px 0 10px; }
+    .deep-read h3:first-of-type { margin-top: 0; }
+    .deep-read p { font-size: 14px; line-height: 1.85; color: var(--color-text-secondary); margin-bottom: 10px; }
+    .deep-read ul { margin: 8px 0 12px 18px; font-size: 14px; color: var(--color-text-secondary); line-height: 1.8; }
+    .deep-read li { margin-bottom: 4px; }
+    .deep-read .highlight-box { background: #fdf5f2; border-left: 3px solid var(--color-primary-light); padding: 12px 16px; border-radius: 0 6px 6px 0; margin: 12px 0; font-size: 13.5px; color: var(--color-text-primary); }
+
+    /* === FAQ === */
+    .faq-list { display: flex; flex-direction: column; gap: 8px; }
+    .faq-item { background: var(--color-surface); border-radius: var(--radius-btn); box-shadow: var(--shadow-default); overflow: hidden; }
+    .faq-item summary { padding: 12px 16px; font-weight: 600; font-size: 14px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; font-size: 18px; color: var(--color-text-tertiary); transition: transform 0.2s; }
+    .faq-item[open] summary::after { content: "−"; }
+    .faq-item .faq-answer { padding: 0 16px 14px; font-size: 13.5px; color: var(--color-text-secondary); line-height: 1.8; }
+
+    /* === 评论 === */
+    .comment-list { display: flex; flex-direction: column; gap: 10px; }
+    .comment-item { background: var(--color-surface); border-radius: var(--radius-card); padding: 12px 16px; box-shadow: var(--shadow-default); font-size: 13px; line-height: 1.6; }
+    .comment-item .c-name { font-weight: 700; color: var(--color-primary-dark); margin-right: 8px; }
+    .comment-item .c-body { color: var(--color-text-secondary); }
+    .comment-item .c-meta { font-size: 10.5px; color: var(--color-text-tertiary); margin-top: 4px; }
+
+    /* === 资讯 === */
+    .news-list { display: flex; flex-direction: column; gap: 12px; }
+    .news-item { display: flex; gap: 14px; background: var(--color-surface); border-radius: var(--radius-card); padding: 12px 16px; box-shadow: var(--shadow-default); transition: box-shadow 0.2s; }
+    .news-item:hover { box-shadow: var(--shadow-hover); }
+    .news-date { flex-shrink: 0; font-size: 11px; color: var(--color-text-tertiary); font-variant-numeric: tabular-nums; width: 70px; }
+    .news-content { flex: 1; }
+    .news-title { font-weight: 700; font-size: 14px; margin-bottom: 3px; }
+    .news-summary { font-size: 12.5px; color: var(--color-text-secondary); line-height: 1.55; }
+
+    /* === 相关推荐 === */
+    .related-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .related-tags a { display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); padding: 5px 14px; border-radius: var(--radius-tag); font-size: 12.5px; color: var(--color-text-secondary); transition: 0.2s; }
+    .related-tags a:hover { border-color: var(--color-primary); color: var(--color-primary-dark); background: #fef8f6; }
+
+    /* === 补充板块：时间线 === */
+    .timeline { display: flex; flex-direction: column; gap: 0; position: relative; padding-left: 24px; }
+    .timeline::before { content: ""; position: absolute; left: 8px; top: 4px; bottom: 4px; width: 2px; background: var(--color-border); }
+    .tl-item { position: relative; padding: 8px 0 16px; }
+    .tl-item::before { content: ""; position: absolute; left: -20px; top: 14px; width: 8px; height: 8px; border-radius: 50%; background: var(--color-primary-light); border: 2px solid var(--color-bg); }
+    .tl-date { font-size: 11px; color: var(--color-text-tertiary); font-weight: 600; margin-bottom: 2px; }
+    .tl-title { font-size: 13.5px; font-weight: 700; margin-bottom: 2px; }
+    .tl-desc { font-size: 12.5px; color: var(--color-text-secondary); }
+
+    /* === 投稿互动 === */
+    .interact-panel { background: linear-gradient(135deg, #fef5f2, #fdf8f5); border-radius: var(--radius-banner); padding: 20px 24px; border: 1px solid var(--color-border-light); display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+    .interact-panel .ip-text { flex: 1; min-width: 200px; }
+    .interact-panel .ip-text h3 { font-size: 16px; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 4px; }
+    .interact-panel .ip-text p { font-size: 13px; color: var(--color-text-secondary); }
+
+    /* === 页尾 === */
+    .footer { background: #2b2421; color: #c8bfb9; margin-top: 20px; padding: 36px 20px 24px; }
+    .footer-inner { max-width: var(--container-wide); margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 32px; }
+    .footer-brand { font-size: 18px; font-weight: 800; color: #f0e6e1; margin-bottom: 8px; }
+    .footer-desc { font-size: 12.5px; line-height: 1.7; color: #a69c96; }
+    .footer-group h4 { font-size: 12px; font-weight: 700; color: #e0d6d0; letter-spacing: 0.06em; margin-bottom: 10px; }
+    .footer-group a { display: block; font-size: 12.5px; color: #a69c96; margin-bottom: 6px; transition: color 0.15s; }
+    .footer-group a:hover { color: #f0e6e1; }
+    .footer-bottom { max-width: var(--container-wide); margin: 24px auto 0; padding-top: 16px; border-top: 1px solid #3d3430; font-size: 11.5px; color: #8c827b; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+    /* === 回到顶部 === */
+    .back-top { position: fixed; bottom: 24px; right: 24px; width: 40px; height: 40px; border-radius: 50%; background: var(--color-primary); color: #fff; font-size: 18px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-hover); opacity: 0; visibility: hidden; transition: 0.25s; z-index: 90; }
+    .back-top.visible { opacity: 1; visibility: visible; }
+    .back-top:hover { background: var(--color-primary-dark); }
+
+    /* === 无结果提示 === */
+    .no-result { display: none; text-align: center; padding: 24px; color: var(--color-text-tertiary); font-size: 14px; }
+    .no-result.show { display: block; }
+    .search-hidden { display: none !important; }
+
+    /* === 响应式 === */
+    @media (max-width: 1024px) {
+      .main-layout { grid-template-columns: 1fr 240px; }
+      .left-sidebar { display: none; }
+      .hero { grid-template-columns: 1fr 260px; }
+      .header-nav { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 740px) {
+      body { padding-top: 76px; }
+      :root { --sticky-offset: 76px; }
+      .main-layout { grid-template-columns: 1fr; }
+      .right-sidebar { position: static; margin-top: 8px; }
+      .hero { grid-template-columns: 1fr; gap: 16px; padding: 20px 16px; }
+      .hero h1 { font-size: 26px; }
+      .hero-visual { height: 140px; order: -1; }
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .header { padding: 0 12px; height: 44px; }
+      .search-box input { width: 70px; }
+      .announce-bar { font-size: 11px; gap: 10px; }
+      .card-grid { grid-template-columns: 1fr 1fr; }
+      .update-item { flex-wrap: wrap; gap: 4px 10px; }
+      .update-item .up-summary { flex-basis: 100%; }
+      .interact-panel { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 480px) {
+      .card-grid { grid-template-columns: 1fr; }
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- ====== 吸顶公告条 + 页头 ====== -->
+  <div class="sticky-wrapper" id="stickyWrapper">
+    <div class="announce-bar">
+      <span class="brand-mini">黑料极品</span>
+      <span class="announce-item"><span class="announce-date">2026-11-08</span> 「疯狂小杨哥」直播间翻车事件追踪</span>
+      <span class="announce-item"><span class="announce-date">2026-11-07</span> 新增 3 条「东北雨姐」红薯粉条争议时间线</span>
+      <span class="announce-item">今日更新 <strong>12</strong> 条</span>
+    </div>
+    <header class="header">
+      <div class="logo-area">
+        <svg class="logo-svg" viewBox="0 0 32 32" fill="none" aria-label="黑料极品标志">
+          <rect width="32" height="32" rx="8" fill="#b83a2a"/>
+          <path d="M8 10h16v3H8zM8 16h10v3H8zM8 22h16v3H8z" fill="#fff" opacity="0.9"/>
+          <circle cx="24" cy="18" r="4" fill="#f5e6e2"/>
+          <path d="M22 18h4M24 16v4" stroke="#b83a2a" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">黑料极品</span>
+      </div>
+      <nav class="header-nav" aria-label="主题导航">
+        <a href="/#section-overview">领域概览</a>
+        <a href="/#section-featured">精选爆料</a>
+        <a href="/#section-updates">最新动态</a>
+        <a href="/#section-categories">分类索引</a>
+        <a href="/#section-deep">深度解析</a>
+        <a href="/#section-faq">常见问题</a>
+      </nav>
+      <div class="header-actions">
+        <div class="search-box" role="search">
+          <input type="text" id="searchInput" placeholder="搜索条目…" aria-label="搜索内容条目">
+          <button id="searchBtn" aria-label="搜索">🔍</button>
+        </div>
+        <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+  </div>
+
+  <!-- 移动端抽屉 -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="drawer" id="drawerMenu" role="dialog" aria-label="移动端导航菜单">
+    <button class="drawer-close" id="drawerClose" aria-label="关闭菜单">×</button>
+    <nav>
+      <a href="/#section-overview">领域概览</a>
+      <a href="/#section-featured">精选爆料</a>
+      <a href="/#section-updates">最新动态</a>
+      <a href="/#section-categories">分类索引</a>
+      <a href="/#section-deep">深度解析</a>
+      <a href="/#section-guide">体验指南</a>
+      <a href="/#section-faq">常见问题</a>
+      <a href="/#section-comments">用户评论</a>
+      <a href="/#section-news">相关资讯</a>
+      <a href="/#section-related">相关推荐</a>
+      <a href="/#section-timeline">事件时间线</a>
+      <a href="/#section-interact">投稿互动</a>
+    </nav>
+  </div>
+
+  <!-- ====== 首屏 ====== -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>黑料极品</h1>
+      <p class="hero-desc">汇聚直播翻车、带货争议、人设崩塌与舆论反转的争议内容索引，按事件时间线、当事人回应、平台处置和网友讨论分层整理，适合关注网络舆论走向与内容生态的读者查阅。</p>
+      <div class="hero-actions">
+        <a href="/#section-featured" class="btn-primary">浏览精选爆料</a>
+        <a href="/#section-timeline" class="btn-outline">查看事件时间线</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="30" width="120" height="80" rx="10" fill="#fde8e4" stroke="#d86a58" stroke-width="1.5"/>
+        <rect x="36" y="46" width="60" height="6" rx="3" fill="#d86a58" opacity="0.6"/>
+        <rect x="36" y="58" width="88" height="6" rx="3" fill="#d86a58" opacity="0.4"/>
+        <rect x="36" y="70" width="72" height="6" rx="3" fill="#d86a58" opacity="0.3"/>
+        <rect x="36" y="86" width="40" height="6" rx="3" fill="#b83a2a" opacity="0.5"/>
+        <rect x="160" y="20" width="140" height="100" rx="10" fill="#fff" stroke="#e8e0da" stroke-width="1.5"/>
+        <circle cx="185" cy="48" r="10" fill="#fde8e4"/>
+        <rect x="202" y="42" width="70" height="5" rx="2.5" fill="#b83a2a" opacity="0.5"/>
+        <rect x="202" y="52" width="50" height="4" rx="2" fill="#8c827b" opacity="0.4"/>
+        <rect x="175" y="70" width="110" height="4" rx="2" fill="#e8e0da"/>
+        <rect x="175" y="80" width="90" height="4" rx="2" fill="#e8e0da"/>
+        <rect x="175" y="90" width="100" height="4" rx="2" fill="#e8e0da"/>
+        <rect x="60" y="130" width="200" height="50" rx="10" fill="#fff" stroke="#e8e0da" stroke-width="1.5"/>
+        <circle cx="86" cy="155" r="6" fill="#d86a58" class="pulse-dot"/>
+        <rect x="100" y="148" width="80" height="5" rx="2.5" fill="#b83a2a" opacity="0.6"/>
+        <rect x="100" y="158" width="120" height="4" rx="2" fill="#8c827b" opacity="0.35"/>
+        <circle cx="240" cy="155" r="6" fill="#d86a58" class="pulse-dot" style="animation-delay:1s"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ====== 三栏主布局 ====== -->
+  <div class="main-layout">
+
+    <!-- 左侧频道索引 -->
+    <aside class="left-sidebar" aria-label="频道索引">
+      <div class="sidebar-block">
+        <h3>频道索引</h3>
+        <nav class="channel-list" aria-label="内容频道">
+          <a href="/#section-overview" class="active">领域概览</a>
+          <a href="/#section-featured">精选爆料</a>
+          <a href="/#section-updates">最新动态</a>
+          <a href="/#section-categories">分类索引</a>
+          <a href="/#section-deep">深度解析</a>
+          <a href="/#section-guide">体验指南</a>
+          <a href="/#section-faq">常见问题</a>
+          <a href="/#section-comments">用户评论</a>
+          <a href="/#section-news">相关资讯</a>
+          <a href="/#section-related">相关推荐</a>
+          <a href="/#section-timeline">事件时间线</a>
+          <a href="/#section-interact">投稿互动</a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- 中间主内容 -->
+    <main>
+
+      <!-- 1. 领域概览 -->
+      <section class="section" id="section-overview">
+        <h2 class="section-title">网络争议内容生态概览</h2>
+        <div class="overview-text">
+          <p>「黑料」在中文互联网语境里指向的是公众人物、网红主播、品牌商家在公开场合或直播中出现的失言、翻车、造假、侵权等争议事件；「极品」则叠了一层筛选意味——不是所有翻车都值得被反复咀嚼，能被称为极品的，通常具备证据链清晰、当事人回应失当、平台处置滞后或粉丝群体反噬等至少两个特征。2026 年下半年，直播间虚假宣传与短视频人设崩塌仍是争议最密集的两种类型，抖音、快手、小红书三个平台的处置公告是主要信源。</p>
+          <p>从事件形态看，直播带货翻车集中在食品（红薯粉条、风干牛肉、蜂蜜）与美妆（射频美容仪、美白精华）两个品类，2026 年 10 月抖音电商安全中心公布的 17 批违规案例中，食品类占比接近四成。人设崩塌类争议则更多出现在剧情号与情感博主之间，典型如「农村媳妇」系列账号被扒出拍摄场地为租用影棚。品牌方与 MCN 机构的切割声明、当事人小号道歉视频的播放量对比、平台处罚公告的措辞变化，构成了追踪这类事件的三条主要线索。</p>
+          <p>值得单独列出的还有「反转型」事件——初期被指认的一方在完整聊天记录或监控视频公开后角色互换。这类事件对信息整理的要求最高，单条爆料截图不足以支撑判断，需要比对当事人回应时间、平台处置节点与第三方媒体（如《新京报》调查组、澎湃质量观）的跟进报道。站内目前收录的 2026 年 9 月至 11 月事件中，反转型占比约 18%，较上半年有所上升。</p>
+        </div>
+      </section>
+
+      <!-- 2. 精选内容推荐 -->
+      <section class="section" id="section-featured">
+        <h2 class="section-title">本周精选爆料卡片</h2>
+        <p class="section-sub">按证据完整度与讨论量排序，共 8 条</p>
+        <div class="card-grid" id="cardGrid">
+          <article class="card" data-search="疯狂小杨哥 香港美诚月饼 虚假宣传">
+            <img class="card-img" src="https://picsum.photos/seed/xiaoyangge1/400/300" alt="小杨哥直播间月饼带货画面" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-type">直播翻车</div>
+              <h3 class="card-title">疯狂小杨哥「香港美诚月饼」产地争议</h3>
+              <p class="card-desc">直播间宣称香港品牌，实际产地在广东佛山，香港无门店。合肥高新区市监局 9 月 17 日立案，三只羊网络 9 月 18 日发致歉声明，承诺退一赔三。</p>
+              <div class="card-tags"><span class="tag tag-hot">市监局立案</span><span class="tag">退一赔三</span><span class="tag">三只羊</span></div>
+              <div class="card-meta"><span>🔥 热度 98.2</span><span>2026-11-05</span></div>
+            </div>
+          </article>
+          <article class="card" data-search="东北雨姐 红薯粉条 木薯淀粉">
+            <img class="card-img" src="https://picsum.photos/seed/yujie2/400/300" alt="东北雨姐红薯粉条产品包装" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-type">食品打假</div>
+              <h3 class="card-title">东北雨姐红薯粉条检出木薯淀粉</h3>
+              <p class="card-desc">打假博主「大娃」送检报告显示产品含木薯源性成分，与本溪县市场监管局 10 月 12 日公布的调查结论一致。雨姐传媒被罚 165 万元，账号禁言至 11 月 30 日。</p>
+              <div class="card-tags"><span class="tag tag-hot">罚 165 万</span><span class="tag">木薯淀粉</span><span class="tag">本溪调查</span></div>
+              <div class="card-meta"><span>🔥 热度 95.6</span><span>2026-11-04</span></div>
+            </div>
+          </article>
+          <article class="card" data-search="七老板 射频美容仪 虚假宣传">
+            <img class="card-img" src="https://picsum.photos/seed/qilaoban3/400/300" alt="七老板直播间美容仪讲解截图" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-type">美妆争议</div>
+              <h3 class="card-title">七老板射频美容仪「胶原再生」话术被指违规</h3>
+              <p class="card-desc">直播切片中称产品可「刺激胶原蛋白再生」，该表述超出医疗器械注册证载明适用范围。合肥市监局 10 月 28 日回复消费者投诉称已介入核查。</p>
+              <div class="card-tags"><span class="tag tag-hot">话术违规</span><span class="tag">射频美容仪</span><span class="tag">注册证范围</span></div>
+              <div class="card-meta"><span>🔥 热度 87.4</span><span>2026-11-03</span></div>
+            </div>
+          </article>
+          <article class="card" data-search="农村媳妇 影棚 人设崩塌">
+            <img class="card-img" src="https://picsum.photos/seed/nongcun4/400/300" alt="农村媳妇账号拍摄场地对比图" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-type">人设崩塌</div>
+              <h3 class="card-title">「农村媳妇小芳」拍摄场地被指租用影棚</h3>
+              <p class="card-desc">网友比对近 30 条视频背景中的墙砖纹理与窗外山体轮廓，发现与河北某影视基地布景一致。账号运营方 10 月 30 日承认部分场景为搭景拍摄。</p>
+              <div class="card-tags"><span class="tag">搭景拍摄</span><span class="tag">剧情号</span><span class="tag">场地比对</span></div>
+              <div class="card-meta"><span>🔥 热度 82.1</span><span>2026-11-02</span></div>
+            </div>
+          </article>
+          <article class="card" data-search="王海 打假 蜂蜜 检测报告">
+            <img class="card-img" src="https://picsum.photos/seed/wanghai5/400/300" alt="王海打假团队送检蜂蜜样品" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-type">职业打假</div>
+              <h3 class="card-title">王海团队送检 5 款直播间蜂蜜 3 款果糖超标</h3>
+              <p class="card-desc">检测由青岛谱尼测试完成，报告编号可在官网查询。涉事三款产品分别来自三个百万粉主播橱窗，其中一款已下架，另两款仍在售。</p>
+              <div class="card-tags"><span class="tag tag-hot">果糖超标</span><span class="tag">谱尼测试</span><span class="tag">橱窗下架</span></div>
+              <div class="card-meta"><span>🔥 热度 79.8</span><span>2026-11-01</span></div>
+            </div>
+          </article>
+          <article class="card" data-search="李佳琦 花西子 眉笔 佣金">
+            <img class="card-img" src="https://picsum.photos/seed/lijiaqi6/400/300" alt="李佳琦直播间花西子眉笔画面" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-type">价格争议</div>
+              <h3 class="card-title">花西子眉笔佣金比例截图再度流传</h3>
+              <p class="card-desc">一张标注「某头部主播眉笔类目佣金 60%-80%」的截图 10 月 29 日在多个电商社群传开，花西子客服回应称「不掌握该数据」，未正面否认。</p>
+              <div class="card-tags"><span class="tag">佣金比例</span><span class="tag">截图溯源</span><span class="tag">客服回应</span></div>
+              <div class="card-meta"><span>🔥 热度 75.3</span><span>2026-10-29</span></div>
+            </div>
+          </article>
+          <article class="card" data-search="辛巴 棉密码 卫生巾 荧光剂">
+            <img class="card-img" src="https://picsum.photos/seed/xinba7/400/300" alt="棉密码卫生巾产品检测相关画面" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-type">产品安全</div>
+              <h3 class="card-title">棉密码卫生巾荧光增白剂争议旧帖被翻出</h3>
+              <p class="card-desc">2025 年 3 月的一则送检帖 11 月 1 日重新进入热榜，原帖称检出可迁移性荧光物质。辛选方面回应称「历年抽检均合格」，未公布最新检测报告。</p>
+              <div class="card-tags"><span class="tag">荧光增白剂</span><span class="tag">旧帖翻红</span><span class="tag">辛选回应</span></div>
+              <div class="card-meta"><span>🔥 热度 71.5</span><span>2026-11-01</span></div>
+            </div>
+          </article>
+          <article class="card" data-search="痞幼 机车 盗图 人设">
+            <img class="card-img" src="https://picsum.photos/seed/piyou8/400/300" alt="痞幼机车视频截图与图片来源对比" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-type">内容版权</div>
+              <h3 class="card-title">痞幼机车视频被指盗用海外博主素材</h3>
+              <p class="card-desc">原视频来自 Instagram 账号 @moto_anna，发布于 9 月 22 日。对比可见车身贴纸位置一致。痞幼 10 月 27 日回应称「素材由外包剪辑提供」。</p>
+              <div class="card-tags"><span class="tag tag-hot">盗图争议</span><span class="tag">素材来源</span><span class="tag">外包剪辑</span></div>
+              <div class="card-meta"><span>🔥 热度 68.7</span><span>2026-10-27</span></div>
+            </div>
+          </article>
+        </div>
+        <div class="no-result" id="noResult">未找到匹配的条目，试试「月饼」「粉条」「美容仪」等关键词。</div>
+      </section>
+
+      <!-- 3. 最新更新 / 动态 -->
+      <section class="section" id="section-updates">
+        <h2 class="section-title">最新动态与进展追踪</h2>
+        <div class="update-list">
+          <div class="update-item" data-search="小杨哥 月饼 罚款 6894万">
+            <span class="up-name">疯狂小杨哥月饼案</span>
+            <span class="up-summary">合肥市监局 11 月 6 日公布处罚决定书全文，三只羊网络被罚 6894.91 万元，与 9 月通报的「退一赔三」合计赔付金额超 1.2 亿元。</span>
+            <span class="up-time">11-06</span>
+          </div>
+          <div class="update-item" data-search="东北雨姐 账号 禁言 解封">
+            <span class="up-name">东北雨姐账号状态</span>
+            <span class="up-summary">抖音账号仍处禁言期，11 月 4 日有网友发现其小号「雨姐日常」更新了一条喂鸡视频，2 小时后删除。</span>
+            <span class="up-time">11-04</span>
+          </div>
+          <div class="update-item" data-search="七老板 美容仪 市监局 核查">
+            <span class="up-name">七老板美容仪核查</span>
+            <span class="up-summary">合肥市监局 10 月 28 日回复投诉人称「已责令企业提供注册证及说明书」，核查结果将在 12 月上旬公示。</span>
+            <span class="up-time">10-28</span>
+          </div>
+          <div class="update-item" data-search="农村媳妇 小芳 运营方 承认">
+            <span class="up-name">农村媳妇小芳</span>
+            <span class="up-summary">运营方 10 月 30 日发布 3 分 17 秒视频承认「部分外景为基地搭景」，承诺后续标注「场景演绎」，未回应是否退粉。</span>
+            <span class="up-time">10-30</span>
+          </div>
+          <div class="update-item" data-search="王海 蜂蜜 果糖 复检">
+            <span class="up-name">王海蜂蜜打假</span>
+            <span class="up-summary">涉事主播之一「山里娃阿强」11 月 2 日公布自检报告称合格，王海回应「欢迎送同一批次到谱尼复检」。</span>
+            <span class="up-time">11-02</span>
+          </div>
+          <div class="update-item" data-search="痞幼 盗图 外包 声明">
+            <span class="up-name">痞幼盗图事件</span>
+            <span class="up-summary">10 月 27 日回应后，原博主 @moto_anna 在评论区用英文留言「at least ask first」，获赞 2.4 万。</span>
+            <span class="up-time">10-27</span>
+          </div>
+          <div class="update-item" data-search="花西子 眉笔 佣金 截图 溯源">
+            <span class="up-name">花西子佣金截图</span>
+            <span class="up-summary">截图最早出现于 10 月 26 日某电商运营微信群，群内 500 人，转发路径无法追溯到原始发布者。</span>
+            <span class="up-time">10-26</span>
+          </div>
+          <div class="update-item" data-search="辛巴 棉密码 检测 报告 最新">
+            <span class="up-name">棉密码荧光剂争议</span>
+            <span class="up-summary">辛选 11 月 1 日声明后，有消费者向哈尔滨市监局申请信息公开，要求公开 2025 年至今的抽检记录。</span>
+            <span class="up-time">11-01</span>
+          </div>
+          <div class="update-item" data-search="小英一家 牛棚 摆拍 争议">
+            <span class="up-name">小英一家摆拍争议</span>
+            <span class="up-summary">网友 11 月 3 日发布航拍对比图，称视频中的牛棚与 2025 年卫星图位置不符，账号尚未回应。</span>
+            <span class="up-time">11-03</span>
+          </div>
+          <div class="update-item" data-search="二驴 剧本 直播 封禁">
+            <span class="up-name">二驴剧本直播</span>
+            <span class="up-summary">快手 10 月 25 日公告封禁 5 个「编造冲突剧情」账号，二驴团队旗下 2 个账号在列，封禁期 30 天。</span>
+            <span class="up-time">10-25</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. 分类入口 -->
+      <section class="section" id="section-categories">
+        <h2 class="section-title">按争议类型查找</h2>
+        <p class="section-sub">点击分类可定位到对应内容说明</p>
+        <div class="cat-grid">
+          <a href="/#section-featured" class="cat-item"><span>直播带货翻车</span><span class="cat-count">42 条</span></a>
+          <a href="/#section-featured" class="cat-item"><span>食品打假</span><span class="cat-count">31 条</span></a>
+          <a href="/#section-featured" class="cat-item"><span>人设崩塌</span><span class="cat-count">27 条</span></a>
+          <a href="/#section-featured" class="cat-item"><span>美妆虚假宣传</span><span class="cat-count">19 条</span></a>
+          <a href="/#section-featured" class="cat-item"><span>版权盗用</span><span class="cat-count">14 条</span></a>
+          <a href="/#section-featured" class="cat-item"><span>剧本摆拍</span><span class="cat-count">22 条</span></a>
+          <a href="/#section-featured" class="cat-item"><span>平台处罚公告</span><span class="cat-count">16 条</span></a>
+          <a href="/#section-featured" class="cat-item"><span>反转事件</span><span class="cat-count">11 条</span></a>
+        </div>
+      </section>
+
+      <!-- 5. 深度解析 -->
+      <section class="section" id="section-deep">
+        <h2 class="section-title">直播翻车事件的判断维度拆解</h2>
+        <div class="deep-read">
+          <h3>证据链完整度比「瓜大不大」更决定事件寿命</h3>
+          <p>2026 年 9 月小杨哥月饼事件与 10 月东北雨姐粉条事件，发酵速度接近，但讨论热度的衰减曲线差异明显。前者有市监局立案通知书、处罚决定书全文、品牌方致歉声明三份可核文件，事件在 11 月上旬仍有新料——处罚金额 6894.91 万元公布当天，微博话题阅读量新增 2.1 亿；后者主要依赖打假博主的单份检测报告与市监局 165 万元罚款通报，缺少品牌方公开的原料采购合同，11 月 4 日后新增讨论量跌至峰值的 7%。</p>
+          <p>拆开看，一份爆料能否支撑长期讨论，取决于四个环节是否齐全：<strong>样品来源可追溯、检测机构具名、官方处置有书面文书、当事方有过正式回应</strong>。四缺一，讨论通常在一周内退潮；四缺二，多数会在三天内被新事件覆盖。这不是传播学规律的推导，是站内对 2026 年 9 月至 11 月 28 起事件逐条比对后的结果。</p>
+
+          <h3>「极品」标签的滥用与回收</h3>
+          <p>「极品」在网友口中从形容词变成了分类标签，代价是门槛模糊。10 月 27 日痞幼盗图事件被部分账号冠以「极品翻车」，但原始素材仅是一段 15 秒机车视频，涉事金额为零，与月饼案、粉条案不在一个量级。这类标签错配会造成两个后果：一是真正有书面处罚文书的案例被稀释；二是当事人回应成本降低——一句「素材由外包提供」就能结案。</p>
+          <div class="highlight-box">判断一条爆料是否够格进入「极品」讨论，可以对照三项：是否有第三方机构出具的书面结论、是否涉及消费者实际损失、是否有平台或监管部门的处置动作。三项全无，多半是流量号在借词。</div>
+          <p>回收标签的做法在 11 月开始出现。几个整理类账号在 10 月底联合发布了一份「翻车事件分级参考」，把事件按证据层级分为 A（有处罚文书）、B（有检测报告无处罚）、C（仅有当事人陈述）、D（网友爆料无实证），并公开标注每条内容属于哪一级。这份参考并非官方标准，但被转发了 1.7 万次，说明读者对粗放标签已有疲劳。</p>
+
+          <h3>平台处置公告的措辞差异值得逐字读</h3>
+          <p>抖音电商安全中心与快手小助手在 2026 年的违规公告里，对同类行为的表述并不一致。以「虚假宣传」为例，抖音常用「商品信息与实际不符」，快手多用「夸大宣传误导消费者」。前者指向商品本身，后者指向话术行为。这个差异直接影响品牌方后续的追责路径：被认定「信息不符」，品牌方需要自证原料来源；被认定「误导」，主播团队需要自证话术依据。</p>
+          <ul>
+            <li>抖音 10 月 17 日公告：某食品类店铺因「商品信息与实际不符」被清退，未点名主播。</li>
+            <li>快手 10 月 25 日公告：5 个账号因「编造冲突剧情」被禁言 30 天，点名了团队名称。</li>
+            <li>小红书 11 月 2 日公告：3 个账号因「虚假种草」被限流，公告附了违规笔记截图。</li>
+          </ul>
+          <p>三份公告的信息颗粒度不同，读者若只看标题摘要，容易把「清退店铺」误读为「主播被封」。逐字比对公告原文，是判断事件进度最省力的方法。</p>
+        </div>
+      </section>
+
+      <!-- 6. 体验指南 -->
+      <section class="section" id="section-guide">
+        <h2 class="section-title">争议内容的阅读顺序与判断路径</h2>
+        <div class="deep-read" style="padding:20px 24px;">
+          <p style="font-weight:700; color:var(--color-text-primary);">先看处置文书，再看当事人回应，最后看网友讨论。顺序颠倒容易先入为主。</p>
+          <p>一份完整的翻车事件材料通常散落在三四个地方：市监局官网的行政处罚公示、当事人微博或抖音的回应视频、平台安全中心的公告、以及打假博主或媒体记者的跟进报道。先读处罚文书，能直接拿到涉事主体、违法事实、处罚金额三个硬信息；再看回应视频，重点对比回应时间与立案时间差——间隔超过 72 小时的，回应内容通常经过法务审核，措辞更谨慎但信息量更低。</p>
+          <p>比较同类事件时，把「是否有书面处罚」作为第一分水岭。有处罚文书的，讨论可以落到金额与整改动作；只有检测报告的，讨论应停在检测方法与样品代表性；仅有聊天记录截图的，基本只能当作线索，不宜当作结论。</p>
+          <p>投入时间前，做一道简单算术：这条爆料涉及的金额、人数或产品类别，是否与你的实际消费场景有交集。月饼、粉条、蜂蜜属于高频消费品，值得花 10 分钟核实批次与召回信息；机车视频盗图、剧情号搭景这类内容，5 分钟了解梗概即可，不必追更。</p>
+        </div>
+      </section>
+
+      <!-- 7. FAQ -->
+      <section class="section" id="section-faq">
+        <h2 class="section-title">关于翻车与打假的常见疑问</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>东北雨姐红薯粉条里检出木薯淀粉，意味着什么？</summary>
+            <div class="faq-answer">红薯粉条按国家标准应使用红薯淀粉为原料，检出木薯源性成分说明原料中掺入了低价木薯淀粉。木薯本身可食用，问题在于标签未如实标注，构成《食品安全法》意义上的虚假标注。本溪县市场监管局 10 月 12 日的通报采用的正是这一认定路径。</div>
+          </details>
+          <details class="faq-item">
+            <summary>直播间买的月饼能退一赔三吗？</summary>
+            <div class="faq-answer">取决于购买渠道与平台规则。三只羊网络在 9 月 18 日致歉声明中承诺对「香港美诚月饼」订单退一赔三，消费者需保留订单截图与支付记录，通过原购买平台客服申请。若平台未执行，可向合肥高新区市监局 12315 渠道投诉，附上处罚决定书编号可加快处理。</div>
+          </details>
+          <details class="faq-item">
+            <summary>射频美容仪宣称「胶原再生」算违规吗？</summary>
+            <div class="faq-answer">射频美容仪若按医疗器械注册，其宣传用语不得超出注册证载明的适用范围。「刺激胶原蛋白再生」在多数注册证中属于超出范围的功效宣称。合肥市监局 10 月 28 日回复投诉人称已责令企业提供注册证及说明书，核查结果预计 12 月上旬公示。</div>
+          </details>
+          <details class="faq-item">
+            <summary>打假博主自己的检测报告可信吗？</summary>
+            <div class="faq-answer">看三点：检测机构是否具备 CMA 或 CNAS 资质、报告编号能否在机构官网查询、样品来源是否有购买记录佐证。王海团队 11 月 1 日公布的蜂蜜检测由青岛谱尼测试出具，报告编号可查，这类相对可信；仅有手机拍摄的快速检测卡结果，参考价值有限。</div>
+          </details>
+          <details class="faq-item">
+            <summary>人设崩塌类账号被扒出搭景，平台会封号吗？</summary>
+            <div class="faq-answer">通常不会直接封号。平台对剧情类账号的处置以「要求标注演绎」为主，抖音 2026 年 10 月更新的社区规则中写明，未标注「场景演绎」的虚构剧情内容会被限流。账号运营方承认搭景后，若按要求补充标注，一般不影响正常发布。</div>
+          </details>
+          <details class="faq-item">
+            <summary>「反转事件」怎么判断哪一方的说法更可信？</summary>
+            <div class="faq-answer">比对时间线是主要方法。先列出双方各自公开证据的时间点，再看每次新证据出现后，哪一方的说法发生了实质性修改。以 2026 年 10 月某情感博主争议为例，指控方在监控视频公开后删除了原帖，被指方则补充了完整的聊天记录，前者说法变动两次、后者一次，信息稳定性可以作为参考。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8. 用户评论 -->
+      <section class="section" id="section-comments">
+        <h2 class="section-title">网友讨论摘录</h2>
+        <div class="comment-list">
+          <div class="comment-item"><span class="c-name">@阿茶不喝茶</span><span class="c-body">月饼那个退一赔三我申请了，平台 3 天就退了，但赔三的部分拖到 10 月底才到账。</span><div class="c-meta">11-05 14:22</div></div>
+          <div class="comment-item"><span class="c-name">@山城小面</span><span class="c-body">粉条事件最离谱的是雨姐小号还在更新喂鸡视频，删得倒是快。</span><div class="c-meta">11-04 20:11</div></div>
+          <div class="comment-item"><span class="c-name">@momo 酱</span><span class="c-body">美容仪那个话术我在直播间听过原版，当时就觉得「胶原再生」有点扯。</span><div class="c-meta">11-03 09:45</div></div>
+          <div class="comment-item"><span class="c-name">@路过的电工</span><span class="c-body">谱尼的报告我查了编号，是真的。不过样品是王海他们自己买的，批次能不能代表全部，存疑。</span><div class="c-meta">11-02 22:08</div></div>
+          <div class="comment-item"><span class="c-name">@一颗小行星</span><span class="c-body">农村媳妇那个墙砖纹理对比图我也看过，确实一模一样。搭景就搭景，非说是真实农村生活就很没意思。</span><div class="c-meta">11-02 16:33</div></div>
+          <div class="comment-item"><span class="c-name">@老李头不喝酒</span><span class="c-body">花西子那个佣金截图，连个群名都打码，信源太弱了。没有原始出处的东西建议先别当结论。</span><div class="c-meta">11-01 11:50</div></div>
+          <div class="comment-item"><span class="c-name">@橘子汽水</span><span class="c-body">痞幼那个机车视频，原博主都留言了，回应「外包剪辑」等于没回应。</span><div class="c-meta">10-28 08:14</div></div>
+          <div class="comment-item"><span class="c-name">@南山南</span><span class="c-body">棉密码那个荧光剂的事 2025 年就讨论过一轮，这次翻出来也没有新检测报告，纯炒冷饭。</span><div class="c-meta">11-01 19:07</div></div>
+          <div class="comment-item"><span class="c-name">@打工人小周</span><span class="c-body">6894 万罚款看着多，分摊到那场直播的销售额里比例其实不高。罚不是目的，整改才是。</span><div class="c-meta">11-06 10:02</div></div>
+          <div class="comment-item"><span class="c-name">@棉袄与短袖</span><span class="c-body">二驴又被封了，30 天，感觉都成固定节目了。</span><div class="c-meta">10-25 15:40</div></div>
+          <div class="comment-item"><span class="c-name">@豆豆龙</span><span class="c-body">小英一家的牛棚航拍对比有人做视频逐帧分析了，结论是位置确实对不上，但账号一直没吭声。</span><div class="c-meta">11-03 13:26</div></div>
+          <div class="comment-item"><span class="c-name">@清补凉</span><span class="c-body">说实话有些所谓的黑料看下来就是网友过度解读，一句口误能剪出 20 个视频。</span><div class="c-meta">11-02 21:15</div></div>
+          <div class="comment-item"><span class="c-name">@夜航船</span><span class="c-body">这套分级参考做得还行，A 级 B 级分得清楚，比那些什么「极品大瓜」的标题靠谱多了。</span><div class="c-meta">10-31 17:58</div></div>
+          <div class="comment-item"><span class="c-name">@麦田守望</span><span class="c-body">快手和抖音公告措辞不一样这个点以前真没注意，回头去翻了两边原文，确实有差别。</span><div class="c-meta">10-26 09:40</div></div>
+          <div class="comment-item"><span class="c-name">@小鹿乱撞</span><span class="c-body">蜂蜜那事我买过其中一款，现在还在橱窗里挂着，问客服就说「以检测报告为准」。</span><div class="c-meta">11-02 12:05</div></div>
+          <div class="comment-item"><span class="c-name">@大江东去</span><span class="c-body">反转事件那个判断方法挺实用的，比直接站队强。先看哪边说法变来变去。</span><div class="c-meta">10-29 20:22</div></div>
+        </div>
+      </section>
+
+      <!-- 9. 相关资讯 -->
+      <section class="section" id="section-news">
+        <h2 class="section-title">近期相关资讯</h2>
+        <div class="news-list">
+          <article class="news-item">
+            <span class="news-date">2026-11-06</span>
+            <div class="news-content">
+              <div class="news-title">合肥市监局公示三只羊网络处罚决定书，罚款 6894.91 万元</div>
+              <p class="news-summary">决定书列明涉事月饼货值金额 1.2 亿元，违法所得按 15% 核算，处罚依据为《反不正当竞争法》第八条。三只羊方面表示不申请行政复议。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <span class="news-date">2026-11-04</span>
+            <div class="news-content">
+              <div class="news-title">抖音电商安全中心 10 月违规公告：清退 23 家店铺，12 家涉食品类</div>
+              <p class="news-summary">公告附违规类型分布，食品类占 52%，美妆类占 26%。清退店铺名单中 7 家曾在头部主播橱窗出现，平台未披露主播连带责任处理结果。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <span class="news-date">2026-11-02</span>
+            <div class="news-content">
+              <div class="news-title">青岛谱尼测试回应蜂蜜检测质疑：报告编号可官网验证，样品接收日期 10 月 21 日</div>
+              <p class="news-summary">机构在官网发布说明，确认 5 份样品中有 3 份果糖葡萄糖含量超出蜂蜜国标限值，检测方法为 GB 5009.8-2023，未对样品来源发表意见。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <span class="news-date">2026-10-30</span>
+            <div class="news-content">
+              <div class="news-title">「农村媳妇小芳」运营方承认部分场景搭景，承诺 11 月起标注「场景演绎」</div>
+              <p class="news-summary">致歉视频中运营方称搭景比例约为三成，主要涉及外景与农活镜头。抖音平台已要求该账号在 11 月 15 日前完成历史视频标注补充。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <span class="news-date">2026-10-28</span>
+            <div class="news-content">
+              <div class="news-title">合肥市监局回复七老板美容仪投诉：已责令提供注册证及说明书</div>
+              <p class="news-summary">回复函编号可在市监局官网查询，处理时限为 60 个工作日，预计 12 月上旬公示核查结果。涉事美容仪目前在抖音橱窗已显示「暂时缺货」。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <span class="news-date">2026-10-25</span>
+            <div class="news-content">
+              <div class="news-title">快手封禁 5 个编造冲突剧情账号，二驴团队两账号在列</div>
+              <p class="news-summary">封禁期 30 天，公告首次点名团队而非仅列账号 ID。快手方面表示后续将按季度公示剧情类账号违规处理情况。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 10. 相关推荐 -->
+      <section class="section" id="section-related">
+        <h2 class="section-title">相关方向与条目索引</h2>
+        <div class="related-tags">
+          <a href="/#section-featured">香港美诚月饼产地争议</a>
+          <a href="/#section-featured">红薯粉条木薯淀粉掺假</a>
+          <a href="/#section-featured">射频美容仪注册证范围</a>
+          <a href="/#section-featured">直播间蜂蜜果糖超标</a>
+          <a href="/#section-featured">剧情号搭景标注规则</a>
+          <a href="/#section-featured">平台违规公告措辞对比</a>
+          <a href="/#section-featured">打假检测报告资质核查</a>
+          <a href="/#section-featured">退一赔三申请流程</a>
+        </div>
+      </section>
+
+      <!-- 11. 补充板块：事件时间线 -->
+      <section class="section" id="section-timeline">
+        <h2 class="section-title">小杨哥月饼事件时间线</h2>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-date">2026-09-17</div>
+            <div class="tl-title">合肥高新区市监局立案</div>
+            <div class="tl-desc">针对三只羊网络直播间销售的「香港美诚月饼」涉嫌虚假宣传，正式立案调查。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2026-09-18</div>
+            <div class="tl-title">三只羊网络发布致歉声明</div>
+            <div class="tl-desc">承诺对涉事月饼订单退一赔三，消费者可通过原购买平台申请。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2026-09-19</div>
+            <div class="tl-title">抖音电商安全中心下架相关商品</div>
+            <div class="tl-desc">「香港美诚月饼」全系列商品在平台内搜索结果显示「商品已下架」。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2026-10-10</div>
+            <div class="tl-title">市监局完成调查取证</div>
+            <div class="tl-desc">调取直播间录屏、商品详情页存档、品牌方供货合同等材料，认定虚假宣传成立。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2026-11-06</div>
+            <div class="tl-title">处罚决定书公示</div>
+            <div class="tl-desc">罚款 6894.91 万元，责令停止违法行为，三只羊表示不申请行政复议。</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12. 投稿互动 -->
+      <section class="section" id="section-interact">
+        <h2 class="section-title">投稿与互动</h2>
+        <div class="interact-panel">
+          <div class="ip-text">
+            <h3>有新的翻车线索？</h3>
+            <p>欢迎提交你看到的直播切片、商品页面截图或检测报告，附上具体时间与平台名称，编辑组会在 48 小时内核实并回复是否收录。</p>
+          </div>
+          <a href="/#section-interact" class="btn-primary" style="flex-shrink:0;">提交线索</a>
+        </div>
+        <div class="interact-panel" style="margin-top:12px;">
+          <div class="ip-text">
+            <h3>参与「翻车事件分级」共创</h3>
+            <p>如果你对某条事件的证据等级有不同判断，可以在评论区附上文书编号或报告截图，有理有据的反驳会被整理进下一版分级参考。</p>
+          </div>
+          <a href="/#section-comments" class="btn-outline" style="flex-shrink:0;">去讨论</a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右侧辅助栏 -->
+    <aside class="right-sidebar" aria-label="辅助信息">
+      <div class="sidebar-block">
+        <h3>本周热榜</h3>
+        <ol class="hot-list">
+          <li><span class="rank">1</span>疯狂小杨哥月饼案 6894 万罚款</li>
+          <li><span class="rank">2</span>东北雨姐粉条检出木薯淀粉</li>
+          <li><span class="rank">3</span>七老板美容仪话术违规核查</li>
+          <li><span class="rank">4</span>农村媳妇小芳承认搭景</li>
+          <li><span class="rank">5</span>王海团队蜂蜜检测 3 款超标</li>
+          <li><span class="rank">6</span>痞幼机车视频盗图争议</li>
+          <li><span class="rank">7</span>棉密码荧光剂旧帖翻红</li>
+          <li><span class="rank">8</span>二驴团队两账号被封 30 天</li>
+        </ol>
+      </div>
+      <div class="sidebar-block">
+        <h3>更新节奏</h3>
+        <p style="font-size:12.5px; color:var(--color-text-secondary); line-height:1.6;">工作日每日 10:00 更新前一日新增事件与处置进展，周六汇总当周分级参考变动。11 月 8 日共更新 12 条，其中新增事件 3 条、进展追踪 9 条。</p>
+      </div>
+      <div class="sidebar-block">
+        <h3>常用信源</h3>
+        <ul style="font-size:12.5px; color:var(--color-text-secondary); line-height:1.9;">
+          <li>· 市监局行政处罚公示</li>
+          <li>· 抖音电商安全中心公告</li>
+          <li>· 快手小助手违规公告</li>
+          <li>· 谱尼测试报告查询</li>
+          <li>· 澎湃质量观跟进报道</li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- ====== 页尾 ====== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">黑料极品</div>
+        <p class="footer-desc">收录 2026 年 9 月至 11 月直播翻车、食品打假、人设崩塌与版权争议事件，按证据等级与处置进度分层整理，工作日每日更新。</p>
+      </div>
+      <div class="footer-group">
+        <h4>内容分类</h4>
+        <a href="/#section-featured">直播带货翻车</a>
+        <a href="/#section-featured">食品打假</a>
+        <a href="/#section-featured">人设崩塌</a>
+        <a href="/#section-featured">美妆虚假宣传</a>
+        <a href="/#section-featured">版权盗用</a>
+      </div>
+      <div class="footer-group">
+        <h4>深入阅读</h4>
+        <a href="/#section-deep">判断维度拆解</a>
+        <a href="/#section-guide">阅读顺序指南</a>
+        <a href="/#section-faq">常见疑问</a>
+        <a href="/#section-timeline">事件时间线</a>
+      </div>
+      <div class="footer-group">
+        <h4>互动</h4>
+        <a href="/#section-interact">提交线索</a>
+        <a href="/#section-comments">参与讨论</a>
+        <a href="/#section-related">方向索引</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>内容为示例条目整理，事实性表述以公开通报与报道为准。</span>
+      <span>更新时间：2026-11-08</span>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+  <!-- ====== 交互脚本 ====== -->
+  <script>
+    (function() {
+      // 吸顶阴影
+      var stickyWrapper = document.getElementById('stickyWrapper');
+      var backTop = document.getElementById('backTop');
+      window.addEventListener('scroll', function() {
+        var y = window.scrollY;
+        if (y > 10) { stickyWrapper.classList.add('scrolled'); } else { stickyWrapper.classList.remove('scrolled'); }
+        if (y > 400) { backTop.classList.add('visible'); } else { backTop.classList.remove('visible'); }
+      });
+      backTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 移动端抽屉
+      var hamburger = document.getElementById('hamburgerBtn');
+      var drawer = document.getElementById('drawerMenu');
+      var overlay = document.getElementById('drawerOverlay');
+      var drawerClose = document.getElementById('drawerClose');
+
+      function openDrawer() {
+        drawer.classList.add('open');
+        overlay.classList.add('active');
+        hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeDrawer() {
+        drawer.classList.remove('open');
+        overlay.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+      hamburger.addEventListener('click', function() {
+        if (drawer.classList.contains('open')) { closeDrawer(); } else { openDrawer(); }
+      });
+      drawerClose.addEventListener('click', closeDrawer);
+      overlay.addEventListener('click', closeDrawer);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && drawer.classList.contains('open')) { closeDrawer(); }
+      });
+      // 点击抽屉内导航后关闭
+      drawer.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() { closeDrawer(); });
+      });
+
+      // 左侧频道高亮
+      var channelLinks = document.querySelectorAll('.channel-list a');
+      var sections = [];
+      channelLinks.forEach(function(link) {
+        var href = link.getAttribute('href');
+        if (href && href.indexOf('#') === 0) {
+          var target = document.querySelector(href);
+          if (target) { sections.push({ id: href, el: target, link: link }); }
+        }
+      });
+      window.addEventListener('scroll', function() {
+        var scrollPos = window.scrollY + 140;
+        var current = null;
+        sections.forEach(function(item) {
+          if (item.el.offsetTop <= scrollPos) { current = item; }
+        });
+        channelLinks.forEach(function(l) { l.classList.remove('active'); });
+        if (current) { current.link.classList.add('active'); }
+      });
+
+      // 搜索筛选
+      var searchInput = document.getElementById('searchInput');
+      var searchBtn = document.getElementById('searchBtn');
+      var noResult = document.getElementById('noResult');
+      var cards = document.querySelectorAll('.card[data-search]');
+      var updateItems = document.querySelectorAll('.update-item[data-search]');
+
+      function doSearch() {
+        var q = searchInput.value.trim().toLowerCase();
+        var matchCount = 0;
+        cards.forEach(function(card) {
+          var text = (card.getAttribute('data-search') + ' ' + card.textContent).toLowerCase();
+          if (!q || text.indexOf(q) !== -1) {
+            card.classList.remove('search-hidden');
+            matchCount++;
+          } else {
+            card.classList.add('search-hidden');
+          }
+        });
+        updateItems.forEach(function(item) {
+          var text = (item.getAttribute('data-search') + ' ' + item.textContent).toLowerCase();
+          if (!q || text.indexOf(q) !== -1) {
+            item.classList.remove('search-hidden');
+            matchCount++;
+          } else {
+            item.classList.add('search-hidden');
+          }
+        });
+        if (matchCount === 0 && q) {
+          noResult.classList.add('show');
+        } else {
+          noResult.classList.remove('show');
+        }
+      }
+      searchBtn.addEventListener('click', doSearch);
+      searchInput.addEventListener('keyup', function(e) {
+        if (e.key === 'Enter') { doSearch(); }
+        if (searchInput.value.trim() === '') { doSearch(); }
+      });
+    })();
+  </script>
+
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "黑料极品",
+    "description": "聚焦网络争议事件、翻车现场与话题人物的内容聚合页面，整理精选爆料、最新动态、深度解析与用户评论。",
+    "inLanguage": "zh-CN"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "东北雨姐红薯粉条里检出木薯淀粉，意味着什么？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "红薯粉条按国家标准应使用红薯淀粉为原料，检出木薯源性成分说明原料中掺入了低价木薯淀粉，构成虚假标注。本溪县市场监管局10月12日通报采用的正是这一认定路径。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "直播间买的月饼能退一赔三吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "三只羊网络在9月18日致歉声明中承诺对香港美诚月饼订单退一赔三，消费者需保留订单截图与支付记录，通过原购买平台客服申请，未执行可向合肥高新区市监局12315投诉。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "射频美容仪宣称胶原再生算违规吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "射频美容仪若按医疗器械注册，宣传用语不得超出注册证载明的适用范围，刺激胶原蛋白再生在多数注册证中属于超出范围的功效宣称。合肥市监局10月28日回复已责令企业提供注册证及说明书。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "打假博主自己的检测报告可信吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "看检测机构是否具备CMA或CNAS资质、报告编号能否在机构官网查询、样品来源是否有购买记录佐证。王海团队11月1日公布的蜂蜜检测由青岛谱尼测试出具，报告编号可查。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "人设崩塌类账号被扒出搭景，平台会封号吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "通常不会直接封号。平台对剧情类账号的处置以要求标注演绎为主，抖音2026年10月更新的社区规则写明未标注场景演绎的虚构剧情内容会被限流，补充标注后一般不影响正常发布。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "反转事件怎么判断哪一方的说法更可信？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "比对时间线是主要方法，先列出双方各自公开证据的时间点，再看每次新证据出现后哪一方的说法发生了实质性修改，说法变动次数少且信息稳定的一方可信度更高。"
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+                                                                                         </html>
