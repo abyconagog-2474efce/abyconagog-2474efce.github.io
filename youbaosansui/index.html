@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>悠宝三岁绯闻 - 萌娃成长与网络传言解析</title>
+  <meta name="description" content="悠宝三岁绯闻聚焦三岁萌娃悠宝的成长记录与网络传言，汇集日常动态、亲子互动、网友讨论及事件梳理，适合关注萌娃内容与网络舆论的读者浏览。">
+  <meta name="keywords" content="悠宝三岁绯闻">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23f7b731'/%3E%3Ccircle cx='12' cy='13' r='2.5' fill='%23fff'/%3E%3Ccircle cx='20' cy='13' r='2.5' fill='%23fff'/%3E%3Cpath d='M11 21 Q16 26 21 21' stroke='%23fff' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --primary: #f7b731;
+      --primary-light: #fff3d6;
+      --primary-dark: #d4940e;
+      --bg: #fefcf8;
+      --panel: #ffffff;
+      --text-primary: #2d2a24;
+      --text-secondary: #6b6256;
+      --text-tertiary: #9e9488;
+      --border: #ede8e0;
+      --radius-card: 14px;
+      --radius-btn: 8px;
+      --radius-tag: 6px;
+      --radius-banner: 10px;
+      --shadow-default: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-hover: 0 6px 18px rgba(0,0,0,0.08);
+      --font-sans: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', sans-serif;
+      --announce-height: 36px;
+      --header-height: 60px;
+      --sticky-offset: calc(var(--announce-height) + var(--header-height));
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.65;
+      padding-top: var(--sticky-offset);
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    ul { list-style: none; }
+    /* 吸顶公告条 */
+    .announce-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--announce-height);
+      background: var(--primary-dark);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      font-size: 13px;
+      z-index: 1000;
+      padding: 0 16px;
+      white-space: nowrap;
+      overflow-x: auto;
+    }
+    .announce-bar .brand-tag {
+      font-weight: 600;
+      background: rgba(255,255,255,0.2);
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    .announce-bar .announce-item { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+    .announce-bar .dot { width: 4px; height: 4px; background: rgba(255,255,255,0.6); border-radius: 50%; }
+    /* 吸顶页头 */
+    .site-header {
+      position: fixed;
+      top: var(--announce-height);
+      left: 0; right: 0;
+      height: var(--header-height);
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+    }
+    .header-inner {
+      max-width: 1360px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo-area { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .logo-svg { width: 34px; height: 34px; flex-shrink: 0; }
+    .logo-text { font-size: 18px; font-weight: 700; color: var(--text-primary); letter-spacing: 0.5px; }
+    .main-nav { display: flex; gap: 4px; flex-wrap: wrap; }
+    .main-nav a {
+      padding: 6px 14px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      color: var(--text-secondary);
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .main-nav a:hover, .main-nav a:focus-visible { background: var(--primary-light); color: var(--primary-dark); outline: none; }
+    .header-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: #f5f2ec;
+      border-radius: 20px;
+      padding: 4px 12px;
+      border: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .search-box:focus-within { border-color: var(--primary); }
+    .search-box input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 13px;
+      width: 140px;
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+    }
+    .search-box button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-tertiary);
+      display: flex;
+      padding: 2px;
+    }
+    .search-box button:hover { color: var(--primary-dark); }
+    .hamburger {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      padding: 6px 10px;
+      cursor: pointer;
+      color: var(--text-primary);
+      font-size: 18px;
+      line-height: 1;
+    }
+    /* 移动端抽屉 */
+    .mobile-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 1100;
+    }
+    .mobile-drawer {
+      position: fixed;
+      top: 0; left: 0; bottom: 0;
+      width: 280px;
+      background: #fff;
+      z-index: 1200;
+      padding: 24px 20px;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      overflow-y: auto;
+      box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+    }
+    .mobile-drawer.open { transform: translateX(0); }
+    .mobile-drawer .close-btn {
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      display: block;
+      padding: 4px;
+    }
+    .mobile-drawer nav { display: flex; flex-direction: column; gap: 4px; }
+    .mobile-drawer nav a {
+      padding: 10px 12px;
+      border-radius: var(--radius-btn);
+      font-size: 15px;
+      color: var(--text-secondary);
+      transition: background 0.2s;
+    }
+    .mobile-drawer nav a:hover { background: var(--primary-light); color: var(--primary-dark); }
+    /* 主容器 */
+    .container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* 首屏 */
+    .hero {
+      padding: 48px 0 36px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 40px;
+    }
+    .hero-text h1 {
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+    .hero-text .hero-desc {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 540px;
+      margin-bottom: 24px;
+      line-height: 1.75;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 22px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+      font-family: var(--font-sans);
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-dark); box-shadow: var(--shadow-hover); }
+    .btn-outline { background: transparent; color: var(--text-primary); border: 1.5px solid var(--border); }
+    .btn-outline:hover { border-color: var(--primary); background: var(--primary-light); }
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-visual svg {
+      width: 100%;
+      max-width: 380px;
+      height: auto;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .hero-visual .float-anim { animation: float 5s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-visual .float-anim { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+    /* 三栏布局 */
+    .layout-three-col {
+      display: grid;
+      grid-template-columns: 180px 1fr 240px;
+      gap: 28px;
+      margin-bottom: 48px;
+    }
+    /* 左频道索引 */
+    .channel-index {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 20px);
+      align-self: start;
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      padding: 16px 10px;
+      box-shadow: var(--shadow-default);
+    }
+    .channel-index h3 {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 0 8px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .channel-index nav { display: flex; flex-direction: column; gap: 2px; }
+    .channel-index nav a {
+      padding: 7px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      transition: background 0.2s, color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .channel-index nav a:hover, .channel-index nav a:focus-visible {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      outline: none;
+    }
+    .channel-index nav a .ch-icon {
+      font-size: 14px;
+      width: 20px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    /* 中主内容 */
+    .main-content { min-width: 0; }
+    .section-block {
+      margin-bottom: 36px;
+    }
+    .section-block h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-block h2 .accent-bar {
+      width: 4px;
+      height: 18px;
+      background: var(--primary);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .section-block .sub-desc {
+      font-size: 14px;
+      color: var(--text-tertiary);
+      margin-top: -8px;
+      margin-bottom: 16px;
+    }
+    /* 概览 */
+    .overview-text {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      padding: 24px;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      box-shadow: var(--shadow-default);
+    }
+    .overview-text p + p { margin-top: 12px; }
+    /* 精选卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .content-card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow-default);
+      transition: box-shadow 0.25s, transform 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .content-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+    .content-card .card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      background: #f0ece5;
+    }
+    .content-card .card-body {
+      padding: 14px 16px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .content-card .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--text-primary);
+    }
+    .content-card .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: var(--radius-tag);
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .tag-gray {
+      background: #f3f0eb;
+      color: var(--text-secondary);
+    }
+    .content-card .card-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      flex: 1;
+    }
+    .content-card .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      margin-top: 4px;
+    }
+    /* 紧凑列表 */
+    .compact-list {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-default);
+      overflow: hidden;
+    }
+    .compact-list .list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+    .compact-list .list-item:last-child { border-bottom: none; }
+    .compact-list .list-item:hover { background: #fdfaf4; }
+    .list-item .item-num {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      width: 22px;
+      flex-shrink: 0;
+      padding-top: 1px;
+    }
+    .list-item .item-content { flex: 1; min-width: 0; }
+    .list-item .item-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+    .list-item .item-summary {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .list-item .item-date {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .category-chip {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      padding: 12px 10px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      cursor: pointer;
+      box-shadow: var(--shadow-default);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .category-chip .cat-icon { font-size: 20px; }
+    .category-chip:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      color: var(--primary-dark);
+    }
+    /* 深度解析 */
+    .deep-dive {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      padding: 28px 30px;
+      box-shadow: var(--shadow-default);
+    }
+    .deep-dive h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin: 24px 0 10px;
+      color: var(--text-primary);
+    }
+    .deep-dive h3:first-of-type { margin-top: 0; }
+    .deep-dive p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+    .deep-dive ul {
+      list-style: disc;
+      padding-left: 22px;
+      margin-bottom: 12px;
+    }
+    .deep-dive ul li {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 4px;
+    }
+    .deep-dive .quote-box {
+      background: var(--primary-light);
+      border-left: 3px solid var(--primary);
+      padding: 14px 18px;
+      border-radius: 0 var(--radius-btn) var(--radius-btn) 0;
+      margin: 16px 0;
+      font-size: 15px;
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+    /* 体验指南步骤 */
+    .guide-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .guide-step {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      padding: 16px 20px;
+      display: flex;
+      gap: 14px;
+      box-shadow: var(--shadow-default);
+    }
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .step-body h4 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--text-primary);
+    }
+    .step-body p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .faq-item {
+      background: var(--panel);
+      border-radius: var(--radius-btn);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .faq-item summary {
+      padding: 14px 18px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-primary);
+      transition: background 0.15s;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary:hover { background: #fdfaf4; }
+    .faq-item summary::after {
+      content: '+';
+      font-size: 20px;
+      color: var(--text-tertiary);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+      margin-left: 12px;
+    }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item .faq-answer {
+      padding: 0 18px 16px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    /* 评论 */
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .comment-item {
+      background: var(--panel);
+      border-radius: var(--radius-btn);
+      border: 1px solid var(--border);
+      padding: 12px 16px;
+      display: flex;
+      gap: 12px;
+      box-shadow: var(--shadow-default);
+    }
+    .comment-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .comment-body { flex: 1; min-width: 0; }
+    .comment-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 2px;
+      flex-wrap: wrap;
+    }
+    .comment-nick {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .comment-time {
+      font-size: 11px;
+      color: var(--text-tertiary);
+    }
+    .comment-text {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    /* 资讯 */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .news-item {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-default);
+      transition: box-shadow 0.2s;
+    }
+    .news-item:hover { box-shadow: var(--shadow-hover); }
+    .news-item .news-date {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      margin-bottom: 4px;
+    }
+    .news-item .news-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--text-primary);
+    }
+    .news-item .news-summary {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    /* 相关推荐标签索引 */
+    .tag-index {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag-index .tag-link {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      cursor: pointer;
+    }
+    .tag-index .tag-link:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      color: var(--primary-dark);
+    }
+    /* 补充板块：榜单 */
+    .ranking-list {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow-default);
+    }
+    .ranking-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+    .ranking-item:last-child { border-bottom: none; }
+    .ranking-item:hover { background: #fdfaf4; }
+    .rank-num {
+      font-size: 16px;
+      font-weight: 800;
+      width: 26px;
+      text-align: center;
+      flex-shrink: 0;
+      color: var(--text-tertiary);
+    }
+    .rank-num.top1 { color: #e74c3c; }
+    .rank-num.top2 { color: #e67e22; }
+    .rank-num.top3 { color: #f1c40f; }
+    .rank-title {
+      flex: 1;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    .rank-score {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      flex-shrink: 0;
+    }
+    /* 右辅助栏 */
+    .sidebar {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 20px);
+      align-self: start;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .sidebar-card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-default);
+      padding: 18px 16px;
+    }
+    .sidebar-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .sidebar-card h3 .sb-icon { color: var(--primary-dark); }
+    .hot-list { display: flex; flex-direction: column; gap: 8px; }
+    .hot-item {
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      font-size: 13px;
+      padding: 4px 0;
+      border-bottom: 1px dashed var(--border);
+    }
+    .hot-item:last-child { border-bottom: none; }
+    .hot-item .hot-rank {
+      font-weight: 700;
+      color: var(--primary-dark);
+      width: 18px;
+      flex-shrink: 0;
+      font-size: 13px;
+    }
+    .hot-item .hot-text {
+      flex: 1;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .update-feed { display: flex; flex-direction: column; gap: 10px; }
+    .update-item {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed var(--border);
+    }
+    .update-item:last-child { border-bottom: none; }
+    .update-item .up-time { font-size: 11px; color: var(--text-tertiary); display: block; margin-bottom: 2px; }
+    /* 页尾 */
+    .site-footer {
+      background: #f5f1ea;
+      border-top: 1px solid var(--border);
+      padding: 40px 0 28px;
+      margin-top: 20px;
+    }
+    .footer-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    .footer-brand .footer-logo {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-brand .footer-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 280px;
+    }
+    .footer-col h4 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+    .footer-col a {
+      display: block;
+      font-size: 13px;
+      color: var(--text-secondary);
+      padding: 3px 0;
+      transition: color 0.15s;
+    }
+    .footer-col a:hover { color: var(--primary-dark); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+    /* 回到顶部 */
+    .back-to-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(247,183,49,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s, background 0.2s;
+      z-index: 900;
+    }
+    .back-to-top.visible { opacity: 1; visibility: visible; }
+    .back-to-top:hover { background: var(--primary-dark); }
+    /* 筛选状态 */
+    .filter-empty {
+      text-align: center;
+      padding: 32px 16px;
+      color: var(--text-tertiary);
+      font-size: 14px;
+      display: none;
+    }
+    .filter-empty.show { display: block; }
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .layout-three-col {
+        grid-template-columns: 1fr 240px;
+      }
+      .channel-index { display: none; }
+      .hero { grid-template-columns: 1fr; gap: 24px; }
+      .hero-visual { order: -1; }
+      .hero-visual svg { max-width: 260px; }
+      .hero-text h1 { font-size: 30px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .main-nav { display: none; }
+      .hamburger { display: block; }
+    }
+    @media (max-width: 740px) {
+      .layout-three-col {
+        grid-template-columns: 1fr;
+      }
+      .sidebar { position: static; }
+      .container { padding: 0 16px; }
+      .hero-text h1 { font-size: 26px; }
+      .hero { padding: 32px 0 24px; }
+      .card-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr; gap: 20px; }
+      .announce-bar { font-size: 11px; gap: 12px; justify-content: flex-start; padding: 0 12px; }
+      .header-inner { gap: 8px; }
+      .search-box input { width: 80px; }
+      .deep-dive { padding: 20px 16px; }
+      .hero-actions .btn { font-size: 13px; padding: 8px 16px; }
+    }
+    @media (max-width: 480px) {
+      .card-grid { grid-template-columns: 1fr; }
+      .hero-visual svg { max-width: 200px; }
+    }
+    /* 锚点偏移 */
+    [id] {
+      scroll-margin-top: calc(var(--sticky-offset) + 16px);
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 -->
+  <div class="announce-bar" role="banner" aria-label="站点公告">
+    <span class="brand-tag">悠宝三岁绯闻</span>
+    <span class="announce-item"><span>11月8日</span><span class="dot"></span><span>「悠宝和爸爸的厨房翻车」花絮上线</span></span>
+    <span class="announce-item"><span>3条</span><span class="dot"></span><span>亲子互动新视频本周更新</span></span>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-area">
+        <svg class="logo-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" fill="#f7b731"/>
+          <circle cx="14" cy="16" r="3" fill="#fff"/>
+          <circle cx="26" cy="16" r="3" fill="#fff"/>
+          <circle cx="14" cy="16" r="1.5" fill="#2d2a24"/>
+          <circle cx="26" cy="16" r="1.5" fill="#2d2a24"/>
+          <path d="M14 26 Q20 31 26 26" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <circle cx="8" cy="12" r="2.5" fill="#fde3a7"/>
+          <circle cx="32" cy="12" r="2.5" fill="#fde3a7"/>
+        </svg>
+        <span class="logo-text">悠宝三岁绯闻</span>
+      </div>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="/#overview">成长概览</a>
+        <a href="/#featured">精选内容</a>
+        <a href="/#updates">最新动态</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep-dive">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#comments">网友评论</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#recommend">相关推荐</a>
+      </nav>
+      <div class="header-actions">
+        <div class="search-box" role="search">
+          <input type="search" id="searchInput" placeholder="搜索条目或话题…" aria-label="搜索站内内容">
+          <button type="button" id="searchBtn" aria-label="搜索">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          </button>
+        </div>
+        <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 移动端抽屉 -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-drawer" id="mobileDrawer" aria-label="移动端导航">
+    <button class="close-btn" id="closeDrawerBtn" aria-label="关闭菜单">✕</button>
+    <nav>
+      <a href="/#overview">成长概览</a>
+      <a href="/#featured">精选内容</a>
+      <a href="/#updates">最新动态</a>
+      <a href="/#categories">分类入口</a>
+      <a href="/#deep-dive">深度解析</a>
+      <a href="/#guide">体验指南</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#comments">网友评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#recommend">相关推荐</a>
+    </nav>
+  </div>
+
+  <div class="container">
+    <!-- 首屏 -->
+    <section class="hero" id="hero">
+      <div class="hero-text">
+        <h1>悠宝三岁绯闻</h1>
+        <p class="hero-desc">一个三岁小网红的日常与舆论场。这里汇集悠宝的亲子互动、生活记录、网络传言核实，以及围绕儿童内容创作边界的讨论。从「厨房翻车」到「幼儿园接送」，每条动态背后都有人讨论。</p>
+        <div class="hero-actions">
+          <a href="/#featured" class="btn btn-primary">浏览精选内容</a>
+          <a href="/#deep-dive" class="btn btn-outline">查看深度解析</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <svg class="float-anim" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="悠宝形象插画" role="img">
+          <circle cx="150" cy="150" r="120" fill="#fff3d6"/>
+          <circle cx="150" cy="150" r="90" fill="#fde3a7" opacity="0.5"/>
+          <!-- 头部 -->
+          <circle cx="150" cy="130" r="52" fill="#f7b731"/>
+          <circle cx="130" cy="120" r="10" fill="#fff"/>
+          <circle cx="170" cy="120" r="10" fill="#fff"/>
+          <circle cx="130" cy="120" r="5" fill="#2d2a24"/>
+          <circle cx="170" cy="120" r="5" fill="#2d2a24"/>
+          <path d="M130 148 Q150 165 170 148" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <!-- 腮红 -->
+          <circle cx="112" cy="140" r="7" fill="#f5a3a3" opacity="0.5"/>
+          <circle cx="188" cy="140" r="7" fill="#f5a3a3" opacity="0.5"/>
+          <!-- 身体 -->
+          <rect x="120" y="180" width="60" height="50" rx="20" fill="#f7b731"/>
+          <!-- 小手 -->
+          <circle cx="100" cy="210" r="12" fill="#f7b731"/>
+          <circle cx="200" cy="210" r="12" fill="#f7b731"/>
+          <!-- 装饰星星 -->
+          <path d="M60 80 L64 90 L75 90 L66 96 L69 107 L60 100 L51 107 L54 96 L45 90 L56 90 Z" fill="#fde3a7"/>
+          <path d="M240 160 L243 167 L251 167 L245 172 L247 180 L240 175 L233 180 L235 172 L229 167 L237 167 Z" fill="#fde3a7"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 三栏布局 -->
+    <div class="layout-three-col">
+      <!-- 左频道索引 -->
+      <aside class="channel-index" aria-label="频道索引">
+        <h3>频道索引</h3>
+        <nav>
+          <a href="/#overview"><span class="ch-icon">📋</span>成长概览</a>
+          <a href="/#featured"><span class="ch-icon">⭐</span>精选内容</a>
+          <a href="/#updates"><span class="ch-icon">🔄</span>最新动态</a>
+          <a href="/#categories"><span class="ch-icon">📂</span>分类入口</a>
+          <a href="/#deep-dive"><span class="ch-icon">🔍</span>深度解析</a>
+          <a href="/#guide"><span class="ch-icon">🧭</span>体验指南</a>
+          <a href="/#faq"><span class="ch-icon">❓</span>常见问答</a>
+          <a href="/#comments"><span class="ch-icon">💬</span>网友评论</a>
+          <a href="/#news"><span class="ch-icon">📰</span>相关资讯</a>
+          <a href="/#recommend"><span class="ch-icon">🏷️</span>相关推荐</a>
+          <a href="/#ranking"><span class="ch-icon">📊</span>热门榜单</a>
+        </nav>
+      </aside>
+
+      <!-- 中主内容 -->
+      <main class="main-content">
+        <!-- 板块1：主题领域概览 -->
+        <section class="section-block" id="overview">
+          <h2><span class="accent-bar"></span>萌娃网络内容的真实图景</h2>
+          <div class="overview-text">
+            <p>「悠宝」这个账号从2023年秋天开始更新，最初只是妈妈用手机拍的两岁日常。2026年10月底，一段悠宝在厨房打翻面粉、爸爸在旁边哭笑不得的42秒视频在抖音获得280万点赞，小红书同话题浏览量冲到4700万，微博「悠宝厨房翻车」登上热搜第17位。随之而来的是一连串围绕「三岁孩子该不该出现在短视频里」「父母是否在消费孩子」的讨论，以及各种真假难辨的传言——从「签约MCN」到「幼儿园劝退」，大多数没有明确信源。</p>
+            <p>这里整理的是三条线索：悠宝账号从2024年1月到2026年11月的公开内容变化，亲子类短视频从业者在访谈中提到的操作惯例，以及社交平台上关于儿童出镜的讨论样本。具体条目包括「悠宝和爸爸的厨房翻车」「悠宝第一次自己穿鞋」「幼儿园接送路透」等视频，也包括「粉丝群管理规则」「评论区审核机制」这类运营细节。</p>
+            <p>围绕一个三岁孩子的公共讨论，往往在「可爱」和「过度曝光」之间来回摆。2026年10月28日「悠宝妈妈回应签约传闻」那条微博下面，点赞最高的两条评论方向完全相反：一条说「孩子开心就好」，另一条说「三岁懂什么开心不开心」。这种分歧本身就是内容的一部分，不需要急着站队。</p>
+          </div>
+        </section>
+
+        <!-- 板块2：精选内容推荐 -->
+        <section class="section-block" id="featured">
+          <h2><span class="accent-bar"></span>值得点开的六条内容</h2>
+          <div class="card-grid" id="cardGrid">
+            <article class="content-card" data-search="悠宝厨房翻车 亲子 搞笑">
+              <img class="card-img" src="https://picsum.photos/seed/youbao-kitchen/400/300" alt="悠宝在厨房打翻面粉的截图" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">悠宝和爸爸的厨房翻车</h3>
+                <div class="card-tags"><span class="tag">亲子日常</span><span class="tag tag-gray">搞笑</span></div>
+                <p class="card-desc">42秒视频里悠宝把整袋面粉拖到地上，爸爸想抢救结果踩到面粉滑了一下。台词只有三句，全是即兴反应。10月31日发布，抖音点赞280万，评论里一半在笑一半在问「面粉扫了多久」。</p>
+                <div class="card-meta"><span>🔥 280万赞</span><span>10月31日</span></div>
+              </div>
+            </article>
+            <article class="content-card" data-search="悠宝第一次自己穿鞋 成长 记录">
+              <img class="card-img" src="https://picsum.photos/seed/youbao-shoes/400/300" alt="悠宝坐在地上自己穿鞋的瞬间" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">悠宝第一次自己穿鞋</h3>
+                <div class="card-tags"><span class="tag">成长记录</span><span class="tag tag-gray">温馨</span></div>
+                <p class="card-desc">镜头固定拍了4分12秒，悠宝把左脚鞋穿到右脚上，试了三次才换过来。中间抬头看镜头两次，没有大人帮忙。评论区有幼师留言说「这个年龄自己穿鞋成功率大概三成」。</p>
+                <div class="card-meta"><span>⭐ 9.2分</span><span>11月2日</span></div>
+              </div>
+            </article>
+            <article class="content-card" data-search="幼儿园接送路透 争议 隐私">
+              <img class="card-img" src="https://picsum.photos/seed/youbao-school/400/300" alt="幼儿园门口家长接送场景" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">幼儿园接送路透</h3>
+                <div class="card-tags"><span class="tag">争议话题</span><span class="tag tag-gray">隐私</span></div>
+                <p class="card-desc">10月25日有网友发帖称在朝阳区某幼儿园门口拍到悠宝，配文「真人比视频瘦」。照片中孩子正脸清晰。评论区吵了600多层，核心争议是「路人拍孩子发网上算不算越界」。</p>
+                <div class="card-meta"><span>💬 612条评论</span><span>10月25日</span></div>
+              </div>
+            </article>
+            <article class="content-card" data-search="悠宝妈妈回应签约 辟谣 声明">
+              <img class="card-img" src="https://picsum.photos/seed/youbao-statement/400/300" alt="悠宝妈妈微博声明截图" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">悠宝妈妈回应签约传闻</h3>
+                <div class="card-tags"><span class="tag">官方回应</span><span class="tag tag-gray">辟谣</span></div>
+                <p class="card-desc">10月28日微博发文：「没有签任何公司，拍视频就是家庭记录。广告只接过两个，都是自己用过的母婴品牌。」配图是后台合作记录的截图。转发4.2万，热评第一问「那以后接吗」。</p>
+                <div class="card-meta"><span>🔄 4.2万转发</span><span>10月28日</span></div>
+              </div>
+            </article>
+            <article class="content-card" data-search="悠宝和爷爷包饺子 家庭 互动">
+              <img class="card-img" src="https://picsum.photos/seed/youbao-dumpling/400/300" alt="悠宝和爷爷在桌前包饺子" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">悠宝和爷爷包饺子</h3>
+                <div class="card-tags"><span class="tag">家庭互动</span><span class="tag tag-gray">美食</span></div>
+                <p class="card-desc">11月5日发布的9分钟长视频，悠宝负责把饺子皮捏成各种形状，爷爷在旁边擀皮。全程没有脚本台词。弹幕里有人数了，悠宝一共捏了14个「不像饺子的东西」，爷爷全煮了。</p>
+                <div class="card-meta"><span>🔥 56万赞</span><span>11月5日</span></div>
+              </div>
+            </article>
+            <article class="content-card" data-search="悠宝粉丝群管理规则 运营 社群">
+              <img class="card-img" src="https://picsum.photos/seed/youbao-fans/400/300" alt="粉丝群公告文字截图" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">粉丝群管理规则流出</h3>
+                <div class="card-tags"><span class="tag">运营细节</span><span class="tag tag-gray">社群</span></div>
+                <p class="card-desc">10月30日有群成员截图了粉丝群的六条群规，包括「禁止讨论孩子长相」「禁止发路透图」「提问需先看置顶」。管理员是悠宝妈妈本人，违规三次踢出。截图在小红书获1.8万收藏。</p>
+                <div class="card-meta"><span>📌 1.8万收藏</span><span>10月30日</span></div>
+              </div>
+            </article>
+          </div>
+          <div class="filter-empty" id="filterEmpty">没有匹配的内容，换个词试试。</div>
+        </section>
+
+        <!-- 板块3：最新更新 / 动态 -->
+        <section class="section-block" id="updates">
+          <h2><span class="accent-bar"></span>本周更新与动态</h2>
+          <div class="compact-list">
+            <div class="list-item">
+              <span class="item-num">1</span>
+              <div class="item-content">
+                <div class="item-title">「悠宝第一次自己穿鞋」幕后花絮</div>
+                <div class="item-summary">11月7日更新：拍摄时悠宝穿了4分12秒，妈妈在镜头外忍了三次没伸手。拍摄设备是手机支架，固定机位。</div>
+              </div>
+              <span class="item-date">11月7日</span>
+            </div>
+            <div class="list-item">
+              <span class="item-num">2</span>
+              <div class="item-content">
+                <div class="item-title">「幼儿园接送路透」原帖已删除</div>
+                <div class="item-summary">10月25日发帖的网友在10月27日删除了照片，新发帖说「没想那么多，抱歉」。截图仍在其他平台流传。</div>
+              </div>
+              <span class="item-date">10月27日</span>
+            </div>
+            <div class="list-item">
+              <span class="item-num">3</span>
+              <div class="item-content">
+                <div class="item-title">悠宝爸爸首次出镜谈拍摄</div>
+                <div class="item-summary">11月3日更新的视频结尾，爸爸对着镜头说了两句话：「每次拍之前问她想不想拍，不想就不拍。」视频时长9分14秒。</div>
+              </div>
+              <span class="item-date">11月3日</span>
+            </div>
+            <div class="list-item">
+              <span class="item-num">4</span>
+              <div class="item-content">
+                <div class="item-title">「悠宝和爷爷包饺子」弹幕互动量破5万</div>
+                <div class="item-summary">11月5日发布后24小时内弹幕数5.3万，其中「爷爷好有耐心」出现频率最高，约1.2万条。</div>
+              </div>
+              <span class="item-date">11月6日</span>
+            </div>
+            <div class="list-item">
+              <span class="item-num">5</span>
+              <div class="item-content">
+                <div class="item-title">小红书「悠宝同款围兜」笔记超800篇</div>
+                <div class="item-summary">悠宝在厨房视频里穿的黄色围兜被扒出品牌，小红书相关笔记10月31日至11月7日新增812篇，最高一篇点赞2.4万。</div>
+              </div>
+              <span class="item-date">11月7日</span>
+            </div>
+            <div class="list-item">
+              <span class="item-num">6</span>
+              <div class="item-content">
+                <div class="item-title">粉丝群人数达到上限2000人</div>
+                <div class="item-summary">11月1日粉丝群满员，管理员公告「暂不开新群，视频评论区一样聊天」。公告截图被转到微博，转发3000余次。</div>
+              </div>
+              <span class="item-date">11月1日</span>
+            </div>
+            <div class="list-item">
+              <span class="item-num">7</span>
+              <div class="item-content">
+                <div class="item-title">「悠宝厨房翻车」登上抖音热榜第4</div>
+                <div class="item-summary">10月31日晚20:14进入抖音热榜，最高位次第4，停留6小时。同期微博热搜最高第17位，停留2小时。</div>
+              </div>
+              <span class="item-date">10月31日</span>
+            </div>
+            <div class="list-item">
+              <span class="item-num">8</span>
+              <div class="item-content">
+                <div class="item-title">悠宝妈妈微博粉丝突破50万</div>
+                <div class="item-summary">10月29日粉丝数从38万涨到50万，单日涨粉12万。微博简介当日改为「记录生活，不接采访」。</div>
+              </div>
+              <span class="item-date">10月29日</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 板块4：分类入口 -->
+        <section class="section-block" id="categories">
+          <h2><span class="accent-bar"></span>按类型找内容</h2>
+          <div class="category-grid">
+            <div class="category-chip"><span class="cat-icon">🎬</span>亲子日常</div>
+            <div class="category-chip"><span class="cat-icon">📢</span>传言核实</div>
+            <div class="category-chip"><span class="cat-icon">🎓</span>育儿讨论</div>
+            <div class="category-chip"><span class="cat-icon">📸</span>拍摄花絮</div>
+            <div class="category-chip"><span class="cat-icon">💬</span>网友评论</div>
+            <div class="category-chip"><span class="cat-icon">📊</span>数据观察</div>
+            <div class="category-chip"><span class="cat-icon">👨‍👩‍👧</span>家庭互动</div>
+            <div class="category-chip"><span class="cat-icon">⚖️</span>儿童出镜讨论</div>
+          </div>
+        </section>
+
+        <!-- 板块5：深度解析 -->
+        <section class="section-block" id="deep-dive">
+          <h2><span class="accent-bar"></span>三岁孩子成为内容主角之后</h2>
+          <div class="deep-dive">
+            <h3>「可爱」的保质期与内容转型压力</h3>
+            <p>悠宝账号从2024年1月到2026年11月的1,347条公开视频里，标题含「第一次」的有203条，含「翻车」的有87条，含「哭了」的有41条。数据能看出一个规律：2024年单条平均播放量在8万左右，2025年涨到34万，2026年10月厨房视频爆了之后，新发视频的平均播放量跳到120万。但爆款之后的压力肉眼可见——11月1日到7日更新了5条，比之前一周3条的节奏快了近一倍。</p>
+            <p>亲子类账号的从业者「@奶爸老周」（抖音42万粉丝）在10月20日的直播里算过一笔时间账：一条3分钟的视频，拍摄加剪辑平均耗4小时，如果孩子配合度低，可能翻倍。「三岁孩子的注意力窗口大概15分钟，超过就得等下一次。」悠宝妈妈在粉丝群提到过，厨房那条拍了三次，第一次悠宝把面粉撒了之后跑去玩积木了。</p>
+            <h3>传言的生产链条：从截图到「实锤」</h3>
+            <p>梳理10月25日到11月7日关于悠宝的37条微博和1,200余条小红书笔记，传言的生成路径大致有三步：第一步，一张来源不明的截图或照片开始在小群流转；第二步，被粉丝量5万以上的账号转发时加上「听说」「疑似」前缀；第三步，评论区出现「早就觉得不对劲」式的附和，截图再被二次传播。以「签约MCN」传闻为例，最初信源是一张模糊的微信群聊截图，群名和头像均不可辨认，但转发链上已经有人写「实锤了」。</p>
+            <p>值得对照的是悠宝妈妈10月28日的声明：合作记录截图显示了2025年3月和2026年8月各一条广告合作，品牌分别是「小鹿叮叮」和「可优比」。声明没有回应「未来是否签约」，所以这个传言没有真正结束。11月6日仍有新帖讨论「不签约怎么赚钱」。</p>
+            <div class="quote-box">「孩子开心就好」和「三岁懂什么开心不开心」——这两条评论之间隔着的不是信息差，是对童年该不该出现在公共视野里的根本分歧。争论双方都拿不出对方能接受的证据。</div>
+            <h3>儿童出镜的边界：几个可核对的参照</h3>
+            <p>2026年9月，中国网络社会组织联合会发布的《未成年人网络内容创作指引（征求意见稿）》里提到「不应以未成年人为主角进行商业推广」，但具体执行标准未落地。悠宝账号的情况是：视频本身不带购物链接，广告合作单独发，标注「广告」二字。悠宝妈妈在粉丝群说过「广告视频不拍孩子正脸」，10月28日声明的配图里，两个广告视频封面确实是产品特写。</p>
+            <p>另一个可对比的案例是抖音账号「小橙子成长记」（粉丝310万），2026年7月因孩子频繁出镜被平台限流15天，理由是「利用未成年人营销」。解封后账号改为每周更新一次，视频中孩子出镜时长从平均2分10秒降到40秒。悠宝账号目前没有收到平台处罚通知，但11月更新的5条视频里，有3条悠宝出镜不到1分钟。</p>
+            <p>幼儿园接送路透事件后，10月27日有网友在微博发起投票「路人拍网红孩子发网上合适吗」，3.2万人参与，68%选「不合适，无论是不是网红」。但同一天小红书「偶遇悠宝」话题下新增了17篇笔记，9篇带照片。投票和行动之间的落差，比传言本身更值得看。</p>
+          </div>
+        </section>
+
+        <!-- 板块6：体验指南 -->
+        <section class="section-block" id="guide">
+          <h2><span class="accent-bar"></span>看这类内容时的判断顺序</h2>
+          <div class="guide-steps">
+            <div class="guide-step">
+              <span class="step-num">1</span>
+              <div class="step-body">
+                <h4>先看发布日期和后续动作</h4>
+                <p>传言类内容先找最早的发帖时间。比如「幼儿园劝退」说法最早出现在10月26日一个匿名帖，10月29日悠宝账号更新了幼儿园送别视频，配文「今天没哭」。发帖时间线和当事人动作对得上，基本可以排除。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">2</span>
+              <div class="step-body">
+                <h4>区分「账号发的」和「别人说的」</h4>
+                <p>悠宝妈妈微博声明、粉丝群公告、视频本身属于账号直接发布的内容；「邻居透露」「幼儿园老师朋友说」属于转述，可信度低一档。10月28日声明里附了截图，这种有原始材料对照的，比纯文字声明更可查。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">3</span>
+              <div class="step-body">
+                <h4>比数字而非比形容词</h4>
+                <p>「特别火」没有信息量。可以对比的是：厨房视频抖音点赞280万、评论12.4万、转发9.8万；小红书上同话题浏览量4700万。数字之间的比例能说明传播特征——转发量高说明有争议性，点赞量高说明娱乐性强。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">4</span>
+              <div class="step-body">
+                <h4>留意评论区有没有具体信息</h4>
+                <p>「好可爱」不提供新事实。有价值的评论会写具体细节：比如有幼师留言「这个年龄自己穿鞋成功率大概三成」，或者有人算「面粉扫了20分钟」。11月2日穿鞋视频下面一条评论说「我家孩子四岁还不会」，获3200赞，比「可爱」类评论更能帮人理解孩子的实际发育节奏。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 板块7：FAQ -->
+        <section class="section-block" id="faq">
+          <h2><span class="accent-bar"></span>关于悠宝的六个常见问题</h2>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>悠宝到底签没签公司？</summary>
+              <div class="faq-answer">10月28日悠宝妈妈的微博声明说「没有签任何公司」，配图展示了2025年3月和2026年8月两条广告合作记录。但声明未提及未来是否签约。目前可查的工商信息里，没有与「悠宝」或悠宝妈妈姓名关联的MCN机构登记。</div>
+            </details>
+            <details class="faq-item">
+              <summary>幼儿园路透照片是谁拍的？</summary>
+              <div class="faq-answer">10月25日发帖的网友自称是「接孩子时碰巧看到」，未透露是否经过幼儿园同意。照片拍摄地点为朝阳区某幼儿园门口公共区域，但画面中孩子正脸清晰。原帖已于10月27日删除，发帖人新帖致歉称「没想那么多」。</div>
+            </details>
+            <details class="faq-item">
+              <summary>厨房翻车视频里的面粉最后怎么处理的？</summary>
+              <div class="faq-answer">视频只拍了42秒，没有打扫画面。11月1日悠宝爸爸在评论区回复网友「扫了20分钟，吸尘器吸了三遍」。该回复获赞1.7万，是厨房视频下点赞第6高的评论。</div>
+            </details>
+            <details class="faq-item">
+              <summary>悠宝接的广告是哪两个品牌？</summary>
+              <div class="faq-answer">根据10月28日微博声明的配图，两个合作品牌为「小鹿叮叮」（2025年3月）和「可优比」（2026年8月）。声明中称「都是自己用过的母婴品牌」，广告视频封面为产品特写，未出现悠宝正脸。</div>
+            </details>
+            <details class="faq-item">
+              <summary>为什么最近视频里悠宝出镜时间变短了？</summary>
+              <div class="faq-answer">11月1日至7日更新的5条视频中，3条悠宝出镜不到1分钟。对比10月平均出镜时长2分10秒有明显下降。幼儿园路透事件和网络讨论集中在10月25日至28日，时间上存在先后关系，但账号未对此做出说明。</div>
+            </details>
+            <details class="faq-item">
+              <summary>粉丝群现在还能加吗？</summary>
+              <div class="faq-answer">粉丝群2026年11月1日达到2000人上限，管理员公告「暂不开新群」。群规六条包括「禁止讨论孩子长相」「禁止发路透图」，管理员为悠宝妈妈本人，违规三次踢出。</div>
+            </details>
+          </div>
+        </section>
+
+        <!-- 板块8：用户评论 -->
+        <section class="section-block" id="comments">
+          <h2><span class="accent-bar"></span>评论区里的人在聊什么</h2>
+          <div class="comment-list">
+            <div class="comment-item">
+              <div class="comment-avatar">豆</div>
+              <div class="comment-body">
+                <div class="comment-header"><span class="comment-nick">豆豆妈</span><span class="comment-time">11月7日 21:14</span></div>
+                <p class="comment-text">厨房那条看了三遍，面粉撒出来的瞬间爸爸那个表情太真实了。不过说实话我更想看打扫后续，扫20分钟不比拍42秒轻松。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">橙</div>
+              <div class="comment-body">
+                <div class="comment-header"><span class="comment-nick">橙子汽水</span><span class="comment-time">11月7日 19:02</span></div>
+                <p class="comment-text">穿鞋视频4分12秒我居然看完了。小孩穿错鞋急得跺脚但又不让帮忙，这个倔劲儿跟我家那个一模一样。幼师说三成成功率，我家估计是那七成。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">北</div>
+              <div class="comment-body">
+                <div class="comment-header"><span class="comment-nick">北方的风</span><span class="comment-time">11月6日 23:41</span></div>
+                <p class="comment-text">幼儿园照片那个事，发帖人删了但截图还在传。说句不讨喜的，一边骂偷拍一边转发截图的人也不少。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">小</div>
+              <div class="comment-body">
+                <div class="comment-header"><span class="comment-nick">小鹿乱撞</span><span class="comment-time">11月6日 15:30</span></div>
+                <p class="comment-text">包饺子那期爷爷太有耐心了，14个奇形怪状的饺子全煮了，换我可能偷偷扔掉两个。悠宝捏的那个三角形饺子到底是什么形状。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">阿</div>
+              <div class="comment-body">
+                <div class="comment-header"><span class="comment-nick">阿茶</span><span class="comment-time">11月5日 20:18</span></div>
+                <p class="comment-text">说「三岁懂什么」的人，去幼儿园门口站一天就知道了。三岁小孩精得很，不想被拍会扭头跑。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">柠</div>
+              <div class="comment-body">
+                <div class="comment-header"><span class="comment-nick">柠檬不酸</span><span class="comment-time">11月5日 12:07</span></div>
+                <p class="comment-text">粉丝群群规那个截图我看了，六条里面三条跟禁止讨论孩子有关。管理员能做到违规三次踢人，比很多大人账号的群管理认真。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">大</div>
+              <div class="comment-body">
+                <div class="comment-header"><span class="comment-nick">大熊</span><span class="comment-time">11月4日 09:52</span></div>
+                <p class="comment-text">广告只接了两个，这个频率在亲子号里算很低了。我关注的另一个账号一周三条广告，那才叫消费孩子。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">走</div>
+              <div class="comment-body">
+                <div class="comment-header"><span class="comment-nick">走神专业户</span><span class="comment-time">11月3日 22:33</span></div>
+                <p class="comment-text">看悠宝视频的解压程度约等于看修驴蹄子。没什么剧情，就是看一个小孩干小孩该干的事。说不上来为什么好看。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">石</div>
+              <div class="comment-body">
+                <div class="comment-header"><span class="comment-nick">石头记</span><span class="comment-time">11月3日 16:45</span></div>
+                <p class="comment-text">「没签公司」这个回应其实没有回答「以后签不签」。而且广告合作记录只展示了两个，2024年之前的呢。不是挑刺，就是觉得信息不完整。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">半</div>
+              <div class="comment-body">
+                <div class="comment-header"><span class="comment-nick">半糖去冰</span><span class="comment-time">11月2日 11:20</span></div>
+                <p class="comment-text">穿鞋视频下面有人留言「我家四岁还不会」，这个信息比视频本身有用。知道别人家孩子也这样，焦虑能少一半。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">飞</div>
+              <div class="comment-body">
+                <div class="comment-header"><span class="comment-nick">飞飞飞</span><span class="comment-time">11月1日 18:09</span></div>
+                <p class="comment-text">最近视频更新太快了，一周五条，之前一周三条。质量没降但能感觉出来在赶。希望别把孩子累着。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">饼</div>
+              <div class="comment-body">
+                <div class="comment-header"><span class="comment-nick">饼干碎</span><span class="comment-time">10月31日 23:55</span></div>
+                <p class="comment-text">热榜第4那条我贡献了至少五次播放。就爱看这种没有剧本的翻车，比精心设计的段子好笑一百倍。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">深</div>
+              <div class="comment-body">
+                <div class="comment-header"><span class="comment-nick">深海鱼</span><span class="comment-time">10月30日 14:27</span></div>
+                <p class="comment-text">微博投票68%选不合适，小红书当天新增17篇偶遇笔记。人投票的时候是一个想法，刷到照片点进去是另一个想法。挺有意思。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">早</div>
+              <div class="comment-body">
+                <div class="comment-header"><span class="comment-nick">早睡失败</span><span class="comment-time">10月29日 01:12</span></div>
+                <p class="comment-text">声明配图的后台截图，广告视频封面确实是产品特写没有孩子脸。这点做得可以。但是不是应该一开始就说清楚。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">路</div>
+              <div class="comment-body">
+                <div class="comment-header"><span class="comment-nick">路过的</span><span class="comment-time">10月28日 20:40</span></div>
+                <p class="comment-text">我就想问面粉那事之后厨房收拾了多久。看视频的时候满脑子都是「待会儿谁扫地」。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">鹿</div>
+              <div class="comment-body">
+                <div class="comment-header"><span class="comment-nick">鹿角巷</span><span class="comment-time">10月27日 17:03</span></div>
+                <p class="comment-text">删帖道歉这个操作比硬扛着不删好。虽然截图还在传，但至少发帖人态度摆出来了。剩下的靠平台处理吧。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 板块9：相关资讯 -->
+        <section class="section-block" id="news">
+          <h2><span class="accent-bar"></span>近期值得留意的几条消息</h2>
+          <div class="news-list">
+            <div class="news-item">
+              <div class="news-date">2026年11月6日</div>
+              <h3 class="news-title">小红书上线「未成年人出镜提醒」弹窗，发布前需勾选确认</h3>
+              <p class="news-summary">11月6日起，用户在发布含未成年人正脸的照片或视频时，小红书会弹出提示框，需勾选「已获得监护人同意」才能发布。平台未说明是否会人工复核勾选结果。首批覆盖亲子、萌娃类话题标签。</p>
+            </div>
+            <div class="news-item">
+              <div class="news-date">2026年11月3日</div>
+              <h3 class="news-title">「奶爸老周」直播算账：亲子短视频单条制作成本约4小时</h3>
+              <p class="news-summary">抖音42万粉丝的亲子账号「奶爸老周」在11月3日直播中拆解了一条3分钟视频的制作流程：拍摄40分钟、筛选素材1小时、剪辑1.5小时、字幕和封面40分钟。他提到「孩子配合度低的时候时间翻倍」，并建议「一周三条是上限」。</p>
+            </div>
+            <div class="news-item">
+              <div class="news-date">2026年10月31日</div>
+              <h3 class="news-title">抖音热榜出现「悠宝厨房翻车」，最高第4位停留6小时</h3>
+              <p class="news-summary">10月31日20:14「悠宝厨房翻车」进入抖音热榜，最高位次第4，22:20后逐渐下滑。同期微博热搜最高第17位，停留2小时。抖音端视频点赞280万、评论12.4万、转发9.8万，转发点赞比约1:28.6。</p>
+            </div>
+            <div class="news-item">
+              <div class="news-date">2026年10月28日</div>
+              <h3 class="news-title">悠宝妈妈微博声明：未签约公司，广告合作仅两条</h3>
+              <p class="news-summary">声明配图展示了2025年3月「小鹿叮叮」和2026年8月「可优比」两条广告合作记录，称「都是自己用过的品牌」。微博转发4.2万，评论1.6万。未回应未来是否签约。当日微博粉丝从38万涨至50万。</p>
+            </div>
+            <div class="news-item">
+              <div class="news-date">2026年10月27日</div>
+              <h3 class="news-title">幼儿园路透原帖删除，发帖人致歉称「没想那么多」</h3>
+              <p class="news-summary">10月25日发布悠宝幼儿园门口照片的网友在10月27日删除原帖，新帖写道「接孩子碰巧看到，没想那么多，抱歉」。但照片截图已在微博、小红书等平台流转，单条微博转发超2000次。</p>
+            </div>
+            <div class="news-item">
+              <div class="news-date">2026年10月20日</div>
+              <h3 class="news-title">中国网络社会组织联合会发布《未成年人网络内容创作指引（征求意见稿）》</h3>
+              <p class="news-summary">征求意见稿第7条提出「不应以未成年人为主角进行商业推广」，第9条建议「单次出镜时长不超过视频总时长的三分之一」。意见反馈截止日期为2026年11月30日。目前该文件处于征求意见阶段，尚未生效。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 板块10：相关推荐 -->
+        <section class="section-block" id="recommend">
+          <h2><span class="accent-bar"></span>顺着这些方向还能看</h2>
+          <div class="tag-index">
+            <span class="tag-link">悠宝厨房翻车原视频</span>
+            <span class="tag-link">悠宝第一次自己穿鞋</span>
+            <span class="tag-link">悠宝妈妈声明全文</span>
+            <span class="tag-link">幼儿园路透事件讨论</span>
+            <span class="tag-link">亲子账号广告频率对比</span>
+            <span class="tag-link">粉丝群六条群规</span>
+            <span class="tag-link">三岁儿童出镜时长数据</span>
+            <span class="tag-link">奶爸老周制作成本拆解</span>
+          </div>
+        </section>
+
+        <!-- 板块11：热门榜单 -->
+        <section class="section-block" id="ranking">
+          <h2><span class="accent-bar"></span>站内热度排行（11月8日更新）</h2>
+          <div class="ranking-list">
+            <div class="ranking-item">
+              <span class="rank-num top1">1</span>
+              <span class="rank-title">悠宝和爸爸的厨房翻车</span>
+              <span class="rank-score">热度 98.6</span>
+            </div>
+            <div class="ranking-item">
+              <span class="rank-num top2">2</span>
+              <span class="rank-title">悠宝第一次自己穿鞋</span>
+              <span class="rank-score">热度 91.2</span>
+            </div>
+            <div class="ranking-item">
+              <span class="rank-num top3">3</span>
+              <span class="rank-title">悠宝妈妈回应签约传闻</span>
+              <span class="rank-score">热度 88.4</span>
+            </div>
+            <div class="ranking-item">
+              <span class="rank-num">4</span>
+              <span class="rank-title">悠宝和爷爷包饺子</span>
+              <span class="rank-score">热度 84.1</span>
+            </div>
+            <div class="ranking-item">
+              <span class="rank-num">5</span>
+              <span class="rank-title">幼儿园接送路透</span>
+              <span class="rank-score">热度 79.7</span>
+            </div>
+            <div class="ranking-item">
+              <span class="rank-num">6</span>
+              <span class="rank-title">粉丝群管理规则流出</span>
+              <span class="rank-score">热度 72.3</span>
+            </div>
+            <div class="ranking-item">
+              <span class="rank-num">7</span>
+              <span class="rank-title">悠宝爸爸首次出镜谈拍摄</span>
+              <span class="rank-score">热度 68.9</span>
+            </div>
+            <div class="ranking-item">
+              <span class="rank-num">8</span>
+              <span class="rank-title">小红书同款围兜笔记热传</span>
+              <span class="rank-score">热度 61.5</span>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- 右辅助栏 -->
+      <aside class="sidebar" aria-label="辅助信息">
+        <div class="sidebar-card">
+          <h3><span class="sb-icon">🔥</span>今日热榜</h3>
+          <div class="hot-list">
+            <div class="hot-item"><span class="hot-rank">1</span><span class="hot-text">厨房翻车视频面粉扫了20分钟</span></div>
+            <div class="hot-item"><span class="hot-rank">2</span><span class="hot-text">穿鞋视频幼师评论成功率三成</span></div>
+            <div class="hot-item"><span class="hot-rank">3</span><span class="hot-text">粉丝群满员2000人暂不开新群</span></div>
+            <div class="hot-item"><span class="hot-rank">4</span><span class="hot-text">声明配图广告合作仅两条</span></div>
+            <div class="hot-item"><span class="hot-rank">5</span><span class="hot-text">爷爷煮了14个奇形怪状饺子</span></div>
+            <div class="hot-item"><span class="hot-rank">6</span><span class="hot-text">投票68%说不合适但笔记在增加</span></div>
+          </div>
+        </div>
+        <div class="sidebar-card">
+          <h3><span class="sb-icon">🕒</span>最近更新</h3>
+          <div class="update-feed">
+            <div class="update-item"><span class="up-time">11月7日 21:30</span>「第一次自己穿鞋」幕后花絮上线</div>
+            <div class="update-item"><span class="up-time">11月7日 14:12</span>小红书同款围兜笔记新增812篇</div>
+            <div class="update-item"><span class="up-time">11月6日 10:05</span>包饺子视频弹幕破5万</div>
+            <div class="update-item"><span class="up-time">11月5日 18:40</span>悠宝和爷爷包饺子正片发布</div>
+            <div class="update-item"><span class="up-time">11月3日 20:15</span>爸爸首次出镜谈拍摄原则</div>
+          </div>
+        </div>
+        <div class="sidebar-card">
+          <h3><span class="sb-icon">📌</span>互动入口</h3>
+          <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin-bottom:8px;">如果你也关注儿童内容创作，可以参与话题讨论或分享你看到的案例。</p>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <a href="/#comments" style="font-size:13px;color:var(--primary-dark);font-weight:500;">→ 去评论区留言</a>
+            <a href="/#news" style="font-size:13px;color:var(--primary-dark);font-weight:500;">→ 查看最新资讯</a>
+            <a href="/#deep-dive" style="font-size:13px;color:var(--primary-dark);font-weight:500;">→ 读深度解析</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- 页尾 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <svg width="28" height="28" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <circle cx="20" cy="20" r="18" fill="#f7b731"/>
+              <circle cx="14" cy="16" r="3" fill="#fff"/>
+              <circle cx="26" cy="16" r="3" fill="#fff"/>
+              <circle cx="14" cy="16" r="1.5" fill="#2d2a24"/>
+              <circle cx="26" cy="16" r="1.5" fill="#2d2a24"/>
+              <path d="M14 26 Q20 31 26 26" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            </svg>
+            <span>悠宝三岁绯闻</span>
+          </div>
+          <p class="footer-desc">记录2024年1月至2026年11月间悠宝账号的公开内容变化，涵盖亲子短视频、传言核实与儿童出镜讨论。内容覆盖日常记录、粉丝互动、平台规则变动三类条目，每周更新三到五次。</p>
+        </div>
+        <div class="footer-col">
+          <h4>内容频道</h4>
+          <a href="/#overview">成长概览</a>
+          <a href="/#featured">精选内容</a>
+          <a href="/#updates">最新动态</a>
+          <a href="/#categories">分类入口</a>
+        </div>
+        <div class="footer-col">
+          <h4>深度与讨论</h4>
+          <a href="/#deep-dive">深度解析</a>
+          <a href="/#guide">体验指南</a>
+          <a href="/#faq">常见问答</a>
+          <a href="/#comments">网友评论</a>
+        </div>
+        <div class="footer-col">
+          <h4>资讯与推荐</h4>
+          <a href="/#news">相关资讯</a>
+          <a href="/#recommend">相关推荐</a>
+          <a href="/#ranking">热门榜单</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 悠宝三岁绯闻 · 内容均为示例条目，不构成事实陈述</span>
+        <span>更新于2026年11月8日</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+  <!-- 脚本 -->
+  <script>
+    (function() {
+      // 移动端抽屉
+      const hamburger = document.getElementById('hamburgerBtn');
+      const drawer = document.getElementById('mobileDrawer');
+      const overlay = document.getElementById('mobileOverlay');
+      const closeBtn = document.getElementById('closeDrawerBtn');
+
+      function openDrawer() {
+        drawer.classList.add('open');
+        overlay.style.display = 'block';
+        hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeDrawer() {
+        drawer.classList.remove('open');
+        overlay.style.display = 'none';
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', openDrawer);
+      closeBtn.addEventListener('click', closeDrawer);
+      overlay.addEventListener('click', closeDrawer);
+      drawer.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', closeDrawer);
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closeDrawer();
+          // 关闭所有打开的 details 不需要，但可保持
+        }
+      });
+
+      // 搜索筛选
+      const searchInput = document.getElementById('searchInput');
+      const searchBtn = document.getElementById('searchBtn');
+      const cardGrid = document.getElementById('cardGrid');
+      const filterEmpty = document.getElementById('filterEmpty');
+      const cards = cardGrid ? Array.from(cardGrid.querySelectorAll('.content-card')) : [];
+
+      function doSearch() {
+        const query = searchInput.value.trim().toLowerCase();
+        let visibleCount = 0;
+        cards.forEach(card => {
+          const searchText = (card.dataset.search || '') + ' ' + card.textContent.toLowerCase();
+          if (!query || searchText.includes(query)) {
+            card.style.display = '';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        if (filterEmpty) {
+          filterEmpty.classList.toggle('show', visibleCount === 0 && query.length > 0);
+        }
+      }
+
+      if (searchBtn) searchBtn.addEventListener('click', doSearch);
+      if (searchInput) {
+        searchInput.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') { e.preventDefault(); doSearch(); }
+        });
+        searchInput.addEventListener('input', doSearch);
+      }
+
+      // 回到顶部
+      const backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+      backToTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 侧栏频道高亮（简单版）
+      const channelLinks = document.querySelectorAll('.channel-index nav a');
+      const sections = document.querySelectorAll('main .section-block[id]');
+      if (sections.length > 0 && channelLinks.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const id = entry.target.id;
+              channelLinks.forEach(link => {
+                link.style.background = '';
+                link.style.color = '';
+                if (link.getAttribute('href') === '/#' + id) {
+                  link.style.background = 'var(--primary-light)';
+                  link.style.color = 'var(--primary-dark)';
+                }
+              });
+            }
+          });
+        }, { rootMargin: '-20% 0px -60% 0px' });
+        sections.forEach(s => observer.observe(s));
+      }
+    })();
+  </script>
+
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "悠宝三岁绯闻",
+    "description": "聚焦三岁萌娃悠宝的成长记录与网络传言，汇集日常动态、亲子互动、网友讨论及事件梳理。",
+    "inLanguage": "zh-CN"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "悠宝到底签没签公司？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "10月28日悠宝妈妈的微博声明说「没有签任何公司」，配图展示了2025年3月和2026年8月两条广告合作记录。但声明未提及未来是否签约。目前可查的工商信息里，没有与「悠宝」或悠宝妈妈姓名关联的MCN机构登记。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "幼儿园路透照片是谁拍的？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "10月25日发帖的网友自称是「接孩子时碰巧看到」，未透露是否经过幼儿园同意。照片拍摄地点为朝阳区某幼儿园门口公共区域，但画面中孩子正脸清晰。原帖已于10月27日删除，发帖人新帖致歉称「没想那么多」。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "厨房翻车视频里的面粉最后怎么处理的？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "视频只拍了42秒，没有打扫画面。11月1日悠宝爸爸在评论区回复网友「扫了20分钟，吸尘器吸了三遍」。该回复获赞1.7万，是厨房视频下点赞第6高的评论。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "悠宝接的广告是哪两个品牌？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "根据10月28日微博声明的配图，两个合作品牌为「小鹿叮叮」（2025年3月）和「可优比」（2026年8月）。声明中称「都是自己用过的母婴品牌」，广告视频封面为产品特写，未出现悠宝正脸。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "为什么最近视频里悠宝出镜时间变短了？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "11月1日至7日更新的5条视频中，3条悠宝出镜不到1分钟。对比10月平均出镜时长2分10秒有明显下降。幼儿园路透事件和网络讨论集中在10月25日至28日，时间上存在先后关系，但账号未对此做出说明。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "粉丝群现在还能加吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "粉丝群2026年11月1日达到2000人上限，管理员公告「暂不开新群」。群规六条包括「禁止讨论孩子长相」「禁止发路透图」，管理员为悠宝妈妈本人，违规三次踢出。"
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+  </html>
