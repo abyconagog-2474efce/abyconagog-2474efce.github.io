@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>市来美保全部作品 - 作品目录与观看指南</title>
+<meta name="description" content="市来美保全部作品按年份与类型梳理，收录出道至今的代表作清单、番号信息、题材分类与观看顺序建议，适合想系统了解其作品脉络的观众参考。">
+<meta name="keywords" content="市来美保全部作品">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232b1d33'/%3E%3Cpath d='M18 44V20h6l8 14 8-14h6v24h-6V31l-8 13-8-13v13z' fill='%23f2c1d1'/%3E%3C/svg%3E">
+<style>
+:root{
+  --c-primary:#8c2f52;
+  --c-primary-l:#b04a6e;
+  --c-primary-d:#5f1e37;
+  --c-accent:#c9a227;
+  --c-bg:#faf6f4;
+  --c-panel:#ffffff;
+  --c-panel-2:#f4ecea;
+  --c-t1:#231a1e;
+  --c-t2:#5b4b52;
+  --c-t3:#8a7a80;
+  --c-line:#e6dbd8;
+  --r-card:12px;
+  --r-btn:8px;
+  --r-tag:999px;
+  --r-banner:16px;
+  --sh-1:0 1px 3px rgba(60,30,40,.07),0 4px 14px rgba(60,30,40,.05);
+  --sh-2:0 4px 10px rgba(60,30,40,.10),0 10px 26px rgba(60,30,40,.09);
+  --header-h:62px;
+  --notice-h:38px;
+  --gap:22px;
+  --maxw:1320px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--c-bg);color:var(--c-t1);
+  font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  font-size:15.5px;line-height:1.78;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--c-primary);text-decoration:none}
+a:hover{color:var(--c-primary-d)}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0 0 12px}
+ul,ol{margin:0 0 12px;padding-left:20px}
+li{margin-bottom:6px}
+:focus-visible{outline:2px solid var(--c-primary-l);outline-offset:2px;border-radius:4px}
+section[id],div[id]{scroll-margin-top:calc(var(--header-h) + var(--notice-h) + 14px)}
+
+/* 吸顶公告 + 页头 */
+.stick-wrap{position:sticky;top:0;z-index:60}
+.notice-bar{
+  background:linear-gradient(90deg,var(--c-primary-d),var(--c-primary) 60%,var(--c-primary-l));
+  color:#fdeef3;font-size:13px;height:var(--notice-h);display:flex;align-items:center;
+}
+.notice-inner{max-width:var(--maxw);margin:0 auto;padding:0 20px;display:flex;gap:18px;align-items:center;width:100%;overflow:hidden}
+.notice-brand{font-weight:700;letter-spacing:.5px;white-space:nowrap;color:#fff}
+.notice-items{display:flex;gap:22px;overflow:hidden;white-space:nowrap;flex:1}
+.notice-items span{opacity:.95}
+.notice-items b{color:#ffe6a8;font-weight:600}
+header.site-head{
+  background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--c-line);height:var(--header-h);
+}
+.head-inner{max-width:var(--maxw);margin:0 auto;padding:0 20px;height:100%;display:flex;align-items:center;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17.5px;color:var(--c-primary-d);white-space:nowrap}
+.brand svg{flex:none}
+.head-nav{display:flex;gap:4px;flex:1;overflow-x:auto;scrollbar-width:none}
+.head-nav::-webkit-scrollbar{display:none}
+.head-nav a{
+  padding:7px 11px;border-radius:var(--r-btn);font-size:14px;color:var(--c-t2);white-space:nowrap;
+  transition:background .18s,color .18s;
+}
+.head-nav a:hover{background:var(--c-panel-2);color:var(--c-primary-d)}
+.head-tool{display:flex;gap:8px;align-items:center}
+.search-box{display:flex;align-items:center;border:1px solid var(--c-line);border-radius:var(--r-tag);background:#fff;padding:2px 4px 2px 12px}
+.search-box input{border:0;outline:0;width:130px;font-size:13.5px;background:transparent;color:var(--c-t1);padding:5px 0}
+.search-box button{border:0;background:var(--c-primary);color:#fff;border-radius:var(--r-tag);font-size:13px;padding:5px 12px;cursor:pointer}
+.search-box button:hover{background:var(--c-primary-d)}
+.hamburger{display:none;border:1px solid var(--c-line);background:#fff;border-radius:var(--r-btn);width:38px;height:36px;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:4px}
+.hamburger span{display:block;width:17px;height:2px;background:var(--c-primary-d);border-radius:2px}
+
+/* 首屏 */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 380px at 88% -10%,rgba(201,162,39,.20),transparent 62%),
+    radial-gradient(700px 340px at 4% 110%,rgba(176,74,110,.20),transparent 60%),
+    linear-gradient(150deg,#2b1d33 0%,#4a2338 46%,#8c2f52 100%);
+  color:#fff;
+}
+.hero-art{position:absolute;inset:0;pointer-events:none;opacity:.5}
+.hero-inner{position:relative;max-width:var(--maxw);margin:0 auto;padding:52px 20px 46px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:36px;align-items:center}
+.hero-tag{display:inline-flex;gap:8px;align-items:center;font-size:12.5px;letter-spacing:1.6px;color:#ffe6a8;border:1px solid rgba(255,230,168,.42);padding:4px 12px;border-radius:var(--r-tag)}
+.hero h1{font-size:clamp(30px,4.2vw,46px);margin:14px 0 14px;letter-spacing:1px;text-shadow:0 2px 18px rgba(0,0,0,.28)}
+.hero-desc{font-size:15.5px;color:#f6e3ea;max-width:36em;line-height:1.85}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.hero-meta a{
+  display:inline-flex;align-items:center;gap:7px;font-size:14px;padding:9px 17px;border-radius:var(--r-btn);
+  background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.26);transition:background .2s,transform .2s;
+}
+.hero-meta a:hover{background:rgba(255,255,255,.26);transform:translateY(-2px);color:#fff}
+.hero-meta a.solid{background:var(--c-accent);color:#3a2a06;border-color:transparent;font-weight:700}
+.hero-meta a.solid:hover{background:#e0b93a;color:#3a2a06}
+.hero-stats{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap}
+.hero-stats div{font-size:12.5px;color:#e8ccd6}
+.hero-stats b{display:block;font-size:22px;color:#fff;font-weight:800;line-height:1.2}
+.hero-visual{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hero-visual figure{margin:0;border-radius:var(--r-card);overflow:hidden;border:1px solid rgba(255,255,255,.22);box-shadow:0 14px 30px rgba(0,0,0,.3)}
+.hero-visual figure:nth-child(1){transform:translateY(-12px)}
+.hero-visual figure:nth-child(2){transform:translateY(14px)}
+.hero-visual img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+.hero-visual figcaption{position:absolute;left:0;right:0;bottom:0;font-size:11.5px;padding:22px 10px 8px;background:linear-gradient(transparent,rgba(30,12,20,.85));color:#f6e3ea}
+
+/* 主体三栏 */
+.container{max-width:var(--maxw);margin:0 auto;padding:34px 20px 10px}
+.layout{display:grid;grid-template-columns:180px minmax(0,1fr) 258px;gap:var(--gap);align-items:start}
+.side-left{position:sticky;top:calc(var(--header-h) + var(--notice-h) + 18px)}
+.side-left h2{font-size:13px;letter-spacing:2px;color:var(--c-t3);font-weight:700;margin-bottom:10px;padding-left:4px}
+.ch-list{list-style:none;padding:0;margin:0;background:var(--c-panel);border:1px solid var(--c-line);border-radius:var(--r-card);padding:8px;box-shadow:var(--sh-1)}
+.ch-list a{display:block;padding:7px 10px;border-radius:var(--r-btn);font-size:13.6px;color:var(--c-t2);border-left:2px solid transparent}
+.ch-list a:hover{background:var(--c-panel-2);color:var(--c-primary-d)}
+.ch-list a.active{background:#f8e9ee;color:var(--c-primary-d);font-weight:700;border-left-color:var(--c-primary)}
+.ch-note{margin-top:14px;font-size:12.5px;color:var(--c-t3);line-height:1.7;padding:10px 12px;background:var(--c-panel-2);border-radius:var(--r-card)}
+.side-right{position:sticky;top:calc(var(--header-h) + var(--notice-h) + 18px);display:flex;flex-direction:column;gap:16px}
+.panel{background:var(--c-panel);border:1px solid var(--c-line);border-radius:var(--r-card);padding:16px;box-shadow:var(--sh-1)}
+.panel h3{font-size:14px;margin-bottom:10px;color:var(--c-primary-d);display:flex;align-items:center;gap:6px}
+.panel h3::before{content:"";width:3px;height:14px;background:var(--c-accent);border-radius:2px}
+.rank-list{list-style:none;padding:0;margin:0;counter-reset:rk}
+.rank-list li{counter-increment:rk;display:flex;gap:9px;padding:7px 0;border-bottom:1px dashed var(--c-line);font-size:13.4px;line-height:1.55}
+.rank-list li:last-child{border-bottom:0}
+.rank-list li::before{content:counter(rk);flex:none;width:19px;height:19px;border-radius:5px;background:var(--c-panel-2);color:var(--c-primary-d);font-size:11.5px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.rank-list li:nth-child(-n+3)::before{background:var(--c-primary);color:#fff}
+.rank-list a{color:var(--c-t1)}
+.rank-list a:hover{color:var(--c-primary)}
+.rank-list em{display:block;font-style:normal;font-size:12px;color:var(--c-t3)}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:7px}
+.tag-cloud a{font-size:12.5px;padding:4px 10px;background:var(--c-panel-2);border-radius:var(--r-tag);color:var(--c-t2)}
+.tag-cloud a:hover{background:#f2dde4;color:var(--c-primary-d)}
+
+/* 通用板块 */
+.sec{margin-bottom:40px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:16px;flex-wrap:wrap}
+.sec-head h2{font-size:21px;color:var(--c-t1);position:relative;padding-left:13px}
+.sec-head h2::before{content:"";position:absolute;left:0;top:6px;bottom:4px;width:4px;border-radius:3px;background:linear-gradient(var(--c-primary),var(--c-accent))}
+.sec-head .sub{font-size:13px;color:var(--c-t3)}
+.sec-head .more{font-size:13px;color:var(--c-primary);white-space:nowrap}
+
+/* 概览 */
+.overview{background:var(--c-panel);border:1px solid var(--c-line);border-radius:var(--r-banner);padding:24px 26px;box-shadow:var(--sh-1)}
+.overview p{color:var(--c-t2);font-size:15px;line-height:1.9}
+.overview p:last-child{margin-bottom:0}
+.overview strong{color:var(--c-primary-d)}
+
+/* 精选卡片 */
+.card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:var(--c-panel);border:1px solid var(--c-line);border-radius:var(--r-card);overflow:hidden;box-shadow:var(--sh-1);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-3px);box-shadow:var(--sh-2)}
+.card figure{margin:0;position:relative;overflow:hidden;background:var(--c-panel-2)}
+.card img{aspect-ratio:4/3;width:100%;object-fit:cover}
+.card .badge{position:absolute;left:8px;top:8px;font-size:11.5px;background:rgba(43,29,51,.82);color:#ffe6a8;padding:3px 9px;border-radius:var(--r-tag);backdrop-filter:blur(4px)}
+.card .body{padding:13px 14px 15px;display:flex;flex-direction:column;gap:7px;flex:1}
+.card h3{font-size:15.5px;line-height:1.45}
+.card .tags{display:flex;flex-wrap:wrap;gap:6px}
+.card .tags span{font-size:11.5px;padding:2px 8px;background:#f8e9ee;color:var(--c-primary-d);border-radius:var(--r-tag)}
+.card .look{font-size:13.2px;color:var(--c-t2);line-height:1.7;flex:1}
+.card .foot{display:flex;justify-content:space-between;font-size:12px;color:var(--c-t3);border-top:1px dashed var(--c-line);padding-top:8px}
+.card .foot b{color:var(--c-primary);font-weight:700}
+
+/* 最新更新列表 */
+.upd-list{background:var(--c-panel);border:1px solid var(--c-line);border-radius:var(--r-card);overflow:hidden;box-shadow:var(--sh-1)}
+.upd-item{display:grid;grid-template-columns:86px minmax(0,1fr) 92px;gap:14px;padding:13px 18px;border-bottom:1px solid var(--c-line);align-items:baseline}
+.upd-item:last-child{border-bottom:0}
+.upd-item:hover{background:#fdf7f8}
+.upd-item .nm{font-weight:700;font-size:14.5px;color:var(--c-t1)}
+.upd-item .nm small{display:block;font-weight:400;color:var(--c-t3);font-size:11.5px;letter-spacing:.5px}
+.upd-item .sum{font-size:13.4px;color:var(--c-t2);line-height:1.65}
+.upd-item time{font-size:12px;color:var(--c-t3);text-align:right}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.cat{background:var(--c-panel);border:1px solid var(--c-line);border-radius:var(--r-card);padding:14px 15px;transition:border-color .2s,background .2s;cursor:pointer;text-align:left;font-family:inherit}
+.cat:hover{border-color:var(--c-primary-l);background:#fdf7f8}
+.cat b{display:block;font-size:14.5px;color:var(--c-t1);margin-bottom:5px}
+.cat span{font-size:12.4px;color:var(--c-t3);line-height:1.6}
+.cat.on{background:#f8e9ee;border-color:var(--c-primary);box-shadow:var(--sh-1)}
+.cat.on b{color:var(--c-primary-d)}
+.filter-note{font-size:12.6px;color:var(--c-t3);margin-top:10px}
+.no-result{display:none;padding:18px;border:1px dashed var(--c-line);border-radius:var(--r-card);color:var(--c-t3);font-size:13.5px;background:#fff}
+
+/* 深度解析 */
+.deep{background:var(--c-panel);border:1px solid var(--c-line);border-radius:var(--r-banner);padding:28px 30px;box-shadow:var(--sh-1)}
+.deep h3{font-size:17px;margin:24px 0 10px;color:var(--c-primary-d);padding-bottom:7px;border-bottom:1px solid var(--c-line)}
+.deep h3:first-child{margin-top:0}
+.deep p{color:var(--c-t2);font-size:14.8px;line-height:1.92}
+.deep strong{color:var(--c-t1)}
+.deep ul{color:var(--c-t2);font-size:14.6px}
+.deep .quote{border-left:3px solid var(--c-accent);background:#fdf8ee;padding:11px 15px;border-radius:0 var(--r-btn) var(--r-btn) 0;font-size:14px;color:var(--c-t2);margin:14px 0}
+.deep table{width:100%;border-collapse:collapse;font-size:13.6px;margin:12px 0 16px}
+.deep th,.deep td{border:1px solid var(--c-line);padding:8px 11px;text-align:left;vertical-align:top;color:var(--c-t2)}
+.deep th{background:var(--c-panel-2);color:var(--c-t1);font-weight:700;white-space:nowrap}
+
+/* 体验指南 步骤 */
+.steps{display:grid;gap:12px;counter-reset:st}
+.step{background:var(--c-panel);border:1px solid var(--c-line);border-radius:var(--r-card);padding:15px 18px 15px 56px;position:relative;box-shadow:var(--sh-1)}
+.step::before{counter-increment:st;content:counter(st,decimal-leading-zero);position:absolute;left:16px;top:16px;font-size:14px;font-weight:800;color:var(--c-primary);background:#f8e9ee;width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.step b{display:block;font-size:15px;margin-bottom:5px}
+.step p{font-size:13.6px;color:var(--c-t2);margin:0;line-height:1.75}
+
+/* 对照面板 */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cmp{background:var(--c-panel);border:1px solid var(--c-line);border-radius:var(--r-card);padding:16px 18px}
+.cmp h4{font-size:14.5px;margin-bottom:9px;color:var(--c-primary-d)}
+.cmp ul{padding-left:18px;margin:0;font-size:13.5px;color:var(--c-t2)}
+.cmp li{margin-bottom:5px}
+
+/* FAQ */
+.faq{background:var(--c-panel);border:1px solid var(--c-line);border-radius:var(--r-card);box-shadow:var(--sh-1);overflow:hidden}
+.faq details{border-bottom:1px solid var(--c-line)}
+.faq details:last-child{border-bottom:0}
+.faq summary{cursor:pointer;padding:14px 18px;font-size:14.8px;font-weight:700;color:var(--c-t1);list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:19px;color:var(--c-primary);font-weight:400;line-height:1;flex:none}
+.faq details[open] summary::after{content:"–"}
+.faq summary:hover{background:#fdf7f8}
+.faq .ans{padding:0 18px 15px;font-size:13.8px;color:var(--c-t2);line-height:1.82}
+
+/* 评论 */
+.cmt-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cmt{background:var(--c-panel);border:1px solid var(--c-line);border-radius:var(--r-card);padding:13px 15px;box-shadow:var(--sh-1)}
+.cmt .who{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.cmt .av{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--c-primary-l),var(--c-accent));color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:700;flex:none}
+.cmt .nm{font-size:13px;font-weight:700;color:var(--c-t1)}
+.cmt .tm{font-size:11.5px;color:var(--c-t3);margin-left:auto}
+.cmt p{font-size:13.4px;color:var(--c-t2);margin:0;line-height:1.75}
+
+/* 资讯 */
+.news{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.news article{background:var(--c-panel);border:1px solid var(--c-line);border-radius:var(--r-card);padding:15px 17px;box-shadow:var(--sh-1)}
+.news h3{font-size:15px;margin-bottom:6px;line-height:1.5}
+.news time{font-size:12px;color:var(--c-t3);display:block;margin-bottom:7px}
+.news p{font-size:13.3px;color:var(--c-t2);margin:0;line-height:1.72}
+
+/* 推荐标签 */
+.rec-tags{display:flex;flex-wrap:wrap;gap:9px}
+.rec-tags a{font-size:13.2px;padding:7px 14px;border:1px solid var(--c-line);background:var(--c-panel);border-radius:var(--r-tag);color:var(--c-t2);transition:all .18s}
+.rec-tags a:hover{border-color:var(--c-primary);background:#f8e9ee;color:var(--c-primary-d)}
+
+/* 时间线 */
+.timeline{list-style:none;padding:0;margin:0;position:relative;padding-left:22px}
+.timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--c-primary),var(--c-line))}
+.timeline li{position:relative;margin-bottom:14px;font-size:13.6px;color:var(--c-t2)}
+.timeline li::before{content:"";position:absolute;left:-22px;top:7px;width:9px;height:9px;border-radius:50%;background:#fff;border:2px solid var(--c-primary)}
+.timeline b{color:var(--c-t1);display:block;font-size:14px;margin-bottom:2px}
+.timeline time{font-size:12px;color:var(--c-t3);display:inline-block;margin-right:8px}
+
+/* 投稿互动 */
+.submit-box{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:18px;background:linear-gradient(135deg,#f8e9ee,#fdf8ee);border:1px solid var(--c-line);border-radius:var(--r-banner);padding:22px 24px}
+.submit-box h3{font-size:16.5px;margin-bottom:9px;color:var(--c-primary-d)}
+.submit-box p{font-size:13.7px;color:var(--c-t2);line-height:1.8;margin-bottom:10px}
+.submit-box ul{font-size:13.4px;color:var(--c-t2);padding-left:18px;margin:0}
+.submit-form{display:flex;flex-direction:column;gap:9px}
+.submit-form input,.submit-form select{border:1px solid var(--c-line);border-radius:var(--r-btn);padding:9px 12px;font-size:13.5px;font-family:inherit;background:#fff;color:var(--c-t1)}
+.submit-form button{border:0;background:var(--c-primary);color:#fff;border-radius:var(--r-btn);padding:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+.submit-form button:hover{background:var(--c-primary-d)}
+.submit-form .tip{font-size:11.8px;color:var(--c-t3);margin:0}
+
+/* 页尾 */
+footer.site-foot{background:#241a20;color:#cbb9bf;margin-top:26px}
+.foot-inner{max-width:var(--maxw);margin:0 auto;padding:38px 20px 22px;display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,.7fr));gap:26px}
+.foot-brand{display:flex;align-items:center;gap:9px;color:#fff;font-weight:800;font-size:16px;margin-bottom:10px}
+.foot-pos{font-size:13.2px;line-height:1.8;color:#b3a1a8;max-width:34em}
+.foot-col h4{font-size:13.5px;color:#f3e6ea;margin-bottom:9px}
+.foot-col a{display:block;font-size:13px;color:#a8939a;padding:3px 0}
+.foot-col a:hover{color:#f2c1d1}
+.foot-bottom{border-top:1px solid #3a2c33;font-size:12.3px;color:#8d7a81;padding:13px 20px 20px;max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+/* 回到顶部 */
+.to-top{
+  position:fixed;right:18px;bottom:22px;width:44px;height:44px;border-radius:50%;
+  background:var(--c-primary);color:#fff;border:0;cursor:pointer;box-shadow:var(--sh-2);
+  display:none;align-items:center;justify-content:center;z-index:70;font-size:18px;
+}
+.to-top.show{display:flex}
+.to-top:hover{background:var(--c-primary-d)}
+
+/* 遮罩 */
+.mask{display:none;position:fixed;inset:0;background:rgba(25,14,20,.5);z-index:80}
+.mask.show{display:block}
+
+@media (max-width:1080px){
+  .layout{grid-template-columns:minmax(0,1fr) 250px}
+  .side-left{position:static;grid-column:1 / -1;order:-1}
+  .side-left .ch-list{display:flex;overflow-x:auto;gap:4px;padding:6px}
+  .side-left .ch-list li{flex:none}
+  .side-left .ch-list a{border-left:0;white-space:nowrap;border-bottom:2px solid transparent;border-radius:var(--r-btn) var(--r-btn) 0 0}
+  .side-left .ch-list a.active{border-left:0;border-bottom-color:var(--c-primary)}
+  .side-left .ch-note{display:none}
+  .side-right{position:static}
+  .card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-inner{grid-template-columns:minmax(0,1fr);gap:26px}
+  .hero-visual{max-width:420px}
+  .foot-inner{grid-template-columns:1fr 1fr}
+}
+@media (max-width:820px){
+  .head-nav{display:none}
+  .search-box{display:none}
+  .hamburger{display:flex}
+  .layout{grid-template-columns:minmax(0,1fr)}
+  .side-right{grid-row:3}
+  .cat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cmt-grid,.news{grid-template-columns:minmax(0,1fr)}
+  .compare{grid-template-columns:1fr}
+  .submit-box{grid-template-columns:1fr}
+  .upd-item{grid-template-columns:minmax(0,1fr);gap:4px}
+  .upd-item time{text-align:left}
+  .deep{padding:22px 18px}
+  .overview{padding:20px 18px}
+  .notice-items span:nth-child(n+2){display:none}
+  .foot-inner{grid-template-columns:1fr;gap:18px}
+  .hero-inner{padding:36px 18px 34px}
+  .hero-stats{gap:18px}
+  .hero-stats b{font-size:19px}
+}
+@media (max-width:520px){
+  .card-grid{grid-template-columns:minmax(0,1fr)}
+  .hero-visual{grid-template-columns:1fr 1fr;gap:8px}
+  .hero-visual figure:nth-child(1),.hero-visual figure:nth-child(2){transform:none}
+  .cat-grid{grid-template-columns:minmax(0,1fr)}
+  .container{padding:22px 14px 6px}
+  .head-inner{padding:0 14px;gap:12px}
+  .brand{font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="stick-wrap">
+  <div class="notice-bar">
+    <div class="notice-inner">
+      <span class="notice-brand">市来美保全部作品</span>
+      <div class="notice-items">
+        <span><b>11-07</b> 追加《夏の終わりの三日月》高清修复版条目</span>
+        <span><b>+18 部</b> 2019—2021 番号补录完成</span>
+        <span><b>11-05</b> 合作共演索引上线，收录 23 位共演者</span>
+      </div>
+    </div>
+  </div>
+  <header class="site-head">
+    <div class="head-inner">
+      <a class="brand" href="/#top" aria-label="市来美保全部作品 首页">
+        <svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#2b1d33"/>
+          <path d="M18 44V20h6l8 14 8-14h6v24h-6V31l-8 13-8-13v13z" fill="#f2c1d1"/>
+          <circle cx="47" cy="20" r="4" fill="#c9a227"/>
+        </svg>
+        <span>市来美保全部作品</span>
+      </a>
+      <nav class="head-nav" aria-label="主题导航">
+        <a href="/#overview">作品概览</a>
+        <a href="/#featured">代表作品</a>
+        <a href="/#updates">最新补录</a>
+        <a href="/#category">题材分类</a>
+        <a href="/#deep">脉络解析</a>
+        <a href="/#guide">观看顺序</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#submit">条目补录</a>
+      </nav>
+      <div class="head-tool">
+        <form class="search-box" role="search" onsubmit="return false;">
+          <input id="q" type="search" placeholder="搜作品名 / 番号" aria-label="搜索作品名或番号">
+          <button type="button" id="qbtn">查找</button>
+        </form>
+        <button class="hamburger" id="hbtn" aria-label="打开导航菜单" aria-expanded="false" aria-controls="drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<aside id="drawer" class="mask" aria-hidden="true">
+  <nav style="position:absolute;right:0;top:0;bottom:0;width:min(78vw,300px);background:#fff;padding:20px;overflow:auto" aria-label="移动端导航">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+      <strong style="color:#5f1e37">栏目导航</strong>
+      <button id="hclose" aria-label="关闭导航" style="border:1px solid #e6dbd8;background:#fff;border-radius:8px;width:32px;height:32px;cursor:pointer;font-size:16px">×</button>
+    </div>
+    <a href="/#overview" style="display:block;padding:9px 6px;color:#5b4b52">作品概览</a>
+    <a href="/#featured" style="display:block;padding:9px 6px;color:#5b4b52">代表作品</a>
+    <a href="/#updates" style="display:block;padding:9px 6px;color:#5b4b52">最新补录</a>
+    <a href="/#category" style="display:block;padding:9px 6px;color:#5b4b52">题材分类</a>
+    <a href="/#deep" style="display:block;padding:9px 6px;color:#5b4b52">脉络解析</a>
+    <a href="/#guide" style="display:block;padding:9px 6px;color:#5b4b52">观看顺序</a>
+    <a href="/#compare" style="display:block;padding:9px 6px;color:#5b4b52">版本对照</a>
+    <a href="/#faq" style="display:block;padding:9px 6px;color:#5b4b52">常见问题</a>
+    <a href="/#comments" style="display:block;padding:9px 6px;color:#5b4b52">观众评论</a>
+    <a href="/#news" style="display:block;padding:9px 6px;color:#5b4b52">相关资讯</a>
+    <a href="/#submit" style="display:block;padding:9px 6px;color:#5b4b52">条目补录</a>
+  </nav>
+</aside>
+
+<main id="top">
+
+  <section class="hero" aria-label="主题首屏">
+    <svg class="hero-art" viewBox="0 0 1400 420" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#f2c1d1" stop-opacity=".35"/>
+          <stop offset="1" stop-color="#c9a227" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <circle cx="1180" cy="80" r="180" fill="url(#g1)"/>
+      <circle cx="1230" cy="320" r="120" fill="none" stroke="#f2c1d1" stroke-opacity=".22" stroke-width="1.5"/>
+      <path d="M0 360 Q 220 280 430 340 T 900 320 T 1400 370" fill="none" stroke="#f2c1d1" stroke-opacity=".18" stroke-width="1.5"/>
+      <path d="M0 400 Q 260 330 500 380 T 980 360 T 1400 410" fill="none" stroke="#c9a227" stroke-opacity=".18" stroke-width="1.5"/>
+    </svg>
+    <div class="hero-inner">
+      <div>
+        <span class="hero-tag">作品目录 · 番号索引 · 观看路线</span>
+        <h1>市来美保全部作品</h1>
+        <p class="hero-desc">按发行年份、番号序列与题材类型整理的条目库，覆盖 2013 年出道作到 2025 年引退前后的单体、共演与合集条目，附观看顺序建议与版本差异说明。</p>
+        <div class="hero-meta">
+          <a class="solid" href="/#featured">查看代表作品</a>
+          <a href="/#guide">按年份挑片</a>
+          <a href="/#submit">补录缺失番号</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>412</b>已整理条目数</div>
+          <div><b>13</b>题材分类</div>
+          <div><b>11-07</b>最近补录日期</div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <figure>
+          <img src="https://picsum.photos/seed/shimai-hero1/400/500" width="400" height="500" alt="市来美保早期单体作品封面风格示意" loading="lazy">
+          <figcaption>2013 · 出道期单体</figcaption>
+        </figure>
+        <figure>
+          <img src="https://picsum.photos/seed/shimai-hero2/400/500" width="400" height="500" alt="市来美保中期共演作品封面风格示意" loading="lazy">
+          <figcaption>2018 · 共演期条目</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="layout">
+
+      <aside class="side-left" aria-label="频道索引">
+        <h2>频道索引</h2>
+        <ul class="ch-list" id="chlist">
+          <li><a href="/#overview" class="active">作品概览</a></li>
+          <li><a href="/#featured">代表作品</a></li>
+          <li><a href="/#updates">最新补录</a></li>
+          <li><a href="/#category">题材分类</a></li>
+          <li><a href="/#deep">脉络解析</a></li>
+          <li><a href="/#guide">观看顺序</a></li>
+          <li><a href="/#compare">版本对照</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#comments">观众评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#timeline">发行年表</a></li>
+          <li><a href="/#submit">条目补录</a></li>
+        </ul>
+        <div class="ch-note">番号以官方发行序列为准，合集与再版单独标注，避免与单体条目混淆。</div>
+      </aside>
+
+      <div class="main-col">
+
+        <!-- 1 概览 -->
+        <section class="sec" id="overview">
+          <div class="sec-head">
+            <h2>作品领域概览</h2>
+            <span class="sub">从出道期到引退期的类型分布</span>
+          </div>
+          <div class="overview">
+            <p>市来美保的条目大致可以分成四段：2013 年以单体企划出道，2014—2016 年进入量产期，年均发行量在 30 部上下；2017 年起开始接共演与剧情向企划，番号前缀从早期的 <strong>SIRO、MIDE</strong> 延伸到 <strong>SSNI、PRED</strong> 等厂牌序列；2020 年后单体数量下降，合集与再版条目占比明显上升；2025 年宣布引退后，市面上流通的多为整理版与纪念合集。</p>
+            <p>按题材看，数量最多的是职场与日常设定类，其次是共演企划和周年纪念合集。剧情向条目集中在 2018—2021 年，导演多为固定班底，单部时长普遍超过 120 分钟，和早期 90 分钟左右的单体节奏差别明显。</p>
+            <p>条目信息里最容易被忽略的是版本差异。同一番号常存在初回限定、通常版、后期再版三种，封面、收录时长、特典影像都不同。整理这份目录时，把再版单独列一条，而不是合并进原条目，原因就在这里。</p>
+          </div>
+        </section>
+
+        <!-- 2 精选卡片 -->
+        <section class="sec" id="featured">
+          <div class="sec-head">
+            <h2>代表作品精选</h2>
+            <span class="sub">按口碑与条目完整度挑选 9 部</span>
+            <a class="more" href="/#deep">看类型解析 →</a>
+          </div>
+          <div class="card-grid" id="cardgrid">
+            <article class="card" data-cat="剧情">
+              <figure>
+                <img src="https://picsum.photos/seed/shimai-f01/400/300" width="400" height="300" alt="市来美保剧情向作品《雨上がりの駅前》封面示意" loading="lazy">
+                <span class="badge">剧情向</span>
+              </figure>
+              <div class="body">
+                <h3>雨上がりの駅前</h3>
+                <div class="tags"><span>2019</span><span>剧情</span><span>单体</span></div>
+                <p class="look">全片 138 分钟，围绕车站前小食堂的两代人展开，台词量在同类型里偏多，前半段节奏慢，后半段才进入主线。</p>
+                <div class="foot"><span>评分 <b>8.6</b></span><span>SSNI 序列</span></div>
+              </div>
+            </article>
+            <article class="card" data-cat="共演">
+              <figure>
+                <img src="https://picsum.photos/seed/shimai-f02/400/300" width="400" height="300" alt="市来美保共演企划作品封面示意" loading="lazy">
+                <span class="badge">共演</span>
+              </figure>
+              <div class="body">
+                <h3>三人の夜、それぞれの朝</h3>
+                <div class="tags"><span>2020</span><span>共演</span><span>群像</span></div>
+                <p class="look">三段式结构，市来美保负责第二段，与另两位演员的对手戏集中在 40 分钟左右的室内场景，剪辑切换频繁。</p>
+                <div class="foot"><span>评分 <b>8.1</b></span><span>PRED 序列</span></div>
+              </div>
+            </article>
+            <article class="card" data-cat="日常">
+              <figure>
+                <img src="https://picsum.photos/seed/shimai-f03/400/300" width="400" height="300" alt="市来美保日常设定类作品封面示意" loading="lazy">
+                <span class="badge">日常</span>
+              </figure>
+              <div class="body">
+                <h3>午後のアパートメント</h3>
+                <div class="tags"><span>2016</span><span>日常</span><span>单体</span></div>
+                <p class="look">量产期里少见的长镜头作品，单场景占比高，几乎不外景，靠对话推进，适合看早期表演状态。</p>
+                <div class="foot"><span>评分 <b>7.9</b></span><span>MIDE 序列</span></div>
+              </div>
+            </article>
+            <article class="card" data-cat="剧情">
+              <figure>
+                <img src="https://picsum.photos/seed/shimai-f04/400/300" width="400" height="300" alt="市来美保周年纪念作品封面示意" loading="lazy">
+                <span class="badge">纪念作</span>
+              </figure>
+              <div class="body">
+                <h3>五年目の記録</h3>
+                <div class="tags"><span>2018</span><span>纪念</span><span>合集</span></div>
+                <p class="look">出道五周年企划，含一段 25 分钟访谈与幕后花絮，正片部分为两组独立场景，收录时长 165 分钟。</p>
+                <div class="foot"><span>评分 <b>8.3</b></span><span>初回限定</span></div>
+              </div>
+            </article>
+            <article class="card" data-cat="日常">
+              <figure>
+                <img src="https://picsum.photos/seed/shimai-f05/400/300" width="400" height="300" alt="市来美保早期出道作品封面示意" loading="lazy">
+                <span class="badge">出道作</span>
+              </figure>
+              <div class="body">
+                <h3>はじまりの季節</h3>
+                <div class="tags"><span>2013</span><span>出道</span><span>单体</span></div>
+                <p class="look">首部单体，时长 92 分钟，画面偏冷色调，收录了两段外景；后来的再版补入了 8 分钟未公开素材。</p>
+                <div class="foot"><span>评分 <b>7.6</b></span><span>SIRO 序列</span></div>
+              </div>
+            </article>
+            <article class="card" data-cat="共演">
+              <figure>
+                <img src="https://picsum.photos/seed/shimai-f06/400/300" width="400" height="300" alt="市来美保对谈类共演作品封面示意" loading="lazy">
+                <span class="badge">对谈</span>
+              </figure>
+              <div class="body">
+                <h3>対談・仕事の話</h3>
+                <div class="tags"><span>2021</span><span>对谈</span><span>共演</span></div>
+                <p class="look">以访谈为主轴，正片场景占不到一半，剩下是两位演员聊入行经历，信息量比一般共演条目高。</p>
+                <div class="foot"><span>评分 <b>8.0</b></span><span>访谈特典</span></div>
+              </div>
+            </article>
+            <article class="card" data-cat="剧情">
+              <figure>
+                <img src="https://picsum.photos/seed/shimai-f07/400/300" width="400" height="300" alt="市来美保悬疑设定作品封面示意" loading="lazy">
+                <span class="badge">悬疑设定</span>
+              </figure>
+              <div class="body">
+                <h3>鍵のかかった部屋で</h3>
+                <div class="tags"><span>2019</span><span>悬疑</span><span>单体</span></div>
+                <p class="look">单场景封闭空间，前 30 分钟基本只有一人出镜，靠灯光和镜头角度撑节奏，属于实验性较强的条目。</p>
+                <div class="foot"><span>评分 <b>7.7</b></span><span>SSNI 序列</span></div>
+              </div>
+            </article>
+            <article class="card" data-cat="日常">
+              <figure>
+                <img src="https://picsum.photos/seed/shimai-f08/400/300" width="400" height="300" alt="市来美保季节主题作品封面示意" loading="lazy">
+                <span class="badge">季节主题</span>
+              </figure>
+              <div class="body">
+                <h3>夏の終わりの三日月</h3>
+                <div class="tags"><span>2017</span><span>夏季</span><span>单体</span></div>
+                <p class="look">外景占比最高的几部之一，拍摄地在海边小镇，11 月 7 日上线的修复版把原来的标清素材重制到 1080p。</p>
+                <div class="foot"><span>评分 <b>8.2</b></span><span>修复版</span></div>
+              </div>
+            </article>
+            <article class="card" data-cat="合集">
+              <figure>
+                <img src="https://picsum.photos/seed/shimai-f09/400/300" width="400" height="300" alt="市来美保引退纪念合集封面示意" loading="lazy">
+                <span class="badge">合集</span>
+              </figure>
+              <div class="body">
+                <h3>BEST 2013-2025</h3>
+                <div class="tags"><span>2025</span><span>合集</span><span>引退</span></div>
+                <p class="look">四碟装，按年份分卷收录 28 个片段，附一张年表折页；碟三之后的选段和原版有剪辑差异。</p>
+                <div class="foot"><span>评分 <b>8.4</b></span><span>四碟装</span></div>
+              </div>
+            </article>
+          </div>
+          <div class="no-result" id="noresult">没有匹配的条目，换个番号前缀或作品名关键词再试。</div>
+        </section>
+
+        <!-- 3 最新补录 -->
+        <section class="sec" id="updates">
+          <div class="sec-head">
+            <h2>最新补录与条目动态</h2>
+            <span class="sub">近 30 天内更新的条目</span>
+          </div>
+          <div class="upd-list">
+            <div class="upd-item">
+              <div class="nm">夏の終わりの三日月<small>修复版</small></div>
+              <div class="sum">标清母带重制到 1080p，补入原版删掉的 6 分钟外景片段，封面重新设计。</div>
+              <time>2026-11-07</time>
+            </div>
+            <div class="upd-item">
+              <div class="nm">BEST 2013-2025<small>四碟装</small></div>
+              <div class="sum>">碟三第 7 段与原版剪辑不同，年表折页标注了 2014 年两部未发行企划。</div>
+              <time>2026-11-05</time>
+            </div>
+            <div class="upd-item">
+              <div class="nm">三人の夜、それぞれの朝<small>共演索引</small></div>
+              <div class="sum">补全共演者名单，新增 23 位共演者的交叉索引，可按年份筛选。</div>
+              <time>2026-11-04</time>
+            </div>
+            <div class="upd-item">
+              <div class="nm">対談・仕事の話<small>访谈条目</small></div>
+              <div class="sum">整理出 42 分钟音频版，与影像版存在 3 处表述差异，已逐条标注。</div>
+              <time>2026-11-02</time>
+            </div>
+            <div class="upd-item">
+              <div class="nm">午後のアパートメント<small>再版</small></div>
+              <div class="sum">2022 年再版封面与 2016 初版不同，收录时长多 11 分钟，已拆成两条。</div>
+              <time>2026-10-30</time>
+            </div>
+            <div class="upd-item">
+              <div class="nm">はじまりの季節<small>出道作</small></div>
+              <div class="sum">确认发行日为 2013 年 4 月 26 日，此前目录中的 5 月记录为误记。</div>
+              <time>2026-10-28</time>
+            </div>
+            <div class="upd-item">
+              <div class="nm">鍵のかかった部屋で<small>单体</small></div>
+              <div class="sum">补录导演信息与拍摄周期，全片实际拍摄 2 天，成片 118 分钟。</div>
+              <time>2026-10-25</time>
+            </div>
+            <div class="upd-item">
+              <div class="nm">雨上がりの駅前<small>剧情向</small></div>
+              <div class="sum">校对字幕轨，修正 5 处时间轴错位，正片内容未改动。</div>
+              <time>2026-10-23</time>
+            </div>
+            <div class="upd-item">
+              <div class="nm">五年目の記録<small>纪念作</small></div>
+              <div class="sum">初回限定版附赠的访谈册页扫描件补齐，共 16 页。</div>
+              <time>2026-10-20</time>
+            </div>
+            <div class="upd-item">
+              <div class="nm">2019 年度单体汇总<small>索引页</small></div>
+              <div class="sum">按发行月份重排，补入 4 部此前遗漏的合集条目。</div>
+              <time>2026-10-16</time>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4 分类筛选 -->
+        <section class="sec" id="category">
+          <div class="sec-head">
+            <h2>题材与年份分类</h2>
+            <span class="sub">点击筛选下方代表作品</span>
+          </div>
+          <div class="cat-grid" id="catgrid">
+            <button class="cat on" data-filter="all"><b>全部</b><span>412 条已整理条目</span></button>
+            <button class="cat" data-filter="剧情"><b>剧情向</b><span>2018—2021 集中，单部 120 分钟以上</span></button>
+            <button class="cat" data-filter="共演"><b>共演企划</b><span>含对谈、群像、双人三类结构</span></button>
+            <button class="cat" data-filter="日常"><b>日常设定</b><span>数量最多，量产期主力类型</span></button>
+            <button class="cat" data-filter="合集"><b>合集与再版</b><span>2020 年后占比上升至三成</span></button>
+          </div>
+          <p class="filter-note">分类按企划结构划分，不按发行厂牌划分；同一部作品可能同时属于剧情向与共演。</p>
+        </section>
+
+        <!-- 5 深度解析 -->
+        <section class="sec" id="deep">
+          <div class="sec-head">
+            <h2>作品脉络深度解析</h2>
+            <span class="sub">从番号序列看企划变化</span>
+          </div>
+          <div class="deep">
+            <p>把 412 个条目按番号前缀排一遍，会看到一条很清楚的分界线：2017 年之前，市来美保的作品绝大多数挂在 SIRO 与 MIDE 两个序列下，单部时长 90 分钟上下，企划结构以单场景加一段外景为主；2017 年之后，SSNI 与 PRED 序列的条目开始出现，时长普遍拉到 120 分钟以上，共演比例从不足一成升到接近三成。</p>
+
+            <h3>量产期的条目密度与质量曲线</h3>
+            <p>2014 到 2016 三年，可查到的发行记录分别是 31 部、34 部、29 部，月均接近 3 部。这个密度下，单部作品的拍摄周期普遍只有 1 到 2 天。以 2016 年的《午後のアパートメント》为例，全片单场景拍摄，实际拍摄 2 天，成片 96 分钟，几乎没有外景转场。同期的《夏の終わりの三日月》因为要赶海边外景的天气窗口，拍摄拉长到 4 天，成片质量在当年属于明显偏高的一档。</p>
+            <p>密度高不等于平均质量低，但可以核对的是：2014—2016 年的条目里，单场景占比超过 70% 的作品占多数，而 2018 年之后这一比例降到四成以下。场景数量的变化，是判断一部作品属于哪个阶段最直接的外部指标。</p>
+
+            <h3>剧情向条目的三个可核对特征</h3>
+            <p>剧情向集中在 2018—2021 年，共 27 部。这批条目有三个共同点，都可以从条目信息里直接核对：</p>
+            <ul>
+              <li>时长：27 部里有 24 部超过 120 分钟，最短的 112 分钟，最长 165 分钟。</li>
+              <li>台词密度：以《雨上がりの駅前》为例，前 40 分钟对白段落占八成以上，接近一般电视剧的开场结构。</li>
+              <li>导演固定度：27 部中有 19 部由同两位导演执导，镜头语言前后一致，长镜头使用频率明显高于量产期。</li>
+            </ul>
+            <p>《鍵のかかった部屋で》是个例外。它挂在剧情向分类下，但前 30 分钟只有一人出镜，几乎没有对白，靠灯光和固定机位推进。把它归进剧情向，依据是叙事结构完整，而不是台词量。</p>
+
+            <h3>共演企划里最容易被误读的一类</h3>
+            <p>共演条目常被当成“多人出场”的同义词，实际结构差别很大。以《三人の夜、それぞれの朝》为例，三段式结构里市来美保只负责第二段，另两位演员各自独立成段，三人同框的镜头总计不到 12 分钟。而《対談・仕事の話》更接近访谈节目，正片场景占不到一半，剩下是两位演员聊入行经历。</p>
+            <div class="quote">判断共演条目值不值得看，先看同框时长，再看分段结构。同框时长写在条目说明里的，直接核对；没写的，看片长和分段数——三段式结构里，单人段通常占七成以上。</div>
+
+            <h3>版本差异：同一番号为什么会出现三条记录</h3>
+            <p>初回限定、通常版、后期再版三种形态，封面、收录时长、特典影像都不同。以《午後のアパートメント》为例：</p>
+            <table>
+              <thead><tr><th>版本</th><th>发行年份</th><th>收录时长</th><th>差异项</th></tr></thead>
+              <tbody>
+                <tr><td>初版</td><td>2016</td><td>96 分钟</td><td>无特典，封面为室内景</td></tr>
+                <tr><td>再版</td><td>2022</td><td>107 分钟</td><td>补入 11 分钟花絮，封面重拍</td></tr>
+                <tr><td>修复版</td><td>2026</td><td>102 分钟</td><td>画质重制，删去部分花絮</td></tr>
+              </tbody>
+            </table>
+            <p>三条记录不是重复收录，而是三个不同商品。合并成一条会丢掉时长和特典信息，所以这份目录把它们分开列。</p>
+
+            <h3>引退前后的合集该怎么看</h3>
+            <p>2025 年宣布引退之后，新拍条目基本停止，流通的多是整理版与纪念合集。《BEST 2013-2025》四碟装按年份分卷收录 28 个片段，附一张年表折页。碟三第 7 段与原版剪辑不同，年表折页标注了 2014 年两部未发行企划——这两条信息在原版单体里都找不到，属于合集独有的内容。</p>
+            <p>看合集的价值不在片段本身，而在它补了什么。年表、未发行企划记录、访谈音频，这些是单体条目不会收录的部分。反过来，如果合集只是把已有片段按年份重排、没有任何新增素材，那它的参考价值就有限。</p>
+          </div>
+        </section>
+
+        <!-- 6 观看顺序 -->
+        <section class="sec" id="guide">
+          <div class="sec-head">
+            <h2>观看顺序与挑选路径</h2>
+            <span class="sub">按目的决定先看哪一类</span>
+          </div>
+          <div class="steps">
+            <div class="step">
+              <b>先定目的：看表演状态，还是看企划结构</b>
+              <p>想看早期表演状态，从 2013—2016 年的量产期单体入手，单部时长 90 分钟左右，节奏快、场景少。想看企划结构，直接跳到 2018—2021 年的剧情向条目，单部 120 分钟以上，叙事完整度明显更高。</p>
+            </div>
+            <div class="step">
+              <b>用番号前缀快速定位阶段</b>
+              <p>SIRO、MIDE 两个前缀基本对应 2017 年之前；SSNI、PRED 对应 2017 年之后。拿到一个番号，先看前缀，再核对发行年份，能避开大部分版本混淆。</p>
+            </div>
+            <div class="step">
+              <b>判断一部值不值得投入两小时</b>
+              <p>三个可核对项：时长是否超过 120 分钟、场景数是否在 3 个以上、导演是否属于固定班底那两位。三项里满足两项，基本属于剧情向里完成度较高的一档。</p>
+            </div>
+            <div class="step">
+              <b>同类条目怎么比较</b>
+              <p>拿《雨上がりの駅前》和《鍵のかかった部屋で》比：前者台词密度高、场景多、节奏偏慢；后者单场景封闭、前 30 分钟几乎无对白。同属剧情向，观感差别很大，按自己对节奏的耐受度选。</p>
+            </div>
+            <div class="step">
+              <b>合集留到最后看</b>
+              <p>合集的价值在年表、未发行企划记录和访谈素材，这些内容对已经熟悉单体条目的人才有意义。先看单体建立印象，再回头看合集补背景，顺序反过来容易觉得片段零碎。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7 对照 -->
+        <section class="sec" id="compare">
+          <div class="sec-head">
+            <h2>单体与合集条目对照</h2>
+            <span class="sub">两类条目的信息构成差异</span>
+          </div>
+          <div class="compare">
+            <div class="cmp">
+              <h4>单体条目</h4>
+              <ul>
+                <li>单部时长 90—165 分钟，独立叙事</li>
+                <li>封面、番号、发行日三项信息完整</li>
+                <li>再版与初版差异需单独核对</li>
+                <li>适合按年份或题材逐个挑选</li>
+                <li>代表条目：《雨上がりの駅前》《午後のアパートメント》</li>
+              </ul>
+            </div>
+            <div class="cmp">
+              <h4>合集条目</h4>
+              <ul>
+                <li>多碟装，按年份或主题分卷</li>
+                <li>含年表、未发行企划记录、访谈音频</li>
+                <li>片段剪辑常与原版存在差异</li>
+                <li>适合建立整体脉络，不适合逐部细看</li>
+                <li>代表条目：《BEST 2013-2025》《五年目の記録》</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 8 FAQ -->
+        <section class="sec" id="faq">
+          <div class="sec-head">
+            <h2>常见问题</h2>
+            <span class="sub">围绕条目与版本的具体疑问</span>
+          </div>
+          <div class="faq">
+            <details>
+              <summary>出道作《はじまりの季節》的确切发行日是哪天？</summary>
+              <div class="ans">2013 年 4 月 26 日。此前部分目录记作 5 月，是把再版的发售日误当成初版。再版在 2016 年 5 月发行，补入 8 分钟未公开素材，封面也换了。</div>
+            </details>
+            <details>
+              <summary>同一个番号为什么能搜到三个不同时长？</summary>
+              <div class="ans">初回限定、通常版、后期再版是三个独立商品。以《午後のアパートメント》为例，2016 年初版 96 分钟，2022 年再版 107 分钟，2026 年修复版 102 分钟。时长差异来自特典花絮的增删，正片主体基本一致。</div>
+            </details>
+            <details>
+              <summary>剧情向条目一共多少部，集中在哪几年？</summary>
+              <div class="ans">可核对的有 27 部，集中在 2018—2021 年。其中 24 部超过 120 分钟，19 部由同两位导演执导。2022 年之后新拍的剧情向条目明显减少。</div>
+            </details>
+            <details>
+              <summary>共演条目里，同框时长怎么查？</summary>
+              <div class="ans">条目说明里写了同框时长的直接核对；没写的看分段数——三段式结构里单人段通常占七成以上，三人同框往往不到 12 分钟。《三人の夜、それぞれの朝》就属于这种结构。</div>
+            </details>
+            <details>
+              <summary>引退之后还会有新条目发行吗？</summary>
+              <div class="ans">新拍条目基本停止。2025 年之后流通的主要是整理版、纪念合集和旧作修复版。修复版会重制画质，但不改变正片内容，和再版要分开看。</div>
+            </details>
+            <details>
+              <summary>合集里的年表折页有什么独家信息？</summary>
+              <div class="ans">《BEST 2013-2025》的年表折页标注了 2014 年两部未发行企划，这两条在原版单体里都找不到。另外碟三第 7 段的剪辑和原版不同，属于合集独有的版本。</div>
+            </details>
+          </div>
+        </section>
+
+        <!-- 9 评论 -->
+        <section class="sec" id="comments">
+          <div class="sec-head">
+            <h2>观众评论</h2>
+            <span class="sub">16 条，按时间倒序</span>
+          </div>
+          <div class="cmt-grid">
+            <div class="cmt"><div class="who"><span class="av">A</span><span class="nm">南口三丁目</span><span class="tm">11-07</span></div><p>修复版《夏の終わりの三日月》那 6 分钟外景补得值，原版里海边那段明显被剪断过，接不上。</p></div>
+            <div class="cmt"><div class="who"><span class="av">B</span><span class="nm">磁带倒带</span><span class="tm">11-06</span></div><p>《鍵のかかった部屋で》前半小时真的只有一个人，我第一次看还以为放错了。坚持到 35 分钟才明白结构。</p></div>
+            <div class="cmt"><div class="who"><span class="av">C</span><span class="nm">午休半小时</span><span class="tm">11-06</span></div><p>2016 年那批单体节奏是真的快，96 分钟一气呵成，现在回头看反而觉得舒服。</p></div>
+            <div class="cmt"><div class="who"><span class="av">D</span><span class="nm">阿久</span><span class="tm">11-05</span></div><p>《対談・仕事の話》里聊入行那段比正片有意思，42 分钟音频版和影像版有三处说法不一样，对不上。</p></div>
+            <div class="cmt"><div class="who"><span class="av">E</span><span class="nm">kite_07</span><span class="tm">11-04</span></div><p>四碟装年表折页那两部未发行企划，查了半天没找到任何后续，估计就是拍了没发。</p></div>
+            <div class="cmt"><div class="who"><span class="av">F</span><span class="nm">老周不熬夜</span><span class="tm">11-03</span></div><p>个人不太吃三段式共演，每人一段像拼盘，同框还不到 12 分钟，划不来。</p></div>
+            <div class="cmt"><div class="who"><span class="av">G</span><span class="nm">海边的猫</span><span class="tm">11-02</span></div><p>《雨上がりの駅前》前 40 分钟台词太多了，我快进到后半段才看进去。剧情向里它算慢的。</p></div>
+            <div class="cmt"><div class="who"><span class="av">H</span><span class="nm">番号收集癖</span><span class="tm">11-01</span></div><p>SSNI 前缀那批时长普遍长，但画面质感参差，2018 年有几部明显是赶工。</p></div>
+            <div class="cmt"><div class="who"><span class="av">I</span><span class="nm">小林</span><span class="tm">10-31</span></div><p>《午後のアパートメント》三个版本我都看过，2022 再版多的 11 分钟花絮其实一般，修复版画质最好但删了花絮，取舍看个人。</p></div>
+            <div class="cmt"><div class="who"><span class="av">J</span><span class="nm">雨天限定</span><span class="tm">10-30</span></div><p>2013 出道作画质是真不行，冷色调加上标清，现在看有点糊。</p></div>
+            <div class="cmt"><div class="who"><span class="av">K</span><span class="nm">不困的星期三</span><span class="tm">10-29</span></div><p>这片单整理得挺全，我之前一直以为 2015 年只有 20 多部，实际 34 部，差得有点多。</p></div>
+            <div class="cmt"><div class="who"><span class="av">L</span><span class="nm">いちご</span><span class="tm">10-27</span></div><p>《五年目の記録》那段 25 分钟访谈值得单独看，讲了不少量产期的拍摄细节。</p></div>
+            <div class="cmt"><div class="who"><span class="av">M</span><span class="nm">路过的P</span><span class="tm">10-26</span></div><p>共演索引能按年份筛之后好用多了，之前找 2020 年的怎么都翻不到。</p></div>
+            <div class="cmt"><div class="who"><span class="av">N</span><span class="nm">半夜翻碟</span><span class="tm">10-24</span></div><p>说实话剧情向 27 部我只看过 9 部，剩下的一直没找到资源，慢慢补。</p></div>
+            <div class="cmt"><div class="who"><span class="av">O</span><span class="nm">东京塔下</span><span class="tm">10-22</span></div><p>2019 年那批悬疑设定的，灯光打得比同期好，可惜只拍了一部。</p></div>
+            <div class="cmt"><div class="who"><span class="av">P</span><span class="nm">阿岚</span><span class="tm">10-20</span></div><p>刚看到有修复版，等下就去对比一下原版，看看 6 分钟外景到底补在哪。</p></div>
+          </div>
+        </section>
+
+        <!-- 10 资讯 -->
+        <section class="sec" id="news">
+          <div class="sec-head">
+            <h2>相关资讯</h2>
+            <span class="sub">近一个月条目与发行动态</span>
+          </div>
+          <div class="news">
+            <article>
+              <h3>《夏の終わりの三日月》修复版 11 月 7 日上线</h3>
+              <time>2026-11-07</time>
+              <p>重制版把标清母带升到 1080p，补入原版删掉的 6 分钟海边外景，片尾新增 2017 年拍摄现场照 12 张。</p>
+            </article>
+            <article>
+              <h3>四碟装合集补印年表折页，标注两部未发行企划</h3>
+              <time>2026-11-05</time>
+              <p>折页列出 2014 年 3 月和 9 月各一部企划，均标注“撮影済み・未発売”，发行方未说明未发售原因。</p>
+            </article>
+            <article>
+              <h3>共演者交叉索引扩到 23 人，可按年份筛选</h3>
+              <time>2026-11-04</time>
+              <p>新增的检索维度覆盖 2017—2021 年全部共演条目，其中 2020 年共演者 8 人，为历年最多。</p>
+            </article>
+            <article>
+              <h3>《対談・仕事の話》音频版整理完成，与影像版存 3 处差异</h3>
+              <time>2026-11-02</time>
+              <p>42 分钟录音里，入行年份的表述与影像字幕不一致；另外两处差异涉及 2015 年一部作品的拍摄顺序。</p>
+            </article>
+            <article>
+              <h3>2016 年作品《午後のアパートメント》确认存在三个版本</h3>
+              <time>2026-10-30</time>
+              <p>初版 96 分钟、2022 再版 107 分钟、2026 修复版 102 分钟，三者封面各不相同，再版补入 11 分钟花絮。</p>
+            </article>
+            <article>
+              <h3>出道作发行日更正为 2013 年 4 月 26 日</h3>
+              <time>2026-10-28</time>
+              <p>此前目录记作 5 月，是把 2016 年再版的发售日误当成初版；再版补入 8 分钟未公开素材。</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 11 相关推荐 -->
+        <section class="sec" id="rec">
+          <div class="sec-head">
+            <h2>相关方向索引</h2>
+            <span class="sub">按具体条目名与类型词跳转</span>
+          </div>
+          <div class="rec-tags">
+            <a href="/#featured">2018—2021 剧情向 27 部</a>
+            <a href="/#featured">SSNI 前缀时长对照</a>
+            <a href="/#featured">三段式共演同框时长</a>
+            <a href="/#compare">初回限定与再版差异</a>
+            <a href="/#timeline">2013—2025 发行年表</a>
+            <a href="/#guide">量产期单体挑选法</a>
+            <a href="/#featured">修复版画质重制条目</a>
+            <a href="/#updates">近 30 天补录记录</a>
+          </div>
+        </section>
+
+        <!-- 12 年表 -->
+        <section class="sec" id="timeline">
+          <div class="sec-head">
+            <h2>发行年表节点</h2>
+            <span class="sub">按年份标注企划变化</span>
+          </div>
+          <ul class="timeline">
+            <li><b>2013 · 出道</b><time>4 月 26 日</time>《はじまりの季節》发行，SIRO 序列，92 分钟，冷色调外景两段。</li>
+            <li><b>2014—2016 · 量产期</b><time>年均 31 部</time>三年发行 31、34、29 部，单场景占比超七成，拍摄周期普遍 1—2 天。</li>
+            <li><b>2017 · 序列转换</b><time>SSNI 前缀出现</time>时长拉到 120 分钟以上，共演比例开始上升，《夏の終わりの三日月》为外景最多的一部。</li>
+            <li><b>2018 · 五周年</b><time>纪念企划</time>《五年目の記録》165 分钟，含 25 分钟访谈与幕后花絮，初回限定版附 16 页册页。</li>
+            <li><b>2019—2021 · 剧情向集中</b><time>27 部</time>24 部超 120 分钟，19 部由同两位导演执导；《鍵のかかった部屋で》为单场景实验作。</li>
+            <li><b>2025 · 引退</b><time>合集流通为主</time>《BEST 2013-2025》四碟装按年份分卷收录 28 个片段，附年表折页。</li>
+            <li><b>2026 · 修复与补录</b><time>11 月 7 日</time>《夏の終わりの三日月》修复版上线，补入 6 分钟外景，封面重新设计。</li>
+          </ul>
+        </section>
+
+        <!-- 13 投稿互动 -->
+        <section class="sec" id="submit">
+          <div class="sec-head">
+            <h2>条目补录与交流</h2>
+            <span class="sub">缺番号、错时长、版本混淆都可以提</span>
+          </div>
+          <div class="submit-box">
+            <div>
+              <h3>补录需要哪些信息</h3>
+              <p>最少提供三项：番号、发行年份、收录时长。能附封面或碟面照片更好，版本判断主要靠这两处。</p>
+              <ul>
+                <li>番号写全，含前缀与数字部分</li>
+                <li>时长精确到分钟，注明是否含特典</li>
+                <li>再版请说明与初版的差异项</li>
+                <li>未发行企划如有拍摄记录，单独标注</li>
+              </ul>
+            </div>
+            <form class="submit-form" onsubmit="return false;">
+              <input type="text" placeholder="番号，如 SSNI-XXX" aria-label="番号">
+              <input type="text" placeholder="发行年份 + 收录时长" aria-label="发行年份与时长">
+              <select aria-label="版本类型">
+                <option>初版</option>
+                <option>再版</option>
+                <option>修复版</option>
+                <option>合集</option>
+                <option>未发行企划</option>
+              </select>
+              <button type="button">提交补录</button>
+              <p class="tip">提交后进入待核对队列，通常 3 个工作日内处理。</p>
+            </form>
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="side-right" aria-label="辅助栏">
+        <div class="panel">
+          <h3>条目热度榜</h3>
+          <ol class="rank-list">
+            <li><a href="/#featured">雨上がりの駅前</a><em>8.6 · 剧情向</em></li>
+            <li><a href="/#featured">BEST 2013-2025</a><em>8.4 · 四碟装</em></li>
+            <li><a href="/#featured">五年目の記録</a><em>8.3 · 纪念作</em></li>
+            <li><a href="/#featured">夏の終わりの三日月</a><em>8.2 · 修复版</em></li>
+            <li><a href="/#featured">三人の夜、それぞれの朝</a><em>8.1 · 共演</em></li>
+            <li><a href="/#featured">対談・仕事の話</a><em>8.0 · 访谈</em></li>
+          </ol>
+        </div>
+        <div class="panel">
+          <h3>按年份找条目</h3>
+          <div class="tag-cloud">
+            <a href="/#timeline">2013</a><a href="/#timeline">2014</a><a href="/#timeline">2015</a>
+            <a href="/#timeline">2016</a><a href="/#timeline">2017</a><a href="/#timeline">2018</a>
+            <a href="/#timeline">2019</a><a href="/#timeline">2020</a><a href="/#timeline">2021</a>
+            <a href="/#timeline">2022</a><a href="/#timeline">2025</a><a href="/#timeline">2026</a>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>本页更新记录</h3>
+          <ul class="rank-list" style="counter-reset:none">
+            <li style="display:block;padding-left:0">11-07 修复版条目上线</li>
+            <li style="display:block;padding-left:0">11-05 合集年表补印</li>
+            <li style="display:block;padding-left:0">11-04 共演索引扩至 23 人</li>
+            <li style="display:block;padding-left:0">10-30 再版条目拆分</li>
+          </ul>
+          <style>.panel .rank-list li[style]{padding-left:0!important}.panel .rank-list li[style]::before{display:none}</style>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">
+        <svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#3a2c33"/>
+          <path d="M18 44V20h6l8 14 8-14h6v24h-6V31l-8 13-8-13v13z" fill="#f2c1d1"/>
+        </svg>
+        市来美保全部作品
+      </div>
+      <p class="foot-pos">收录范围自 2013 年 4 月出道作起至 2026 年 11 月的修复版，条目类型含单体、共演、访谈、合集与再版五类；补录以每周一次为节奏，修复版与再版条目单独建条，不合并在初版之下。</p>
+    </div>
+    <div class="foot-col">
+      <h4>条目</h4>
+      <a href="/#featured">代表作品</a>
+      <a href="/#updates">最新补录</a>
+      <a href="/#category">题材分类</a>
+      <a href="/#timeline">发行年表</a>
+    </div>
+    <div class="foot-col">
+      <h4>解析</h4>
+      <a href="/#deep">脉络解析</a>
+      <a href="/#guide">观看顺序</a>
+      <a href="/#compare">版本对照</a>
+      <a href="/#faq">常见问题</a>
+    </div>
+    <div class="foot-col">
+      <h4>参与</h4>
+      <a href="/#submit">条目补录</a>
+      <a href="/#comments">观众评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#rec">相关方向</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>条目信息为示例整理，番号、时长与版本以发行方实际记录为准。</span>
+    <span>页面更新：2026-11-07 · 对应《夏の終わりの三日月》修复版条目</span>
+  </div>
+</footer>
+
+<button class="to-top" id="totop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var drawer=document.getElementById('drawer'),
+      hbtn=document.getElementById('hbtn'),
+      hclose=document.getElementById('hclose'),
+      totop=document.getElementById('totop'),
+      q=document.getElementById('q'),
+      qbtn=document.getElementById('qbtn'),
+      cd=document.getElementById('cardgrid'),
+      cats=document.querySelectorAll('.cat'),
+      cards=cd?cd.querySelectorAll('.card'):[],
+      nr=document.getElementById('noresult');
+
+  function openDrawer(){drawer.classList.add('show');drawer.setAttribute('aria-hidden','false');hbtn.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+  function closeDrawer(){drawer.classList.remove('show');drawer.setAttribute('aria-hidden','true');hbtn.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+  hbtn&&hbtn.addEventListener('click',openDrawer);
+  hclose&&hclose.addEventListener('click',closeDrawer);
+  drawer&&drawer.addEventListener('click',function(e){if(e.target===drawer)closeDrawer();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDrawer();});
+  drawer&&drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeDrawer);});
+
+  var curFilter='all';
+  function apply(){
+    var kw=(q&&q.value||'').trim().toLowerCase(),shown=0;
+    cards.forEach(function(c){
+      var txt=c.textContent.toLowerCase(),
+          okCat=(curFilter==='all'||c.getAttribute('data-cat')===curFilter),
+          okKw=(!kw||txt.indexOf(kw)>-1);
+      var ok=okCat&&okKw;
+      c.style.display=ok?'':'none';
+      if(ok)shown++;
+    });
+    if(nr)nr.style.display=shown?'none':'block';
+  }
+  qbtn&&qbtn.addEventListener('click',apply);
+  q&&q.addEventListener('input',apply);
+  cats.forEach(function(b){
+    b.addEventListener('click',function(){
+      cats.forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on');
+      curFilter=b.getAttribute('data-filter');
+      apply();
+    });
+  });
+
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>window.innerHeight*0.8){totop.classList.add('show');}else{totop.classList.remove('show');}
+  },{passive:true});
+  totop&&totop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+
+  var links=document.querySelectorAll('#chlist a'),secs=[];
+  links.forEach(function(a){
+    var id=a.getAttribute('href').replace('/#','');
+    var el=document.getElementById(id);
+    if(el)secs.push({a:a,el:el});
+  });
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          links.forEach(function(l){l.classList.remove('active');});
+          secs.forEach(function(s){if(s.el===en.target)s.a.classList.add('active');});
+        }
+      });
+    },{rootMargin:'-120px 0px -62% 0px',threshold:0});
+    secs.forEach(function(s){io.observe(s.el);});
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"市来美保全部作品",
+  "description":"市来美保全部作品按年份与类型梳理，收录出道至今的代表作清单、番号信息、题材分类与观看顺序建议。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"出道作《はじまりの季節》的确切发行日是哪天？","acceptedAnswer":{"@type":"Answer","text":"2013 年 4 月 26 日。此前部分目录记作 5 月，是把再版的发售日误当成初版。再版在 2016 年 5 月发行，补入 8 分钟未公开素材，封面也换了。"}},
+    {"@type":"Question","name":"同一个番号为什么能搜到三个不同时长？","acceptedAnswer":{"@type":"Answer","text":"初回限定、通常版、后期再版是三个独立商品。以《午後のアパートメント》为例，2016 年初版 96 分钟，2022 年再版 107 分钟，2026 年修复版 102 分钟。时长差异来自特典花絮的增删，正片主体基本一致。"}},
+    {"@type":"Question","name":"剧情向条目一共多少部，集中在哪几年？","acceptedAnswer":{"@type":"Answer","text":"可核对的有 27 部，集中在 2018—2021 年。其中 24 部超过 120 分钟，19 部由同两位导演执导。2022 年之后新拍的剧情向条目明显减少。"}},
+    {"@type":"Question","name":"共演条目里，同框时长怎么查？","acceptedAnswer":{"@type":"Answer","text":"条目说明里写了同框时长的直接核对；没写的看分段数——三段式结构里单人段通常占七成以上，三人同框往往不到 12 分钟。《三人の夜、それぞれの朝》就属于这种结构。"}},
+    {"@type":"Question","name":"引退之后还会有新条目发行吗？","acceptedAnswer":{"@type":"Answer","text":"新拍条目基本停止。2025 年之后流通的主要是整理版、纪念合集和旧作修复版。修复版会重制画质，但不改变正片内容，和再版要分开看。"}},
+    {"@type":"Question","name":"合集里的年表折页有什么独家信息？","acceptedAnswer":{"@type":"Answer","text":"《BEST 2013-2025》的年表折页标注了 2014 年两部未发行企划，这两条在原版单体里都找不到。另外碟三第 7 段的剪辑和原版不同，属于合集独有的版本。"}}
+  ]
+}
+</script>
+
+</body>
+  </html>
